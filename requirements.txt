@@ -1,0 +1,7 @@
+Flask==0.12.2
+ffmpy==0.2.2
+webrtcvad
+wave
+pyaudio
+numpy
+pycurl
