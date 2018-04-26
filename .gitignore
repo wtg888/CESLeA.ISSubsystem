@@ -102,7 +102,7 @@ venv.bak/
 .mypy_cache/
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -114,3 +114,5 @@ venv.bak/
 
 speaker_recog/
 log.txt
+.gitignore
+testlist
