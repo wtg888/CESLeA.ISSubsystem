@@ -18,6 +18,8 @@ frame_duration_ms = 30 #30ms마다 분석
 CHUNK = int(RATE * (frame_duration_ms / 1000.0))
 FORMAT = pyaudio.paInt16 #16bit
 CHANNELS = 1 #mono
+l = ['몇시야', '몇시일 리아', '이제  시리아', '되질 이요', '세시에 내야', '슬슬 이여', '얘 시리아  나요', '제 시리아', '제트 리아', '네  시에는 이요', '몇시에 를요', '에스엘 이요', '제  비비안',
+'없애실 이야', '주실 이야', '에스엘 리아', '저 실현 이야', '몇시일 로요', '스튜디오', '몇 cm 이요', '내실 래요', '대신리요', '아  세트 엔이요', '네  쓰여', '저  님이요', '근데 쓰여', '제가 시리아', '지에스 니요', '잭슨은 예', '센스 엔이요', '저  십일 이요', '예  일이야', '뒈질 리아', '지금  시리아', '유리야', '센스 이요', '넷째 일이요', '새 셀 리안', '에스 뭐야', '세실 리아  관계', '네 시리아', '열세 니요', '내 쯤이요', '세시로 예약', '응  지금  제일 이요', '접수를 이야', '씨름 이요', '그게  제일 이요', '내실 이요', '했으니 연', '저  시행을 이요', '세실 리아', '이에스엘 이요', '세트 이요', '저 심리학', '여실 이요', '제시를 약', '사실이야', '이제  씨엘 리아  모를까', '주스 리아', '제트 엔이요', '그랬더니 예', '세 수요일 이야', '넥센 이요', '세시에 를요', '세시에 되요', '매실 이야', '세시로요', '저 시리아', '네  일이요', '쓰리요', '쓸쓸히 약', '네  몇시야', '열심히 이요', '쇼핑몰이 약', '네  신용이요', '얘 시리아', '쓰리 약', '쓸수 엘이요', '이제 시리아', '세실 이야', '몇시에 로요', '저 시에 를요', '쓸수 있는게', '제트 이요', '느낌이 야']
 p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
@@ -80,8 +82,9 @@ def runSpeakerRecog():
             g = q2.get(timeout=30)
             now_s, file_name, speech = g
             speaker = -1
-            if 2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야")):
+            if speech in l or (2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야")):
                 speaker = doSpeakerRecog(file_name)
+                speech = '세실리아'
             fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
             print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
         except queue.Empty:
