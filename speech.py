@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import os
 import time
 import queue
@@ -12,8 +13,10 @@ import sys
 import wave
 import webrtcvad
 import pyaudio
+import numpy as np
+import scipy.signal
 
-RATE = 8000 #sampling rate
+RATE = 16000 #sampling rate
 frame_duration_ms = 30 #30ms마다 분석
 CHUNK = int(RATE * (frame_duration_ms / 1000.0))
 FORMAT = pyaudio.paInt16 #16bit
@@ -60,6 +63,8 @@ def runAsr():
         try:
             g = q.get(timeout=30)
             now_s, file_name = g
+            os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(file_name, file_name.replace('wav16k','wav')))
+            file_name = file_name.replace('wav16k','wav')
             speech = asr(file_name)
             q2.put((now_s, file_name, speech))
         except queue.Empty:
@@ -82,7 +87,7 @@ def runSpeakerRecog():
             g = q2.get(timeout=30)
             now_s, file_name, speech = g
             speaker = -1
-            if speech in l or (2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야")):
+            if (speech in l) or (2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야"))):
                 speaker = doSpeakerRecog(file_name)
                 speech = '세실리아'
             fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
@@ -98,7 +103,8 @@ def write_wave(path, audio, sample_rate):
         wf.setsampwidth(2)
         wf.setframerate(sample_rate)
         wf.writeframes(audio)
-	
+
+
 def vad_(sample_rate, frame_duration_ms,
                   padding_duration_ms, vad, stream):
     num_padding_frames = int(padding_duration_ms / frame_duration_ms)
@@ -130,10 +136,12 @@ def vad_(sample_rate, frame_duration_ms,
                 if num_unvoiced > 0.6 * ring_buffer.maxlen:
                     triggered = False
                     print('save %d.wav'%num)
-                    write_wave('speaker_recog\\wav\\%d.wav'%num, b''.join([f for f in voiced_frames]), RATE)
+                    data = b''.join([f for f in voiced_frames])
+                    write_wave('speaker_recog\\wav16k\\%d.wav'%num, data, sample_rate)
+                    #downsample('speaker_recog\\wav16k\\%d.wav'%num, 'speaker_recog\\wav\\%d.wav'%num)
                     now = time.localtime()
                     now_s = "%04d_%02d_%02d_%02d_%02d_%02d" % (now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec)
-                    q.put_nowait((now_s,'speaker_recog\\wav\\%d.wav'%num))
+                    q.put_nowait((now_s,'speaker_recog\\wav16k\\%d.wav'%num))
                     num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []

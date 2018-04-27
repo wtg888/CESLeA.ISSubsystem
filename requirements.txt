@@ -5,3 +5,4 @@ wave
 pyaudio
 numpy
 pycurl
+scipy
