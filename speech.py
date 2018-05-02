@@ -121,7 +121,7 @@ def vad_(sample_rate, frame_duration_ms,
             if not triggered:
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
-                #queue의 90%이상이 voice이면 트리거
+                #queue의 60%이상이 voice이면 트리거
                 if num_voiced > 0.6 * ring_buffer.maxlen:
                     triggered = True
                     for f, s in ring_buffer:
@@ -131,7 +131,7 @@ def vad_(sample_rate, frame_duration_ms,
                 #트리거 중이면 읽은 프레임 추가
                 voiced_frames.append(frame)
                 ring_buffer.append((frame, is_speech))
-                #unvoice가 큐의 90% 이상이 되면 파일 저장
+                #unvoice가 큐의 60% 이하가 되면 파일 저장
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
                 if num_unvoiced > 0.6 * ring_buffer.maxlen:
                     triggered = False
