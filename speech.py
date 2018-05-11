@@ -27,6 +27,7 @@ p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
 def asr(filename):
+    '''
     """
     http://curl.haxx.se/libcurl/c/curl_easy_setopt.html
     http://code.activestate.com/recipes/576422-python-http-post-binary-file-upload-with-pycurl/
@@ -56,6 +57,8 @@ def asr(filename):
         out = 'fail'
     c.close()
     return out
+    '''
+    return ''
 
 
 def runAsr():
