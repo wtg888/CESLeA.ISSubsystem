@@ -15,6 +15,8 @@ import webrtcvad
 import pyaudio
 import numpy as np
 import scipy.signal
+from googletest import google_stt
+import post
 
 RATE = 16000 #sampling rate
 frame_duration_ms = 30 #30ms마다 분석
@@ -26,39 +28,9 @@ l = ['몇시야', '몇시일 리아', '이제  시리아', '되질 이요', '세
 p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
-def asr(filename):
-    '''
-    """
-    http://curl.haxx.se/libcurl/c/curl_easy_setopt.html
-    http://code.activestate.com/recipes/576422-python-http-post-binary-file-upload-with-pycurl/
-    http://pycurl.cvs.sourceforge.net/pycurl/pycurl/tests/test_post2.py?view=markup
-    """
-    url = 'http://127.0.0.1:7777/filemode/?productcode=DEMO&transactionid=0&language=kor'
-    c = pycurl.Curl()
-    #c.setopt(pycurl.VERBOSE, 1)
-    c.setopt(pycurl.URL, url)
-    fout = io.BytesIO()
-    c.setopt(pycurl.WRITEFUNCTION, fout.write)
 
-    c.setopt(c.HTTPPOST, [
-                ("uploadfieldname",
-                 (c.FORM_FILE, filename,
-                  c.FORM_CONTENTTYPE, "audio/wav"))])
-    c.perform()
-    response_code = c.getinfo(pycurl.RESPONSE_CODE)
-    if response_code == 200 :
-        response_data = fout.getvalue().decode('UTF-8')
-        res = json.loads(response_data, encoding='UTF-8')
-        if res['rcode'] <= 0:
-            out = 'fail'
-        else:
-            out = res['result']
-    else:
-        out = 'fail'
-    c.close()
-    return out
-    '''
-    return ''
+def asr(filename):
+    return google_stt(filename)
 
 
 def runAsr():
@@ -66,14 +38,15 @@ def runAsr():
         try:
             g = q.get(timeout=30)
             now_s, file_name = g
-            os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(file_name, file_name.replace('wav16k','wav')))
-            file_name = file_name.replace('wav16k','wav')
             speech = asr(file_name)
-            q2.put((now_s, file_name, speech))
+            if speech:
+                q2.put((now_s, file_name, speech))
         except queue.Empty:
             continue
 
 def doSpeakerRecog(filename):
+    os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(filename, filename.replace('wav16k','wav')))
+    filename = filename.replace('wav16k','wav')
     f = open("speaker_recog\\a.txt", "w")
     f.write("N1 .\\%s"%filename.split("\\")[-1])
     f.close()
@@ -85,16 +58,19 @@ def doSpeakerRecog(filename):
 
 def runSpeakerRecog():
     fr = open("log.txt", "ab", 0)
+    d = {"-1":"N", "0":"ami", "1":"den", "2":"jan", "3":"jun", "4":"lee", "5":"lim", "6":"moh","7":"nas","8":"pro","9":"son","10":"woo","11":"you"}
     while True:
         try:
             g = q2.get(timeout=30)
-            now_s, file_name, speech = g
+            now, file_name, speech = g
+            now_s = str(now)
             speaker = -1
             if (speech in l) or (2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야"))):
                 speaker = doSpeakerRecog(file_name)
                 speech = '세실리아'
             fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
             print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
+            post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
     fr.close()
@@ -124,8 +100,8 @@ def vad_(sample_rate, frame_duration_ms,
             if not triggered:
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
-                #queue의 60%이상이 voice이면 트리거
-                if num_voiced > 0.6 * ring_buffer.maxlen:
+                #queue의 80%이상이 voice이면 트리거
+                if num_voiced > 0.8 * ring_buffer.maxlen:
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
@@ -142,19 +118,23 @@ def vad_(sample_rate, frame_duration_ms,
                     data = b''.join([f for f in voiced_frames])
                     write_wave('speaker_recog\\wav16k\\%d.wav'%num, data, sample_rate)
                     #downsample('speaker_recog\\wav16k\\%d.wav'%num, 'speaker_recog\\wav\\%d.wav'%num)
-                    now = time.localtime()
-                    now_s = "%04d_%02d_%02d_%02d_%02d_%02d" % (now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec)
-                    q.put_nowait((now_s,'speaker_recog\\wav16k\\%d.wav'%num))
+                    now = int(time.time())
+                    q.put_nowait((now,'speaker_recog\\wav16k\\%d.wav'%num))
                     num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []
     except:
         pass
 
+def postres():
+    
+    pass
+
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
+                input_device_index=3,
                 frames_per_buffer=CHUNK)
 vad = webrtcvad.Vad(3) # 0~3   3: the most aggressive
 t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 450, vad, stream))

@@ -7,28 +7,34 @@ from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 
-# Instantiates a client
-client = speech.SpeechClient()
+def google_stt(file_name):
+    # Instantiates a client
+    client = speech.SpeechClient()
 
-# The name of the audio file to transcribe
-file_name = os.path.join(
-    os.path.dirname(__file__),
-    #'resources',
-    'test2.wav')
+    # Loads the audio into memory
+    with io.open(file_name, 'rb') as audio_file:
+        content = audio_file.read()
+        audio = types.RecognitionAudio(content=content)
 
-# Loads the audio into memory
-with io.open(file_name, 'rb') as audio_file:
-    content = audio_file.read()
-    audio = types.RecognitionAudio(content=content)
+    config = types.RecognitionConfig(
+        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=16000,
+        language_code='ko-KR')#영어 : 'en-US' 한국어 : 'ko-KR'
 
-config = types.RecognitionConfig(
-    encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-    sample_rate_hertz=16000,
-    language_code='en-US')
+    try:
+        # Detects speech in the audio file
+        response = client.recognize(config, audio)
+        res = ""
+        for result in response.results:
+            res = res + str(result.alternatives[0].transcript)
+        return res
+    except:
+        return "fail"
 
-# Detects speech in the audio file
-response = client.recognize(config, audio)
-print(response)
-print(response.results)
-for result in response.results:
-    print('Transcript: {}'.format(result.alternatives[0].transcript))
+if __name__ == "__main__":
+    # The name of the audio file to transcribe
+    file_name = os.path.join(
+        os.path.dirname(__file__),
+        #'resources',
+        'test2.wav')
+    google_stt(file_name)
