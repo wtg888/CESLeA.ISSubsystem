@@ -29,6 +29,19 @@ p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
 
+
+def makedixt():
+    d = {"-1" : "N"}
+    f = open("speaker_recog/ceslea_data/map.list", "r")
+    l = [x.split(" ") for x in f.read().split('\n') if x != '']
+    for a, b in l:
+        d[a] = b
+    print(d)
+    return d
+
+
+d = makedixt()
+
 def asr(filename):
     return google_stt(filename)
 
@@ -39,26 +52,26 @@ def runAsr():
             g = q.get(timeout=30)
             now_s, file_name = g
             speech = asr(file_name)
-            if speech:
+            if True:
                 q2.put((now_s, file_name, speech))
         except queue.Empty:
             continue
 
 def doSpeakerRecog(filename):
-    os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(filename, filename.replace('wav16k','wav')))
-    filename = filename.replace('wav16k','wav')
+    #os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(filename, filename.replace('wav16k','wav')))
+    #filename = filename.replace('wav16k','wav')
     f = open("speaker_recog\\a.txt", "w")
     f.write("N1 .\\%s"%filename.split("\\")[-1])
     f.close()
-    os.system("cd speaker_recog && hmml\\mfcc.exe -f ceslea_data\\mm.list a.txt wav && cd ..")
+    os.system("cd speaker_recog && hmml\\mfcc.exe -f ceslea_data\\mm.list a.txt wav16k && cd ..")
     spk_num = -1
     with open('speaker_recog\\spk_result.txt','r') as f:
         spk_num = int(f.readline())
     return spk_num
 
 def runSpeakerRecog():
+    global d
     fr = open("log.txt", "ab", 0)
-    d = {"-1":"N", "0":"ami", "1":"den", "2":"jan", "3":"jun", "4":"lee", "5":"lim", "6":"moh","7":"nas","8":"pro","9":"son","10":"woo","11":"you"}
     while True:
         try:
             g = q2.get(timeout=30)
@@ -134,7 +147,7 @@ stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
-                input_device_index=3,
+                input_device_index=4,
                 frames_per_buffer=CHUNK)
 vad = webrtcvad.Vad(3) # 0~3   3: the most aggressive
 t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 450, vad, stream))

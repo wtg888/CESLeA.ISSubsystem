@@ -113,6 +113,7 @@ venv.bak/
 # End of https://www.gitignore.io/api/python,visualstudiocode
 
 speaker_recog/
+speaker_recog*/
 log.txt
 .gitignore
 testlist.txt

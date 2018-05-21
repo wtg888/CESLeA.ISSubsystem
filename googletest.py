@@ -25,6 +25,7 @@ def google_stt(file_name):
         # Detects speech in the audio file
         response = client.recognize(config, audio)
         res = ""
+        print(response.results)
         for result in response.results:
             res = res + str(result.alternatives[0].transcript)
         return res
