@@ -52,7 +52,7 @@ def runAsr():
             g = q.get(timeout=30)
             now_s, file_name = g
             speech = asr(file_name)
-            if True:
+            if speech:
                 q2.put((now_s, file_name, speech))
         except queue.Empty:
             continue
@@ -82,7 +82,7 @@ def runSpeakerRecog():
                 speaker = doSpeakerRecog(file_name)
                 speech = '세실리아'
             fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
-            print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
+            print(now_s + "\t"+ str(speaker) + '\t' + d[str(speaker)] + '\t' + speech + "\r\n")
             post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
@@ -114,7 +114,7 @@ def vad_(sample_rate, frame_duration_ms,
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
                 #queue의 80%이상이 voice이면 트리거
-                if num_voiced > 0.8 * ring_buffer.maxlen:
+                if num_voiced > 0.9 * ring_buffer.maxlen:
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
@@ -125,7 +125,7 @@ def vad_(sample_rate, frame_duration_ms,
                 ring_buffer.append((frame, is_speech))
                 #unvoice가 큐의 60% 이하가 되면 파일 저장
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
-                if num_unvoiced > 0.6 * ring_buffer.maxlen:
+                if num_unvoiced > 0.9 * ring_buffer.maxlen:
                     triggered = False
                     print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
@@ -147,9 +147,9 @@ stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
-                input_device_index=4,
+                #input_device_index=3,
                 frames_per_buffer=CHUNK)
-vad = webrtcvad.Vad(3) # 0~3   3: the most aggressive
+vad = webrtcvad.Vad(1) # 0~3   3: the most aggressive
 t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 450, vad, stream))
 t2 = threading.Thread(target=runAsr)
 t3 = threading.Thread(target=runSpeakerRecog)
