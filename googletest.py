@@ -7,7 +7,7 @@ from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 
-def google_stt(file_name):
+def google_stt(file_name, language_code):
     # Instantiates a client
     client = speech.SpeechClient()
 
@@ -19,7 +19,7 @@ def google_stt(file_name):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,
-        language_code='ko-KR')#영어 : 'en-US' 한국어 : 'ko-KR'
+        language_code=language_code)#영어 : 'en-US' 한국어 : 'ko-KR'
 
     try:
         # Detects speech in the audio file

@@ -17,6 +17,7 @@ import numpy as np
 import scipy.signal
 from googletest import google_stt
 import post
+import shutil
 
 RATE = 16000 #sampling rate
 frame_duration_ms = 30 #30ms마다 분석
@@ -43,16 +44,17 @@ def makedixt():
 d = makedixt()
 
 def asr(filename):
-    return google_stt(filename)
+    return google_stt(filename, language_code="en-US")
 
 
 def runAsr():
     while True:
         try:
-            g = q.get(timeout=30)
+            g = q.get()
             now_s, file_name = g
             speech = asr(file_name)
-            if speech:
+            print('speech : %s'%speech)
+            if speech != "":
                 q2.put((now_s, file_name, speech))
         except queue.Empty:
             continue
@@ -69,21 +71,38 @@ def doSpeakerRecog(filename):
         spk_num = int(f.readline())
     return spk_num
 
+
+def text_ind_speaker_recognition(filename):
+    shutil.copy(src=filename, dst='C:\\Users\\knu\\Desktop\\share\\test.wav')
+    while not 'speaker_en.txt' in os.listdir('C:\\Users\\knu\\Desktop\\share'):
+        time.sleep(0.1)
+    time.sleep(0.05)
+    with open('C:\\Users\\knu\\Desktop\\share\\speaker_en.txt','r') as f:
+        spk = str(f.readline())
+    os.remove('C:\\Users\\knu\\Desktop\\share\\speaker_en.txt')
+    return spk
+
+
 def runSpeakerRecog():
     global d
     fr = open("log.txt", "ab", 0)
     while True:
         try:
-            g = q2.get(timeout=30)
+            g = q2.get()
             now, file_name, speech = g
             now_s = str(now)
             speaker = -1
             if (speech in l) or (2 < len(speech) < 7 and ( speech.endswith("리아") or speech.endswith("이야") or speech.endswith(" 야") or speech.endswith("리야"))):
                 speaker = doSpeakerRecog(file_name)
                 speech = '세실리아'
-            fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
-            print(now_s + "\t"+ str(speaker) + '\t' + d[str(speaker)] + '\t' + speech + "\r\n")
-            post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
+                fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
+                print(now_s + "\t" + d[str(speaker)] + '\t' + speech + "\r\n")
+                #post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
+            else:
+                speaker = text_ind_speaker_recognition(file_name)
+                fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
+                print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
+                #post.post(createdAt=now, speaker=str(speaker), speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
     fr.close()
@@ -149,8 +168,8 @@ stream = p.open(format=FORMAT,
                 input=True,
                 #input_device_index=3,
                 frames_per_buffer=CHUNK)
-vad = webrtcvad.Vad(1) # 0~3   3: the most aggressive
-t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 450, vad, stream))
+vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
+t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 600, vad, stream))
 t2 = threading.Thread(target=runAsr)
 t3 = threading.Thread(target=runSpeakerRecog)
 t1.daemon = True
