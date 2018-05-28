@@ -18,6 +18,12 @@ import scipy.signal
 from googletest import google_stt
 import post
 import shutil
+initial2name = {"isy":"LimSoyoung", "jjr":"JoJoungrae", "kdh":"KimDongHyun", 
+"kdy":"KwonDoyoung", "kjh":"KimJonghong", "kjs":"KangJunsu", 
+"ksm":"KinSeungmin", "pjh":"ParkJonghoon", "rws":"RyuWoosup", 
+"yhs":"YouHosang", "yig":"YoonIngyu", "aaa":"KinDohyeong",
+"bra":"Braian", "ami":"Amin", "den":"Dennis",
+"gwn":"Gwena", "lin":"lin", "who":"who"}
 
 RATE = 16000 #sampling rate
 frame_duration_ms = 30 #30ms마다 분석
@@ -80,7 +86,7 @@ def text_ind_speaker_recognition(filename):
     with open('C:\\Users\\knu\\Desktop\\share\\speaker_en.txt','r') as f:
         spk = str(f.readline())
     os.remove('C:\\Users\\knu\\Desktop\\share\\speaker_en.txt')
-    return spk
+    return spk.replace("\n","")
 
 
 def runSpeakerRecog():
@@ -97,12 +103,14 @@ def runSpeakerRecog():
                 speech = '세실리아'
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + "\t" + d[str(speaker)] + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
+                post.post(createdAt=now, speaker=initial2name[d[str(speaker)]], speakerId=str(speaker), content=speech)
             else:
                 speaker = text_ind_speaker_recognition(file_name)
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=str(speaker), speakerId=str(speaker), content=speech)
+                if speech == 'Cecilia':
+                    speech = 'ceslea'
+                post.post(createdAt=now, speaker=initial2name[str(speaker)], speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
     fr.close()

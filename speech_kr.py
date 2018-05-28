@@ -29,7 +29,7 @@ l = ['몇시야', '몇시일 리아', '이제  시리아', '되질 이요', '세
 p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
-
+initial2name = {"isy":"LimSoyoung", "jjr":"JoJoungrae", "kdh":"KimDongHyun", "kdy":"KwonDoyoung", "kjh":"KimJonghong", "kjs":"KangJunsu", "ksm":"KinSeungmin", "pjh":"ParkJonghoon", "rws":"RyuWoosup", "yhs":"YouHosang", "yig":"YoonIngyu", "aaa":"KinDohyeong"}
 
 def makedixt():
     d = {"-1" : "N"}
@@ -80,7 +80,7 @@ def text_ind_speaker_recognition(filename):
     with open('C:\\Users\\knu\\Desktop\\share\\speaker_kr.txt','r') as f:
         spk = str(f.readline())
     os.remove('C:\\Users\\knu\\Desktop\\share\\speaker_kr.txt')
-    return spk
+    return spk.replace("\n", "")
 
 
 def runSpeakerRecog():
@@ -97,12 +97,12 @@ def runSpeakerRecog():
                 speech = '세실리아'
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + '\t' + d[str(speaker)] + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=d[str(speaker)], speakerId=str(speaker), content=speech)
+                #post.post(createdAt=now, speaker=initial2name[d[str(speaker)]], speakerId=str(speaker), content=speech)
             else:
                 speaker = text_ind_speaker_recognition(file_name)
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=str(speaker), speakerId=str(speaker), content=speech)
+                #post.post(createdAt=now, speaker=initial2name[str(speaker)], speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
     fr.close()
