@@ -6,7 +6,9 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "D:\git\CESLeA\My First Project-6
 from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
-
+from google.cloud import texttospeech
+import playsound
+i = 0
 def google_stt(file_name, language_code):
     # Instantiates a client
     client = speech.SpeechClient()
@@ -30,12 +32,34 @@ def google_stt(file_name, language_code):
             res = res + str(result.alternatives[0].transcript)
         return res
     except:
-        return "fail"
+        return ""
+
+def synthesize_text(text, language_code):
+    global i
+    """Synthesizes speech from the input string of text."""
+    client = texttospeech.TextToSpeechClient()
+
+    input_text = texttospeech.types.SynthesisInput(text=text)
+
+    # Note: the voice can also be specified by name.
+    # Names of voices can be retrieved with client.list_voices().
+    voice = texttospeech.types.VoiceSelectionParams(
+        language_code=language_code,
+        ssml_gender=texttospeech.enums.SsmlVoiceGender.FEMALE)
+
+    audio_config = texttospeech.types.AudioConfig(
+        audio_encoding=texttospeech.enums.AudioEncoding.MP3)
+
+    response = client.synthesize_speech(input_text, voice, audio_config)
+
+    # The response's audio_content is binary.
+    with open('output%d.mp3'%i, 'wb') as out:
+        out.write(response.audio_content)
+    playsound.playsound('output%d.mp3'%i, True)
+    i = i + 1
+
+    
+    
 
 if __name__ == "__main__":
-    # The name of the audio file to transcribe
-    file_name = os.path.join(
-        os.path.dirname(__file__),
-        #'resources',
-        'test2.wav')
-    google_stt(file_name)
+    synthesize_text("Hello World!!", 'en-US')

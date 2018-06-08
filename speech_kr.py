@@ -15,7 +15,7 @@ import webrtcvad
 import pyaudio
 import numpy as np
 import scipy.signal
-from googletest import google_stt
+from googletest import google_stt, synthesize_text
 import post
 import shutil
 
@@ -29,8 +29,14 @@ l = ['몇시야', '몇시일 리아', '이제  시리아', '되질 이요', '세
 p = pyaudio.PyAudio()
 q = queue.Queue()
 q2 = queue.Queue()
-initial2name = {"isy":"LimSoyoung", "jjr":"JoJoungrae", "kdh":"KimDongHyun", "kdy":"KwonDoyoung", "kjh":"KimJonghong", "kjs":"KangJunsu", "ksm":"KinSeungmin", "pjh":"ParkJonghoon", "rws":"RyuWoosup", "yhs":"YouHosang", "yig":"YoonIngyu", "aaa":"KinDohyeong"}
-
+initial2name = {"isy":"LimSoyoung", "jjr":"JoJoungrae", "kdh":"KimDongHyun", 
+"kdy":"KwonDoyoung", "kjh":"KimJonghong", "kjs":"KangJunsu", 
+"ksm":"KinSeungmin", "pjh":"ParkJonghoon", "rws":"RyuWoosup", 
+"yhs":"YouHosang", "yig":"YoonIngyu", "aaa":"KinDohyeong",
+"bra":"Braian", "ami":"Amin", "den":"Dennis",
+"gwn":"Gwena", "lin":"lin", "who":"Mohamed",
+"kkh":"KwonKihoon", "kst":"KangSeungtae", "kwh":"kwh",
+"sji":"SeoJungin"}
 def makedixt():
     d = {"-1" : "N"}
     f = open("speaker_recog/ceslea_data/map.list", "r")
@@ -97,12 +103,12 @@ def runSpeakerRecog():
                 speech = '세실리아'
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + '\t' + d[str(speaker)] + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=initial2name[d[str(speaker)]], speakerId=str(speaker), content=speech)
+                post.post(createdAt=now, speaker=initial2name[d[str(speaker)]], speakerId=str(speaker), content=speech)
             else:
                 speaker = text_ind_speaker_recognition(file_name)
                 fr.write((now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n").encode())
                 print(now_s + "\t"+ str(speaker) + '\t' + speech + "\r\n")
-                #post.post(createdAt=now, speaker=initial2name[str(speaker)], speakerId=str(speaker), content=speech)
+                post.post(createdAt=now, speaker=initial2name[str(speaker)], speakerId=str(speaker), content=speech)
         except queue.Empty:
             continue
     fr.close()
@@ -115,6 +121,7 @@ def write_wave(path, audio, sample_rate):
         wf.setframerate(sample_rate)
         wf.writeframes(audio)
 
+On = True
 
 def vad_(sample_rate, frame_duration_ms,
                   padding_duration_ms, vad, stream):
@@ -133,18 +140,23 @@ def vad_(sample_rate, frame_duration_ms,
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
                 #queue의 80%이상이 voice이면 트리거
-                if num_voiced > 0.9 * ring_buffer.maxlen:
+                if On and len(ring_buffer) == ring_buffer.maxlen and num_voiced > 0.5 * ring_buffer.maxlen:
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
                     ring_buffer.clear()
             else:
+                if not On:
+                    triggered = False
+                    ring_buffer.clear()
+                    voiced_frames = []
+                    continue
                 #트리거 중이면 읽은 프레임 추가
                 voiced_frames.append(frame)
                 ring_buffer.append((frame, is_speech))
                 #unvoice가 큐의 60% 이하가 되면 파일 저장
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
-                if num_unvoiced > 0.9 * ring_buffer.maxlen:
+                if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.9 * ring_buffer.maxlen:
                     triggered = False
                     print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
@@ -162,14 +174,38 @@ def postres():
     
     pass
 
+from flask import Flask
+from flask import request
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+@app.route('/tts', methods=['POST']) 
+def login(): 
+    global On
+    if request.method == 'POST': 
+        text = request.form['text'] 
+        if len(text) == 0: 
+            return '텍스트를 제대로 입력하지 않았습니다.' 
+        On = False
+        print(text)
+        synthesize_text(text, 'ko-KR')
+        time.sleep(0.25)
+        On = True
+        return 'OK' 
+    else: 
+        return '잘못된 접근입니다.'
+
 stream = p.open(format=FORMAT,
                 channels=CHANNELS,
                 rate=RATE,
                 input=True,
                 #input_device_index=3,
                 frames_per_buffer=CHUNK)
-vad = webrtcvad.Vad(3) # 0~3   3: the most aggressive
-t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 600, vad, stream))
+vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
+t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
 t2 = threading.Thread(target=runAsr)
 t3 = threading.Thread(target=runSpeakerRecog)
 t1.daemon = True
@@ -178,6 +214,7 @@ t3.daemon = True
 t1.start()
 t2.start()
 t3.start()
+app.run(host='0.0.0.0', port=5000)
 try:
     while True:
         time.sleep(24*60*60)

@@ -15,7 +15,7 @@ import webrtcvad
 import pyaudio
 import numpy as np
 import scipy.signal
-from googletest import google_stt
+from googletest import google_stt, synthesize_text
 import post
 import shutil
 initial2name = {"isy":"LimSoyoung", "jjr":"JoJoungrae", "kdh":"KimDongHyun", 
@@ -126,8 +126,11 @@ def write_wave(path, audio, sample_rate):
         wf.writeframes(audio)
 
 
+On = True
+
 def vad_(sample_rate, frame_duration_ms,
                   padding_duration_ms, vad, stream):
+    global On
     num_padding_frames = int(padding_duration_ms / frame_duration_ms)
     ring_buffer = collections.deque(maxlen=num_padding_frames)
     triggered = False
@@ -143,12 +146,17 @@ def vad_(sample_rate, frame_duration_ms,
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
                 #queue의 80%이상이 voice이면 트리거
-                if len(ring_buffer) == ring_buffer.maxlen and num_voiced > 0.5 * ring_buffer.maxlen:
+                if On and len(ring_buffer) == ring_buffer.maxlen and num_voiced > 0.5 * ring_buffer.maxlen:
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
                     ring_buffer.clear()
             else:
+                if not On:
+                    triggered = False
+                    ring_buffer.clear()
+                    voiced_frames = []
+                    continue
                 #트리거 중이면 읽은 프레임 추가
                 voiced_frames.append(frame)
                 ring_buffer.append((frame, is_speech))
@@ -168,31 +176,54 @@ def vad_(sample_rate, frame_duration_ms,
     except:
         pass
 
-def postres():
-    
-    pass
+from flask import Flask
+from flask import request
+app = Flask(__name__)
 
-stream = p.open(format=FORMAT,
-                channels=CHANNELS,
-                rate=RATE,
-                input=True,
-                #input_device_index=3,
-                frames_per_buffer=CHUNK)
-vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
-t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
-t2 = threading.Thread(target=runAsr)
-t3 = threading.Thread(target=runSpeakerRecog)
-t1.daemon = True
-t2.daemon = True
-t3.daemon = True
-t1.start()
-t2.start()
-t3.start()
-try:
-    while True:
-        time.sleep(24*60*60)
-except:
-    print("interupt")
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+@app.route('/tts', methods=['POST']) 
+def login(): 
+    global On
+    if request.method == 'POST': 
+        text = request.form['text'] 
+        if len(text) == 0: 
+            return '텍스트를 제대로 입력하지 않았습니다.' 
+        On = False
+        print(text)
+        synthesize_text(text, 'en-US')
+        time.sleep(0.1)
+        On = True
+        return 'OK' 
+    else: 
+        return '잘못된 접근입니다.'
+
+
+if __name__ == '__main__':
+    stream = p.open(format=FORMAT,
+                    channels=CHANNELS,
+                    rate=RATE,
+                    input=True,
+                    #input_device_index=3,
+                    frames_per_buffer=CHUNK)
+    vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
+    t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
+    t2 = threading.Thread(target=runAsr)
+    t3 = threading.Thread(target=runSpeakerRecog)
+    t1.daemon = True
+    t2.daemon = True
+    t3.daemon = True
+    t1.start()
+    t2.start()
+    t3.start()
+    app.run(host='0.0.0.0', port=5000)
+    try:
+        while True:
+            time.sleep(24*60*60)
+    except:
+        print("interupt")
+        stream.stop_stream()
+        stream.close()
+        p.terminate()

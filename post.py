@@ -11,6 +11,17 @@ def post(createdAt, speaker, speakerId, content):
         print(res.content)
     except:
         pass
-        
+
+def post_me(text):
+    try:
+        URL = 'http://127.0.0.1:5000/tts'
+        headers = {'Content-Type': 'application/json; charset=utf-8'}
+        data=[('text',text)]
+        res = requests.post(url=URL, data=data)
+        print(res.content)
+    except:
+        print("error")
+        pass
+
 if __name__ == '__main__':
-    post(int(time.time()), "TEST", '1', "test")
+    post_me("TEST")
