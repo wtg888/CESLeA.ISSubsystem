@@ -32,6 +32,7 @@ def google_stt(file_name, language_code):
             res = res + str(result.alternatives[0].transcript)
         return res
     except:
+        print("error")
         return ""
 
 def synthesize_text(text, language_code):
