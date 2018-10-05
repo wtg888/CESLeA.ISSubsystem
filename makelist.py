@@ -1,7 +1,8 @@
 import os
 d = dict()
 
-fs = os.listdir("speaker_recog/ceslea_data")
+# your audio data folder
+fs = os.listdir("")
 
 fps = (open("speaker_recog/ceslea_data/mm.list", "w"), 
     open("speaker_recog/ceslea_data/nm.list", "w"), 

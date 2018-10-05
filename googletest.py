@@ -1,6 +1,8 @@
 import io
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "D:\git\CESLeA\My First Project-689bf9126b2f.json"
+
+# path of your google cloud json file
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
 
 # Imports the Google Cloud client library
 from google.cloud import speech
@@ -9,6 +11,8 @@ from google.cloud.speech import types
 from google.cloud import texttospeech
 import playsound
 i = 0
+
+
 def google_stt(file_name, language_code):
     # Instantiates a client
     client = speech.SpeechClient()
@@ -21,7 +25,7 @@ def google_stt(file_name, language_code):
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
         sample_rate_hertz=16000,
-        language_code=language_code)#영어 : 'en-US' 한국어 : 'ko-KR'
+        language_code=language_code) # English : 'en-US', Korean : 'ko-KR'
 
     try:
         # Detects speech in the audio file
@@ -34,6 +38,7 @@ def google_stt(file_name, language_code):
     except:
         print("error")
         return ""
+
 
 def synthesize_text(text, language_code):
     global i
@@ -59,8 +64,6 @@ def synthesize_text(text, language_code):
     playsound.playsound('output%d.mp3'%i, True)
     i = i + 1
 
-    
-    
 
 if __name__ == "__main__":
     synthesize_text("Hello World!!", 'en-US')

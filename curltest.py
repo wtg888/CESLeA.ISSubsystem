@@ -8,7 +8,7 @@ def asr(filename):
     http://code.activestate.com/recipes/576422-python-http-post-binary-file-upload-with-pycurl/
     http://pycurl.cvs.sourceforge.net/pycurl/pycurl/tests/test_post2.py?view=markup
     """
-    url = 'http://127.0.0.1:7777/filemode/?productcode=DEMO&transactionid=0&language=kor'
+    url = '' # use Systran asr server url
     c = pycurl.Curl()
     #c.setopt(pycurl.VERBOSE, 1)
     c.setopt(pycurl.URL, url)
