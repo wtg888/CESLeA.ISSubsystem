@@ -4,13 +4,14 @@ import json
 
 def asr(filename):
     """
+    Send audio file to ASR server
+    reference :
     http://curl.haxx.se/libcurl/c/curl_easy_setopt.html
     http://code.activestate.com/recipes/576422-python-http-post-binary-file-upload-with-pycurl/
     http://pycurl.cvs.sourceforge.net/pycurl/pycurl/tests/test_post2.py?view=markup
     """
     url = '' # use Systran asr server url
     c = pycurl.Curl()
-    #c.setopt(pycurl.VERBOSE, 1)
     c.setopt(pycurl.URL, url)
     fout = io.BytesIO()
     c.setopt(pycurl.WRITEFUNCTION, fout.write)
@@ -40,9 +41,4 @@ if __name__ == '__main__':
     print(l)
     l = ['.\\speaker_recog\\ceslea_data' + x for x in l.split('\n') if x != '']
     f.close()
-    print(l)
-    #f = open('.\\speaker_recog\\ceslea_data\\ami\\ami.wav', 'rb')
-    #f.read()
-    #f.close()
-    ll = [asr(x) for x in l]
-    print(list(set(ll)))
+    print(asr(l[0]))
