@@ -22,7 +22,7 @@ def asr(filename):
                   c.FORM_CONTENTTYPE, "audio/wav"))])
     c.perform()
     response_code = c.getinfo(pycurl.RESPONSE_CODE)
-    if response_code == 200 :
+    if response_code == 200 : # OK response
         response_data = fout.getvalue().decode('UTF-8')
         res = json.loads(response_data, encoding='UTF-8')
         if res['rcode'] <= 0:

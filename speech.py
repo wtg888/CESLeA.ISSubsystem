@@ -52,6 +52,7 @@ def makedixt():
 d = makedixt()
 
 def asr(filename):
+    # replace new ASR function
     return google_stt(filename, language_code="en-US")
 
 
@@ -68,8 +69,6 @@ def runAsr():
             continue
 
 def doSpeakerRecog(filename):
-    #os.system('sox-14.4.2-win32\\sox-14.4.2\\sox.exe %s -r 8000 %s'%(filename, filename.replace('wav16k','wav')))
-    #filename = filename.replace('wav16k','wav')
     f = open("speaker_recog\\a.txt", "w")
     f.write("N1 .\\%s"%filename.split("\\")[-1])
     f.close()
@@ -128,7 +127,6 @@ def vad_(sample_rate, frame_duration_ms,
             #frame 읽어옴
             frame = stream.read(CHUNK)
             is_speech = vad.is_speech(frame, sample_rate)
-            #sys.stdout.write('1' if is_speech else '0')
             if not triggered:
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
@@ -154,7 +152,6 @@ def vad_(sample_rate, frame_duration_ms,
                     print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
                     write_wave('speaker_recog\\wav16k\\%d.wav'%num, data, sample_rate)
-                    #downsample('speaker_recog\\wav16k\\%d.wav'%num, 'speaker_recog\\wav\\%d.wav'%num)
                     now = int(time.time())
                     q.put_nowait((now,'speaker_recog\\wav16k\\%d.wav'%num))
                     num = num + 1
@@ -193,7 +190,6 @@ if __name__ == '__main__':
                     channels=CHANNELS,
                     rate=RATE,
                     input=True,
-                    #input_device_index=3,
                     frames_per_buffer=CHUNK)
     vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
     t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
