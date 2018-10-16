@@ -5,7 +5,7 @@ import json
 
 def post(createdAt, speaker, speakerId, content):
     try:
-        URL = 'http://127.0.0.1:3001/api/v1/speech'
+        URL = '' # server url will be changed
         headers = {'Content-Type': 'application/json; charset=utf-8'}
         data=[('createdAt',createdAt), ('speaker',speaker), ('speakerId',speakerId), ('content',content)]
         res = requests.post(url=URL, data=data)
@@ -15,6 +15,7 @@ def post(createdAt, speaker, speakerId, content):
 
 
 def post_me(text):
+    # post test
     try:
         URL = 'http://127.0.0.1:5000/tts'
         headers = {'Content-Type': 'application/json; charset=utf-8'}
