@@ -85,11 +85,7 @@ if __name__ == '__main__':
     vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
     t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
     t1.daemon = True
-    t2.daemon = True
-    t3.daemon = True
     t1.start()
-    t2.start()
-    t3.start()
     try:
         while True:
             time.sleep(24*60*60)
