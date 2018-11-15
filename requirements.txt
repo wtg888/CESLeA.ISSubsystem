@@ -6,3 +6,6 @@ pyaudio
 numpy
 pycurl
 scipy
+python_speech_features
+sklearn
+hmmlearn

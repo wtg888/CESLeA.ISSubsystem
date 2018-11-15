@@ -1,5 +1,4 @@
-#-*- coding: utf-8 -*-
-import os
+# -*- coding: utf-8 -*-
 import time
 import queue
 import threading
@@ -8,14 +7,9 @@ import contextlib
 import wave
 import webrtcvad
 import pyaudio
-import shutil
 
-RATE = 16000 #sampling rate
-frame_duration_ms = 30 #30ms마다 분석
-CHUNK = int(RATE * (frame_duration_ms / 1000.0))
-FORMAT = pyaudio.paInt16 #16bit
-CHANNELS = 1 #mono
-p = pyaudio.PyAudio()
+
+On = True
 q = queue.Queue()
 
 
@@ -27,11 +21,7 @@ def write_wave(path, audio, sample_rate):
         wf.writeframes(audio)
 
 
-On = True
-
-
-def vad_(sample_rate, frame_duration_ms,
-                  padding_duration_ms, vad, stream):
+def vad_(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
     global On
     num_padding_frames = int(padding_duration_ms / frame_duration_ms)
     ring_buffer = collections.deque(maxlen=num_padding_frames)
@@ -76,21 +66,37 @@ def vad_(sample_rate, frame_duration_ms,
         pass
 
 
-if __name__ == '__main__':
+def main(args):
+    RATE = 16000
+    frame_duration_ms = 30
+    CHUNK = int(RATE * (frame_duration_ms / 1000.0))
+    FORMAT = pyaudio.paInt16
+    CHANNELS = 1
+
+    p = pyaudio.PyAudio()
+
     stream = p.open(format=FORMAT,
                     channels=CHANNELS,
                     rate=RATE,
                     input=True,
                     frames_per_buffer=CHUNK)
-    vad = webrtcvad.Vad(2) # 0~3   3: the most aggressive
+
+    vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
+
     t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
     t1.daemon = True
     t1.start()
+
     try:
         while True:
-            time.sleep(24*60*60)
+            time.sleep(24 * 60 * 60)
     except:
         print("interupt")
+    finally:
         stream.stop_stream()
         stream.close()
         p.terminate()
+
+
+if __name__ == '__main__':
+    main()
