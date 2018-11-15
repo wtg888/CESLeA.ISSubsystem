@@ -27,10 +27,10 @@ numcep = 13
 
 speaker_names = ['den','ami','jan','jun','lee','lim','moh','nas','pro','son','woo','you', 'kst', 'kms', 'lsw']
 
-hmmfile = 'hmm_spr.pkl'
+hmmfile = 'speaker_recog/hmm_spr.pkl'
 
 if os.path.exists(hmmfile):
-    hmms = joblib.load("hmm_spr.pkl")
+    hmms = joblib.load(hmmfile)
 else:
     print('no pickle file')
     exit(1)
@@ -49,7 +49,7 @@ def sample_process(sample, temp_len):
     return temp_len_new, data, A
 
 
-def predict(name):
+def predict_speaker(name):
     mcep, fs, x = wav2mfcc(name, target_fs, winlen, winstep, nfilt, numcep)
     pout = []
     for k in range(len(hmms)):
@@ -65,4 +65,4 @@ if __name__ == "__main__":
     for folder in os.listdir('test'):
         for names in os.listdir('test/%s'%folder):
             fname = os.path.join('test', folder, names)
-            print(fname, predict(fname))
+            print(fname, predict_speaker(fname))

@@ -7,7 +7,7 @@ import contextlib
 import wave
 import webrtcvad
 import pyaudio
-
+from speaker_recog.predict_speaker_recog import predict_speaker
 
 On = True
 q = queue.Queue()
@@ -21,23 +21,23 @@ def write_wave(path, audio, sample_rate):
         wf.writeframes(audio)
 
 
-def vad_(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
+def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
     global On
     num_padding_frames = int(padding_duration_ms / frame_duration_ms)
+    chunk = int(sample_rate * (frame_duration_ms / 1000.0))
     ring_buffer = collections.deque(maxlen=num_padding_frames)
     triggered = False
     num = 0
     voiced_frames = []
     try:
         while True:
-            # frame 읽어옴
-            frame = stream.read(CHUNK)
+            frame = stream.read(chunk)
             is_speech = vad.is_speech(frame, sample_rate)
             if not triggered:
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
-                # queue의 50%이상이 voice이면 트리거
                 if On and len(ring_buffer) == ring_buffer.maxlen and num_voiced > 0.5 * ring_buffer.maxlen:
+                    print('on')
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
@@ -50,15 +50,16 @@ def vad_(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
                     continue
                 voiced_frames.append(frame)
                 ring_buffer.append((frame, is_speech))
-                # unvoice가 큐의 90% 이상이 되면 파일 저장
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
-                if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.9 * ring_buffer.maxlen:
+                if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
+                    print('off')
                     triggered = False
                     print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
-                    write_wave('speaker_recog\\wav16k\\%d.wav'%num, data, sample_rate)
+                    fn = 'wavfile\\%d.wav'%num
+                    write_wave(fn, data, sample_rate)
                     now = int(time.time())
-                    q.put_nowait((now,'speaker_recog\\wav16k\\%d.wav'%num))
+                    q.put_nowait((now, fn))
                     num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []
@@ -66,7 +67,20 @@ def vad_(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
         pass
 
 
-def main(args):
+def speaker_recog_thread():
+    global d
+    while True:
+        try:
+            g = q.get()
+            now, file_name = g
+            now_s = str(now)
+            _, speaker = predict_speaker(file_name)
+            print(now_s, speaker)
+        except queue.Empty:
+            continue
+
+
+def main():
     RATE = 16000
     frame_duration_ms = 30
     CHUNK = int(RATE * (frame_duration_ms / 1000.0))
@@ -81,11 +95,14 @@ def main(args):
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
-    t1 = threading.Thread(target=vad_, args=(RATE, frame_duration_ms, 700, vad, stream))
+    t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream))
+    t2 = threading.Thread(target=speaker_recog_thread)
     t1.daemon = True
+    t2.daemon = True
     t1.start()
+    t2.start()
 
     try:
         while True:
