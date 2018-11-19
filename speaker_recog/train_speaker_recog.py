@@ -40,7 +40,7 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-names = ['den','ami','jan','jun','lee','lim','moh','nas','pro','son','woo','you', 'kst', 'kms', 'lsw']
+names = ['kst', 'kms', 'lsw']
 
 traindata = []
 for ii in range(len(names)):
@@ -141,7 +141,7 @@ num_correct = 0
 num_samples = 0
 num_wrong = 0
 
-names = ['den','ami','jan','jun','lee','lim','moh','nas','pro','son','woo','you', 'kst', 'kms', 'lsw']
+names = ['kst', 'kms', 'lsw']
 s = ['s03/','s05/','s10/']
 file = 'comb.wav'
 

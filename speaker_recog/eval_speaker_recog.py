@@ -38,7 +38,7 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-names = ['den','ami','jan','jun','lee','lim','moh','nas','pro','son','woo','you', 'kst', 'kms', 'lsw']
+names = ['kst', 'kms', 'lsw']
 
 hmmfile = 'hmm_spr.pkl'
 

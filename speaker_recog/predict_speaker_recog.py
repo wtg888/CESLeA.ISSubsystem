@@ -25,7 +25,7 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-speaker_names = ['den','ami','jan','jun','lee','lim','moh','nas','pro','son','woo','you', 'kst', 'kms', 'lsw']
+speaker_names = ['kst', 'kms', 'lsw']
 
 hmmfile = 'speaker_recog/hmm_spr.pkl'
 
