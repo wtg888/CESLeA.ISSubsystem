@@ -40,7 +40,9 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-names = ['kst', 'kms', 'lsw']
+f = open('name.list', 'r')
+names = [x for x in f.read().split('\n') if x != '']
+f.close()
 
 traindata = []
 for ii in range(len(names)):
@@ -141,15 +143,10 @@ num_correct = 0
 num_samples = 0
 num_wrong = 0
 
-names = ['kst', 'kms', 'lsw']
-s = ['s03/','s05/','s10/']
-file = 'comb.wav'
-
 testdata = []
 for ii in range(len(names)):
     path = ('test/%s'% names[ii])
     fname = os.listdir('test/%s'% names[ii])
-    #print(fname)
     for jj in range(len(fname)):
         name = os.path.join(path,fname[jj])
         print(name)

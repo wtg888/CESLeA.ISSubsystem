@@ -25,7 +25,10 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-speaker_names = ['kst', 'kms', 'lsw']
+
+f = open('speaker_recog/name.list', 'r')
+speaker_names = [x for x in f.read().split('\n') if x != '']
+f.close()
 
 hmmfile = 'speaker_recog/hmm_spr.pkl'
 

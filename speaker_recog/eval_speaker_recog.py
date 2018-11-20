@@ -38,7 +38,9 @@ winstep = 0.01
 nfilt = 29
 numcep = 13
 
-names = ['kst', 'kms', 'lsw']
+f = open('name.list', 'r')
+names = [x for x in f.read().split('\n') if x != '']
+f.close()
 
 hmmfile = 'hmm_spr.pkl'
 

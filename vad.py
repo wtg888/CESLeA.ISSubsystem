@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
+import os
 import queue
 import threading
 import collections
@@ -86,6 +87,9 @@ def main():
     CHUNK = int(RATE * (frame_duration_ms / 1000.0))
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
+
+    if not os.path.isdir('wavfile'):
+        os.mkdir('wavfile')
 
     p = pyaudio.PyAudio()
 

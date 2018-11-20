@@ -7,6 +7,8 @@ import contextlib
 import sys
 import wave
 import os
+from time import gmtime, strftime
+import shutil
 
 import webrtcvad
 
@@ -134,19 +136,38 @@ def vad_collector(sample_rate, frame_duration_ms,
 
 
 def main():
-    flist = [x for x in os.listdir('.') if x.endswith('.wav')]
+    t = strftime("%Y_%m_%d_%H_%M_%S", gmtime())
+    flist = [x for x in os.listdir('data') if x.endswith('.wav')]
     for f in flist:
         name = f.split('.')[0]
         os.mkdir(name)
-        audio, sample_rate = read_wave(f)
+        audio, sample_rate = read_wave(os.path.join('data', f))
         vad = webrtcvad.Vad(3)
         frames = frame_generator(30, audio, sample_rate)
         frames = list(frames)
         segments = vad_collector(sample_rate, 30, 300, vad, frames)
         for i, segment in enumerate(segments):
-            path = '%s/%s%02d.wav' % (name, name, i,)
+            path = '%s/%s_%s_%02d.wav' % (name, name, t, i,)
             print(' Writing %s' % (path,))
             write_wave(path, segment, sample_rate)
+        try:
+            os.mkdir('train/' + name)
+        except:
+            pass
+
+        try:
+            os.mkdir('test/' + name)
+        except:
+            pass
+
+        for id, audio in enumerate(os.listdir(name)):
+            if id % 3 == 0:
+                shutil.copy(name + '/' + audio, 'test/' + name)
+            else:
+                shutil.copy(name + '/' + audio, 'train/' + name)
+
+        shutil.rmtree(name)
+
 
 
 if __name__ == '__main__':
