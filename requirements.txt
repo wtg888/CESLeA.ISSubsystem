@@ -9,3 +9,4 @@ scipy
 python_speech_features
 sklearn
 hmmlearn
+keyboard
