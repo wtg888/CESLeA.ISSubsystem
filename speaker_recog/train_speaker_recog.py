@@ -52,11 +52,9 @@ for ii in range(len(names)):
         print(fname)
         for jj in range(len(fname)):
             name = os.path.join(path,fname[jj])
-            print(name)
             mcep, fs, x = wav2mfcc(name, target_fs, winlen, winstep, nfilt, numcep)
             tmp_dict = { "mcep": mcep, "fname":name}
             temp.append(tmp_dict)
-            print(np.shape(temp))
         temp = np.array(temp)
         traindata.append(temp)
 
@@ -71,7 +69,6 @@ if(os.path.exists(hmmfile))==True:
       istrain = False
       print("istrain = %s , samples will be recognized using previously trained model " % istrain)
       hmms = joblib.load("hmm_spr.pkl")
-      print(hmms[1])
 
 #start building hmm for each digit
 
@@ -90,7 +87,6 @@ if istrain == True:
       #print(traindata[ii][jj]["fname"])
       len_temp.append(len(temp))
       sample_in.append(temp)
-      print(len(sample_in))
     len_temp, sample,sample_in = sample_process(sample_in,len_temp)
     #print(len(sample_in))
     with warnings.catch_warnings():
