@@ -1,6 +1,7 @@
 .gitignore
 *.wav
 *.mp3
+*.pyc
 .idea
 data/*
 venv/*
