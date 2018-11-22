@@ -37,6 +37,7 @@ class RecordingThread(threading.Thread):
         threading.Thread.__init__(self, name='RecordingThread')
 
     def run(self):
+        print('recording start')
         while not self._stopevent.isSet():
             frame = self.stream.read(CHUNK)
             self.voiced_frames.append(frame)
@@ -44,6 +45,7 @@ class RecordingThread(threading.Thread):
         self.stream.stop_stream()
         self.stream.close()
         self.p.terminate()
+        print('recording end')
         write_wave(self.filename, b''.join(self.voiced_frames))
 
     def join(self, timeout=None):
@@ -52,7 +54,7 @@ class RecordingThread(threading.Thread):
 
 
 def get_yn(msg):
-    inp = input(msg)
+    inp = input(msg + '(y/n): ')
     if inp not in ['y', 'n', 'Y', 'N']:
         inp = input(msg + '(y/n): ')
     inp = inp.lower()
@@ -87,7 +89,7 @@ if __name__ == '__main__':
 
     idx = 0
     t = strftime("%Y_%m_%d_%H_%M_%S", gmtime())
-    while idx < 10:
+    while idx < 15:
         keyboard.wait('enter')
         rt = RecordingThread(filename='../speaker_recog/train/%s/%s_%02d.wav' %(name, t, idx))
         rt.start()
