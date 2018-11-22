@@ -87,10 +87,11 @@ if __name__ == '__main__':
 
     idx = 0
     t = strftime("%Y_%m_%d_%H_%M_%S", gmtime())
-    while True:
+    while idx < 10:
+        keyboard.wait('enter')
         rt = RecordingThread(filename='../speaker_recog/train/%s/%s_%02d.wav' %(name, t, idx))
         rt.start()
-        sleep(1.5)
+        keyboard.wait('enter')
         rt.join()
         idx = idx + 1
 
