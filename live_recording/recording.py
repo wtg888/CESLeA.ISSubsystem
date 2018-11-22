@@ -6,6 +6,7 @@ import wave
 from time import gmtime, strftime, sleep
 import os
 import sys
+from data_split.vad_on_splited_data import preprocess
 
 CHUNK = 2048
 sample_rate = 16000
@@ -47,6 +48,7 @@ class RecordingThread(threading.Thread):
         self.p.terminate()
         print('recording end')
         write_wave(self.filename, b''.join(self.voiced_frames))
+        preprocess(self.filename)
 
     def join(self, timeout=None):
         self._stopevent.set()
