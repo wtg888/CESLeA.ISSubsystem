@@ -50,8 +50,13 @@ class RecordingThread(threading.Thread):
         self.stream.close()
         self.p.terminate()
         print('recording end')
-        write_wave(self.filename, b''.join(self.voiced_frames))
-        preprocess(self.filename)
+        try:
+            write_wave(self.filename, b''.join(self.voiced_frames))
+            preprocess(self.filename)
+            self.isSuccess = True
+        except:
+            self.isSuccess = False
+            print('fail')
 
     def join(self, timeout=None):
         self._stopevent.set()
@@ -63,13 +68,16 @@ def command(bt, lbl, thread):
     if thread:
         th = thread.pop()
         th.join()
-        _, spk = predict_speaker(th.filename)
+        if th.isSuccess:
+            _, spk = predict_speaker(th.filename)
+            lbl.config(text=spk)
         bt.set("start")
-        lbl.config(text=spk)
     else:
         rt = RecordingThread(filename='wavfile/%02d.wav' % i)
         rt.start()
         i = i + 1
+        bt.set("stop")
+        thread.append(rt)
 
 
 if __name__ == '__main__':
@@ -83,7 +91,7 @@ if __name__ == '__main__':
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     btn_text = StringVar()
-    button = Button(root, overrelief="solid", width=10, repeatdelay=0, repeatinterval=100)
+    button = Button(root, overrelief="solid", width=10, repeatdelay=0, repeatinterval=100, textvar=btn_text)
     btn_text.set("start")
     thread = []
     button.place(relx=0.5, rely=1.0, anchor='s')

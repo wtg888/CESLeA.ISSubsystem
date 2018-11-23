@@ -103,6 +103,7 @@ if istrain == True:
 #start recognising train samples
 
 print('recognizing training samples')
+err_list = []
 num_correct = 0
 num_samples = 0
 num_wrong = 0
@@ -124,40 +125,44 @@ for ii in range (len(traindata)):
             num_correct = num_correct+1
         if ii != max_index:
             print ("speaker %s is recognized as %s" % (ii,max_index))
+            err_list.append("speaker %s is recognized as %s" % (ii,max_index))
             num_wrong = num_wrong+1
 accuracy = (num_correct/num_samples)*100
 print("training accuracy = %s " %accuracy)
-print("wrong = %s " %num_wrong)
 print("correct = %s " %num_correct)
+print("wrong = %s " %num_wrong)
+for err in err_list:
+    print(err)
 
 #recognize test samples
 
-print('recognizing test samples')
-num_correct = 0
-num_samples = 0
-num_wrong = 0
-
-testdata = []
-for ii in range(len(names)):
-    path = ('test/%s'% names[ii])
-    fname = os.listdir('test/%s'% names[ii])
-    for jj in range(len(fname)):
-        name = os.path.join(path,fname[jj])
-        print(name)
-        mcep, fs, x = wav2mfcc(name, target_fs, winlen, winstep, nfilt, numcep)
-        pout = []
-        for k in range(len(hmms)):
-            po = hmms[k].score(mcep)
-            pout.append(po)
-        max_value = max(pout)
-        max_index = pout.index(max_value)
-        num_samples = num_samples+1
-        if ii == max_index:
-            num_correct = num_correct+1
-        if ii!= max_index:
-            print ("speaker %s is recognized as %s" % (ii,max_index))
-            num_wrong = num_wrong+1
-accuracy = (num_correct/num_samples)*100
-print('numcorrect %s',num_correct)
-print('wrong %s ',num_wrong)
-print("test data accuracy = %s" %accuracy)
+# print('recognizing test samples')
+# num_correct = 0
+# num_samples = 0
+# num_wrong = 0
+#
+# testdata = []
+# for ii in range(len(names)):
+#     path = ('test/%s'% names[ii])
+#     fname = os.listdir('test/%s'% names[ii])
+#     for jj in range(len(fname)):
+#         name = os.path.join(path,fname[jj])
+#         print(name)
+#         mcep, fs, x = wav2mfcc(name, target_fs, winlen, winstep, nfilt, numcep)
+#         pout = []
+#         for k in range(len(hmms)):
+#             po = hmms[k].score(mcep)
+#             pout.append(po)
+#         max_value = max(pout)
+#         max_index = pout.index(max_value)
+#         num_samples = num_samples+1
+#         if ii == max_index:
+#             num_correct = num_correct+1
+#         if ii!= max_index:
+#             print ("speaker %s is recognized as %s" % (ii,max_index))
+#             num_wrong = num_wrong+1
+# if num_samples:
+#     accuracy = (num_correct/num_samples)*100
+#     print('numcorrect %s',num_correct)
+#     print('wrong %s ',num_wrong)
+#     print("test data accuracy = %s" %accuracy)
