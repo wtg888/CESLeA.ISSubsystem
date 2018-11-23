@@ -49,7 +49,6 @@ for ii in range(len(names)):
         temp = []
         path = ('train/%s'%(names[ii]))
         fname = os.listdir('train/%s'%(names[ii]))
-        print(fname)
         for jj in range(len(fname)):
             name = os.path.join(path,fname[jj])
             mcep, fs, x = wav2mfcc(name, target_fs, winlen, winstep, nfilt, numcep)
@@ -121,7 +120,6 @@ for ii in range (len(traindata)):
 
         max_index = pout.index(max_value)
         num_samples = num_samples+1
-        print(num_samples)
         if ii == max_index:
             num_correct = num_correct+1
         if ii != max_index:
