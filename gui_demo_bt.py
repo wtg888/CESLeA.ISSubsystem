@@ -13,7 +13,7 @@ from speaker_recog.predict_speaker_recog import predict_speaker
 
 CHUNK = 2048
 sample_rate = 16000
-
+i = 0
 
 def write_wave(path, audio):
     with contextlib.closing(wave.open(path, 'wb')) as wf:
@@ -52,17 +52,25 @@ class RecordingThread(threading.Thread):
         print('recording end')
         write_wave(self.filename, b''.join(self.voiced_frames))
         preprocess(self.filename)
-        _, spk = predict_speaker(self.filename)
-
-
 
     def join(self, timeout=None):
         self._stopevent.set()
         threading.Thread.join(self, timeout)
 
 
-def command(bt, thread):
-    pass
+def command(bt, lbl, thread):
+    global i
+    if thread:
+        th = thread.pop()
+        th.join()
+        _, spk = predict_speaker(th.filename)
+        bt.set("start")
+        lbl.config(text=spk)
+    else:
+        rt = RecordingThread(filename='wavfile/%02d.wav' % i)
+        rt.start()
+        i = i + 1
+
 
 if __name__ == '__main__':
     root = Tk()
@@ -74,9 +82,12 @@ if __name__ == '__main__':
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
+    btn_text = StringVar()
     button = Button(root, overrelief="solid", width=10, repeatdelay=0, repeatinterval=100)
+    btn_text.set("start")
     thread = []
     button.place(relx=0.5, rely=1.0, anchor='s')
+    button.config(command=lambda: command(btn_text, lbl, thread))
 
     try:
         root.mainloop()
