@@ -124,8 +124,8 @@ for ii in range (len(traindata)):
         if ii == max_index:
             num_correct = num_correct+1
         if ii != max_index:
-            print ("speaker %s is recognized as %s" % (ii,max_index))
-            err_list.append("speaker %s is recognized as %s" % (ii,max_index))
+            print ("speaker %s is recognized as %s" % (names[ii],names[max_index]))
+            err_list.append("speaker %s is recognized as %s" % (names[ii],names[max_index]))
             num_wrong = num_wrong+1
 accuracy = (num_correct/num_samples)*100
 print("training accuracy = %s " %accuracy)

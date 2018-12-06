@@ -77,7 +77,7 @@ if __name__ == '__main__':
     speaker_names = [x for x in f.read().split('\n') if x != '']
     f.close()
 
-    name = input("이름을 입력하세요: ")
+    name = input("이니셜을 입력하세요: ")
     if name in speaker_names:
         inp = get_yn("이미 등록된 화자입니다. 추가로 데이터를 녹음하시겠습니까?")
         if inp == 'n':
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
     idx = 0
     t = strftime("%Y_%m_%d_%H_%M_%S", gmtime())
-    while idx < 15:
+    while idx < 10:
         keyboard.wait('space')
         rt = RecordingThread(filename='../speaker_recog/train/%s/%s_%02d.wav' %(name, t, idx))
         rt.start()
