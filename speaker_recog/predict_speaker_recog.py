@@ -26,11 +26,11 @@ nfilt = 29
 numcep = 13
 
 
-f = open('speaker_recog/name.list', 'r')
+f = open('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog/name.list', 'r')
 speaker_names = [x for x in f.read().split('\n') if x != '']
 f.close()
 
-hmmfile = 'speaker_recog/hmm_spr.pkl'
+hmmfile = 'C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog/hmm_spr.pkl'
 
 if os.path.exists(hmmfile):
     hmms = joblib.load(hmmfile)
@@ -65,7 +65,7 @@ def predict_speaker(name):
 
 
 if __name__ == "__main__":
-    for folder in os.listdir('test'):
-        for names in os.listdir('test/%s'%folder):
-            fname = os.path.join('test', folder, names)
+    for folder in os.listdir('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\test'):
+        for names in os.listdir('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\test/%s'%folder):
+            fname = os.path.join('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\test', folder, names)
             print(fname, predict_speaker(fname))
