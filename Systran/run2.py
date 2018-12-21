@@ -8,7 +8,7 @@ import contextlib
 import wave
 import webrtcvad
 import pyaudio
-from requests_fn import asr
+from Systran.requests_fn import asr
 
 
 On = True
