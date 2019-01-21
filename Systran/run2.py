@@ -78,7 +78,7 @@ def speaker_recog_thread():
             now, data = g
             now_s = str(now)
             out = asr(data)
-            # print(out)
+            print(out)
         except queue.Empty:
             continue
 

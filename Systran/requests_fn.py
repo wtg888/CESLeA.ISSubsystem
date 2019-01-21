@@ -8,12 +8,14 @@ def asr(data):
     """
     Send audio file to ASR server
     """
-    url = 'http://127.0.0.1:7777/filemode/?productcode=DEMO&transactionid=0&language=kor'
+    url = 'http://192.168.0.11:7777/filemode/?productcode=DEMO&transactionid=0&language=kor'
     files = {'file': ('wav.pcm', data, "audio/pcm")}
     r = requests.post(url, files=files)
-    print(r.status_code)
-    print(r.json())
-    return r.json()
+    res = r.json()
+    out = 'fail'
+    if r.status_code == 200 and res['rcode'] == 1:
+        out = res['result']
+    return out
 
 
 if __name__ == '__main__':
