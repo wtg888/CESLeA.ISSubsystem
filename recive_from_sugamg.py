@@ -23,18 +23,13 @@ if __name__ == '__main__':
         while True:
             L, R = map(int, input().split('\t'))
             bL += struct.pack('h', L)
-            bR += struct.pack('h', R)
     except:
         pass
     print('finish')
     # write_wave('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\L.wav', bL, sr)
     # write_wave('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\R.wav', bR, sr)
     L = np.frombuffer(bL, dtype=np.int16)
-    R = np.frombuffer(bR, dtype=np.int16)
-    print(L, R)
     Lr = librosa.core.resample(1.0 * L, orig_sr=16000, target_sr=8000, res_type='scipy').astype(dtype=np.int16).tobytes()
-    Rr = librosa.core.resample(1.0 * R, orig_sr=16000, target_sr=8000, res_type='scipy').astype(dtype=np.int16).tobytes()
-    print(Lr, Rr)
 
 
 
