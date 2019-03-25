@@ -19,7 +19,7 @@ from Systran.requests_fn import asr
 On = True
 q = queue.Queue()
 q2 = queue.Queue()
-target_speakers = ['SEUNGTAE', 'GILJIN']
+target_speakers = ['SEUNGTAE', 'GILJIN', 'kst']
 stream = queue.Queue()
 count = 0
 speaker = ''
@@ -82,7 +82,7 @@ def vad_thread2(sample_rate, frame_duration_ms, padding_duration_ms, vad):
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
                     # print('off')
                     if count > 0:
-                        count -= 1
+                        # count -= 1
                         print('save %d.wav'%num)
                         data = b''.join([f for f in voiced_frames])
                         fn = 'C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile2\\%d.wav'%num
@@ -99,15 +99,19 @@ def vad_thread2(sample_rate, frame_duration_ms, padding_duration_ms, vad):
 
 def asr_thread(outLabel):
     global speaker
+    global  count
     while True:
         g = q2.get()
-        now, data = g
-        now_s = str(now)
-        D = np.frombuffer(data, dtype=np.int16)
-        data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
-        out = asr(speaker, data)
-        print(out)
-        outLabel.config(text=speaker + ': ' + out)
+        if count:
+            now, data = g
+            now_s = str(now)
+            D = np.frombuffer(data, dtype=np.int16)
+            data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
+            out = asr(data)
+            if out:
+                count = count - 1
+                print(out)
+                outLabel.config(text=speaker + ': ' + out)
 
 
 def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
@@ -143,13 +147,14 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
                     print('off')
                     triggered = False
-                    print('save %d.wav'%num)
-                    data = b''.join([f for f in voiced_frames])
-                    fn = 'C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile\\%d.wav'%num
-                    write_wave(fn, data, sample_rate)
-                    now = int(time.time())
-                    q.put_nowait((now, fn))
-                    num = num + 1
+                    if count == 0:
+                        print('save %d.wav'%num)
+                        data = b''.join([f for f in voiced_frames])
+                        fn = 'C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile\\%d.wav'%num
+                        write_wave(fn, data, sample_rate)
+                        now = int(time.time())
+                        q.put_nowait((now, fn))
+                        num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []
     except:
@@ -202,11 +207,11 @@ def main():
     vad1 = webrtcvad.Vad(3)
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("800x200")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
-    lbl.config(width=10)
+    lbl.config(width=30)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
