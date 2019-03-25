@@ -30,6 +30,7 @@ if __name__ == '__main__':
     # write_wave('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\R.wav', bR, sr)
     L = np.frombuffer(bL, dtype=np.int16)
     Lr = librosa.core.resample(1.0 * L, orig_sr=16000, target_sr=8000, res_type='scipy').astype(dtype=np.int16).tobytes()
+    print(Lr)
 
 
 
