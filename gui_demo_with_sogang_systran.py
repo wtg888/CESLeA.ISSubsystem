@@ -107,11 +107,14 @@ def asr_thread(outLabel):
             now_s = str(now)
             D = np.frombuffer(data, dtype=np.int16)
             data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
+            print('run asr')
             out = asr(data)
             if out:
                 count = count - 1
                 print(out)
                 outLabel.config(text=speaker + ': ' + out)
+            else:
+                print('out is empty')
 
 
 def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
