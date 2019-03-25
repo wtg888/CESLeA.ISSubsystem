@@ -10,6 +10,7 @@ import webrtcvad
 import pyaudio
 from tkinter import *
 import numpy as np
+import time
 import librosa
 import struct
 
@@ -22,7 +23,13 @@ q2 = queue.Queue()
 target_speakers = ['SEUNGTAE', 'GILJIN', 'kst']
 stream = queue.Queue()
 count = 0
+f = open('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog/name.list', 'r')
+speaker_names = [x for x in f.read().split('\n') if x != '']
+f.close()
 speaker = ''
+
+
+target_speakers = speaker_names
 
 
 def write_wave(path, audio, sample_rate):
@@ -178,6 +185,7 @@ def speaker_recog_thread(outLabel):
                 outLabel.config(text=speaker)
                 print(now_s, speaker)
                 if speaker in target_speakers:
+                    time.sleep(0.2)
                     count = 1
             else:
                 pass
@@ -222,7 +230,7 @@ def main():
     ths.append(threading.Thread(target=receive_thread, args=(CHUNK, )))
     ths.append(threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream)))
     ths.append(threading.Thread(target=speaker_recog_thread, args=(lbl,)))
-    ths.append(threading.Thread(target=vad_thread2, args=(RATE, frame_duration_ms, 300, vad1)))
+    ths.append(threading.Thread(target=vad_thread2, args=(RATE, frame_duration_ms, 500, vad1)))
     ths.append(threading.Thread(target=asr_thread, args=(lbl,)))
     for th in ths:
         th.daemon = True
