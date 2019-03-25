@@ -18,7 +18,7 @@ from Systran.requests_fn import asr
 On = True
 q = queue.Queue()
 
-target_speakers = ['SEUNGTAE', 'GILJIN']
+target_speakers = ['SEUNGTAE', 'GILJIN', 'kst']
 
 
 def write_wave(path, audio, sample_rate):
@@ -90,11 +90,13 @@ def speaker_recog_thread(outLabel):
                 if speaker in target_speakers:
                     on = 1
             else:
-                on -= 1
                 D = np.frombuffer(data, dtype=np.int16)
                 data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
                 out = asr(data)
-                print(speaker, out)
+                if out:
+                    on -= 1
+                    outLabel.config(text=speaker + ': ' + out)
+                    print(speaker, out)
         except queue.Empty:
             continue
 
@@ -120,11 +122,11 @@ def main():
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("800x200")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
-    lbl.config(width=10)
+    lbl.config(width=30)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
