@@ -72,7 +72,7 @@ def vad_thread2(sample_rate, frame_duration_ms, padding_duration_ms, vad):
                 ring_buffer.append((frame, is_speech))
                 num_voiced = len([f for f, speech in ring_buffer if speech])
                 if On and len(ring_buffer) == ring_buffer.maxlen and num_voiced > 0.5 * ring_buffer.maxlen:
-                    # print('on')
+                    print('on s')
                     triggered = True
                     for f, s in ring_buffer:
                         voiced_frames.append(f)
@@ -87,7 +87,7 @@ def vad_thread2(sample_rate, frame_duration_ms, padding_duration_ms, vad):
                 ring_buffer.append((frame, is_speech))
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
-                    # print('off')
+                    print('off s')
                     if count > 0:
                         # count -= 1
                         print('save %d.wav'%num)
@@ -106,7 +106,7 @@ def vad_thread2(sample_rate, frame_duration_ms, padding_duration_ms, vad):
 
 def asr_thread(outLabel):
     global speaker
-    global  count
+    global count
     while True:
         g = q2.get()
         if count:
@@ -215,7 +215,7 @@ def main():
                     frames_per_buffer=CHUNK)
 
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
-    vad1 = webrtcvad.Vad(3)
+    vad1 = webrtcvad.Vad(2)
 
     root = Tk()
     root.geometry("800x200")
