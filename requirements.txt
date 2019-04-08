@@ -10,3 +10,6 @@ hmmlearn
 keyboard
 librosa
 requests
+flask
+playsound
+gtts
