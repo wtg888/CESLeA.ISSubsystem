@@ -78,13 +78,14 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 
 def predict_speaker(file_name):
     shutil.copy(src=file_name, dst='C:\\Users\\MI\\Desktop\\VM\\공유폴더\\test.wav')
-    while not 'speaker_en.txt' in os.listdir('C:\\Users\\MI\\Desktop\\VM\\공유폴더'):
+    while not 'speaker_kr.txt' in os.listdir('C:\\Users\\MI\\Desktop\\VM\\공유폴더'):
         time.sleep(0.1)
     time.sleep(0.05)
     with open('C:\\Users\\MI\\Desktop\\VM\\공유폴더\\speaker_kr.txt','r') as f:
         spk = str(f.readline())
     os.remove('C:\\Users\\MI\\Desktop\\VM\\공유폴더\\speaker_kr.txt')
-    return spk.replace("\n","")
+    spk = spk.replace("\n", "")
+    return spk, spk
 
 
 def speaker_recog_thread(outLabel):

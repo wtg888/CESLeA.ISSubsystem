@@ -13,3 +13,5 @@ requests
 flask
 playsound
 gtts
+google-cloud-speech
+google-cloud-texttospeech

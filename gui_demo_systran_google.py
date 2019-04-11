@@ -12,13 +12,15 @@ from tkinter import *
 import numpy as np
 import librosa
 
+from googletest import google_stt
+
 from speaker_recog.predict_speaker_recog import predict_speaker
 from Systran.requests_fn import asr
 
 On = True
 q = queue.Queue()
 
-target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
+# target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
 
 
 def write_wave(path, audio, sample_rate):
@@ -71,32 +73,40 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                     num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []
+                    # On = False
     except:
         pass
 
 
 def speaker_recog_thread(outLabel):
     global d
-    on = 0
+    global On
     while True:
         try:
             g = q.get()
             now, file_name, data = g
             now_s = str(now)
-            if not on:
-                _, speaker = predict_speaker(file_name)
-                outLabel.config(text=speaker)
-                print(now_s, speaker)
-                if speaker in target_speakers:
-                    on = 1
+            # if not on:
+            #     _, speaker = predict_speaker(file_name)
+            #     outLabel.config(text=speaker)
+            #     print(now_s, speaker)
+            #     if speaker in target_speakers:
+            #         on = 1
+            # else:
+
+            google_ans = google_stt(file_name)
+
+            D = np.frombuffer(data, dtype=np.int16)
+            data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
+            systran_ans = asr(data)
+            if google_ans or systran_ans:
+                outLabel.config(text="Google : " + google_ans + '\r\n' + "엘솔루 : " + systran_ans)
             else:
-                D = np.frombuffer(data, dtype=np.int16)
-                data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
-                out = asr(data)
-                if out:
-                    on -= 1
-                    outLabel.config(text=speaker + ': ' + out)
-                    print(speaker, out)
+                print("empty")
+            # On = True
+            #     on -= 1
+                # outLabel.config(text=speaker + ': ' + out)
+                # print(speaker, out)
         except queue.Empty:
             continue
 
@@ -119,18 +129,18 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
 
     root = Tk()
-    root.geometry("800x200")
+    root.geometry("1500x500")
     root.title('Result')
-    lbl = Label(root, text="이름")
+    lbl = Label(root, text="")
     lbl.config()
-    lbl.config(width=30)
+    lbl.config(width=50)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-    t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream))
+    t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 600, vad, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
     t1.daemon = True
     t2.daemon = True

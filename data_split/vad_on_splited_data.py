@@ -147,4 +147,8 @@ if __name__ == '__main__':
     for dir in dirs:
         fnames = os.listdir(dir)
         for fname in fnames:
-            preprocess(dir + '/' + fname)
+            print(dir + '\\' + fname)
+            try:
+                preprocess(dir + '/' + fname)
+            except:
+                print('error')
