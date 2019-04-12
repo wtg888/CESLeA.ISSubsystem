@@ -2,7 +2,7 @@ import io
 import os
 
 # path of your google cloud json file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\MI\\Dropbox\\My First Project-e0c0bb0b4859.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\My First Project-e0c0bb0b4859.json"
 
 # Imports the Google Cloud client library
 from google.cloud import speech
@@ -57,10 +57,10 @@ def synthesize_text(text, language_code):
     response = client.synthesize_speech(input_text, voice, audio_config)
 
     # The response's audio_content is binary.
-    with open('output%d.mp3'%i, 'wb') as out:
+    with open('output.mp3', 'wb') as out:
         out.write(response.audio_content)
-    playsound.playsound('output%d.mp3'%i, True)
-    i = i + 1
+    playsound.playsound('output.mp3', True)
+    # i = i + 1
 
 
 if __name__ == "__main__":
