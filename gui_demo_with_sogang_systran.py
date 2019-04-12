@@ -20,7 +20,7 @@ from Systran.requests_fn import asr
 On = True
 q = queue.Queue()
 q2 = queue.Queue()
-target_speakers = ['SEUNGTAE', 'GILJIN', 'kst']
+target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
 stream = queue.Queue()
 count = 0
 f = open('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog/name.list', 'r')
@@ -185,7 +185,7 @@ def speaker_recog_thread(outLabel):
                 outLabel.config(text=speaker)
                 print(now_s, speaker)
                 if speaker in target_speakers:
-                    time.sleep(0.2)
+                    time.sleep(0.4)
                     count = 1
             else:
                 pass
