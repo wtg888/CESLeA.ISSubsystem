@@ -60,8 +60,8 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                     data = b''.join([f for f in voiced_frames])
                     q.put_nowait((now, data))
                     print('save %d.wav' % num)
-                    fn = 'wavfile/%d.wav'%num
-                    write_wave(fn, data, sample_rate)
+                    # fn = 'wavfile/%d.wav'%num
+                    # write_wave(fn, data, sample_rate)
                     now = int(time.time())
                     num = num + 1
                     ring_buffer.clear()
@@ -70,7 +70,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
         pass
 
 
-def speaker_recog_thread():
+def speech_recog_thread():
     global d
     while True:
         try:
@@ -104,7 +104,7 @@ def main():
     vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
 
     t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream))
-    t2 = threading.Thread(target=speaker_recog_thread)
+    t2 = threading.Thread(target=speech_recog_thread)
     t1.daemon = True
     t2.daemon = True
     t1.start()
