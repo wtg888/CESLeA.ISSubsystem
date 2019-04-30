@@ -80,7 +80,7 @@ if __name__ == '__main__':
     t = strftime("%Y_%m_%d_%H_%M_%S", gmtime())
     while idx < 20:
         keyboard.wait('space')
-        rt = RecordingThread(filename='../speaker_recog/train/%s/%s_%02d.wav' %(name, t, idx))
+        rt = RecordingThread(filename='../speaker_recog/textind/train/%s/%s_%02d.wav' %(name, name, idx))
         rt.start()
         keyboard.wait('space')
         rt.join()

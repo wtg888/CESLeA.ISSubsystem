@@ -10,11 +10,14 @@ import webrtcvad
 import pyaudio
 from tkinter import *
 import shutil
+from time import strftime, gmtime
 
 #from speaker_recog.predict_speaker_recog import predict_speaker
 
 On = True
 q = queue.Queue()
+
+spk = {"kms":"김민수", "kst":"강승태", "ojh":"오혜준", "kjh":"김종홍", "kdh":"김동현", "lmh":"이민호", "sji":"서정인", "kkh":"권기훈", "mhd":"문희동", "LYJ":"이영재"}
 
 
 def write_wave(path, audio, sample_rate):
@@ -102,7 +105,8 @@ def speaker_recog_thread(outLabel):
             now, file_name = g
             now_s = str(now)
             score, speaker = predict_speaker(file_name)
-            outLabel.config(text=speaker)
+            t = strftime("%H:%M:%S", gmtime())
+            outLabel.config(text="현재 시간 : %s \n 화자 : %s"%(t, spk[speaker]))
             print(score, speaker)
         except queue.Empty:
             continue
@@ -129,11 +133,11 @@ def main():
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("800x800")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
-    lbl.config(width=10)
+    lbl.config(width=50)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 

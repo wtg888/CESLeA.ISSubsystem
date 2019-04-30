@@ -2,7 +2,7 @@ import io
 import os
 
 # path of your google cloud json file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\My First Project-e0c0bb0b4859.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\MI\\Dropbox\\My First Project-e0c0bb0b4859.json" # "C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\My First Project-e0c0bb0b4859.json"
 
 # Imports the Google Cloud client library
 from google.cloud import speech
