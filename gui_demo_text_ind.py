@@ -17,7 +17,7 @@ from time import strftime, gmtime
 On = True
 q = queue.Queue()
 
-spk = {"kms":"김민수", "kst":"강승태", "ojh":"오혜준", "kjh":"김종홍", "kdh":"김동현", "lmh":"이민호", "sji":"서정인", "kkh":"권기훈", "mhd":"문희동", "LYJ":"이영재"}
+spk = {}
 
 
 def write_wave(path, audio, sample_rate):
