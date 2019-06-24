@@ -5,8 +5,8 @@ import json
 
 def post(createdAt, speaker, speakerId, content):
     try:
-        URL = 'http://192.168.0.133:3001/api/v1/speech/browser' # server url will be changed
-        data=[('createdAt',createdAt), ('speaker',speaker), ('speakerId',speakerId), ('content',content)]
+        URL = 'x.x.x.x:x/api/v1/speech/browser' # server url will be changed
+        data=[('createdAt', createdAt), ('speaker', speaker), ('speakerId', speakerId), ('content', content)]
         res = requests.post(url=URL, data=data)
         print(res.content)
     except:
