@@ -16,7 +16,7 @@ def post(createdAt, speaker, speakerId, content):
 def post_me(text):
     # post test
     try:
-        URL = 'http://127.0.0.1:5000/tts'
+        URL = 'http://x.x.x.x:5000/tts'
         data=[('text',text)]
         res = requests.post(url=URL, data=data)
         print(res.content)
