@@ -150,7 +150,8 @@ def main():
     try:
         root.mainloop()
     except:
-        print("interupt")
+        # print("interupt")
+        pass
     finally:
         stream.stop_stream()
         stream.close()
