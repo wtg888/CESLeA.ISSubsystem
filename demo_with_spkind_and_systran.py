@@ -132,7 +132,7 @@ def main():
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
-    root.geometry("800x200")
+    root.geometry("800x250")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
