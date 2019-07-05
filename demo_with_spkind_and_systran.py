@@ -134,7 +134,7 @@ def main():
     root = Tk()
     root.geometry("800x250")
     root.title('Result')
-    lbl = Label(root, text="이름")
+    lbl = Label(root, text="name")
     lbl.config()
     lbl.config(width=30)
     lbl.config(font=("Courier", 44))
