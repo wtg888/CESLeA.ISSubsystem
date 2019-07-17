@@ -70,7 +70,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                     # print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
 
-                    fn = 'C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\CESLeA-ISS\\wavfile\\%d.wav'%num
+                    fn = 'somefolder\\VM\\CESLeA-ISS\\wavfile\\%d.wav'%num
                     write_wave(fn, data, sample_rate)
 
                     now = int(time.time())
@@ -83,13 +83,13 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 
 
 def predict_speaker(file_name):
-    shutil.copy(src=file_name, dst='C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\공유폴더\\test.wav')
-    while not 'speaker_kr.txt' in os.listdir('C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\공유폴더'):
+    shutil.copy(src=file_name, dst='somefolder\\VM\\공유폴더\\test.wav')
+    while not 'speaker_kr.txt' in os.listdir('somefolder\\VM\\공유폴더'):
         time.sleep(0.1)
     time.sleep(0.2)
-    with open('C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\공유폴더\\speaker_kr.txt','r') as f:
+    with open('somefolder\\VM\\공유폴더\\speaker_kr.txt','r') as f:
         spk = str(f.readline())
-    os.remove('C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\공유폴더\\speaker_kr.txt')
+    os.remove('somefolder\\VM\\공유폴더\\speaker_kr.txt')
     spk = spk.replace("\n", "")
     return spk, spk
 
@@ -163,8 +163,8 @@ def main():
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
 
-    if not os.path.isdir('C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\CESLeA-ISS\\wavfile'):
-        os.mkdir('C:\\Users\\kon72\\OneDrive\\바탕 화면\\VM\\CESLeA-ISS\\wavfile')
+    if not os.path.isdir('somefolder\\VM\\CESLeA-ISS\\wavfile'):
+        os.mkdir('somefolder\\VM\\CESLeA-ISS\\wavfile')
 
     p = pyaudio.PyAudio()
 
