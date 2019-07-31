@@ -90,7 +90,7 @@ def predict_speaker(file_name):
 
 def speaker_recog_thread(outLabel):
     global d
-    on = 0
+    # on = 0
     while True:
         try:
             g = q.get()
