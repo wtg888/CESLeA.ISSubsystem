@@ -20,7 +20,7 @@ from Systran.requests_fn import asr
 On = True
 q = queue.Queue()
 
-# target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
+target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
 
 
 def write_wave(path, audio, sample_rate):
