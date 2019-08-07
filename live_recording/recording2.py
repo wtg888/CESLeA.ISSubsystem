@@ -51,7 +51,6 @@ class RecordingThread(threading.Thread):
         write_wave(self.filename, b''.join(self.voiced_frames))
         preprocess(self.filename)
 
-
     def join(self, timeout=None):
         self._stopevent.set()
         threading.Thread.join(self, timeout)
