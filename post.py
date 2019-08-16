@@ -14,7 +14,6 @@ def post(createdAt, speaker, speakerId, content):
 
 
 def post_me(text):
-    # post test
     try:
         URL = 'http://x.x.x.x:5000/tts'
         data=[('text',text)]
@@ -22,7 +21,7 @@ def post_me(text):
         print(res.content)
     except:
         print("error")
-        pass
+        # pass
 
 
 if __name__ == '__main__':
