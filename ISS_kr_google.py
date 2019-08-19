@@ -108,7 +108,6 @@ def asr_thread():
                 print(speaker, speech)
                 post.post(createdAt=now, speaker=speaker, speakerId=speaker, content=speech)
             else:
-                # print("empty")
                 pass
         except queue.Empty:
             continue
