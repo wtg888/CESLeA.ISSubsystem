@@ -106,8 +106,8 @@ def speaker_recog_thread(outLabel):
                 outLabel.config(text=speaker + ': ' + out)
                 print(speaker, out)
             else:
-                # print("empty")
-                pass
+                print("empty")
+                # pass
         except queue.Empty:
             continue
 
