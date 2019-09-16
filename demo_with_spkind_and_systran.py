@@ -13,7 +13,6 @@ import numpy as np
 import librosa
 import shutil
 
-# from speaker_recog.predict_speaker_recog import predict_speaker
 from Systran.requests_fn import asr
 
 On = True
