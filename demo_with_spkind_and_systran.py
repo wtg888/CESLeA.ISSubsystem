@@ -18,7 +18,7 @@ from Systran.requests_fn import asr
 On = True
 q = queue.Queue()
 
-target_speakers = ['SEUNGTAE', 'GILJIN', 'kst']
+target_speakers = ['SEUNGTAE', 'GILJIN']
 
 
 def write_wave(path, audio, sample_rate):
@@ -129,7 +129,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(3)  
 
     root = Tk()
     root.geometry("800x250")
