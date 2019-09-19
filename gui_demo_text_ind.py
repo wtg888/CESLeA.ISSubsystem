@@ -12,7 +12,6 @@ from tkinter import *
 import shutil
 from time import strftime, gmtime
 
-#from speaker_recog.predict_speaker_recog import predict_speaker
 
 On = True
 q = queue.Queue()
