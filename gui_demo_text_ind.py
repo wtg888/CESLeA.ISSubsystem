@@ -15,7 +15,6 @@ from time import strftime, gmtime
 
 On = True
 q = queue.Queue()
-
 spk = {}
 
 
