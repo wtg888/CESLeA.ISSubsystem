@@ -101,7 +101,7 @@ def speaker_recog_thread(outLabel):
         try:
             g = q.get()
             now, file_name = g
-            now_s = str(now)
+            # now_s = str(now)
             score, speaker = predict_speaker(file_name)
             t = strftime("%H:%M:%S", gmtime())
             outLabel.config(text="현재 시간 : %s \n 화자 : %s"%(t, spk[speaker]))
