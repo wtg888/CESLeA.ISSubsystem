@@ -84,16 +84,6 @@ def predict_speaker(file_name):
     return spk, spk
 
 
-# def predict_speaker(file_name):
-#     shutil.copy(src=file_name, dst='C:\\Users\\MI\\Desktop\\VM\\공유폴더\\test.wav')
-#     while not 'speaker_en.txt' in os.listdir('C:\\Users\\MI\\Desktop\\VM\\공유폴더'):
-#         time.sleep(0.1)
-#     time.sleep(0.05)
-#     with open('C:\\Users\\MI\\Desktop\\VM\\공유폴더\\speaker_en.txt','r') as f:
-#         spk = str(f.readline())
-#     os.remove('C:\\Users\\MI\\Desktop\\VM\\공유폴더\\speaker_en.txt')
-#     spk = spk.replace("\n", "")
-#     return spk, spk
 
 def speaker_recog_thread(outLabel):
     global d
