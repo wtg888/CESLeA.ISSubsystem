@@ -57,7 +57,6 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                 ring_buffer.append((frame, is_speech))
                 num_unvoiced = len([f for f, speech in ring_buffer if not speech])
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
-                    # print('off')
                     triggered = False
                     # print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
