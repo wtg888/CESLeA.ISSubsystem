@@ -116,7 +116,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(3)
 
     root = Tk()
     root.geometry("800x800")
