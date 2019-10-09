@@ -137,7 +137,7 @@ def main():
     try:
         root.mainloop()
     except:
-        print("interupt")
+        pass
     finally:
         stream.stop_stream()
         stream.close()
