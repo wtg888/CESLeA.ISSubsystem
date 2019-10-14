@@ -35,7 +35,6 @@ def write_wave(path, audio, sample_rate):
 
 def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream):
     global On
-    # print(On, "ON")
     num_padding_frames = int(padding_duration_ms / frame_duration_ms)
     chunk = int(sample_rate * (frame_duration_ms / 1000.0))
     ring_buffer = collections.deque(maxlen=num_padding_frames)
