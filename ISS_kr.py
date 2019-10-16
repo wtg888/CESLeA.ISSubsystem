@@ -25,6 +25,7 @@ CESLeA = f.readlines()
 f.close()
 CESLeA = [x.replace('\r', "").replace('\n', '') for x in CESLeA]
 
+
 def write_wave(path, audio, sample_rate):
     with contextlib.closing(wave.open(path, 'wb')) as wf:
         wf.setnchannels(1)
