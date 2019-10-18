@@ -3,11 +3,6 @@ from flask import request
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-    return ''
-
-
 @app.route('/api/v1/speech', methods=['POST'])
 def tts():
     global On
