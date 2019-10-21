@@ -106,7 +106,7 @@ def speaker_recog_thread(outLabel):
                 print(speaker, out)
             else:
                 print("empty")
-                # pass
+                pass
         except queue.Empty:
             continue
 
