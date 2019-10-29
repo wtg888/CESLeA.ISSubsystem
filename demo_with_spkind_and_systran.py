@@ -12,7 +12,6 @@ from tkinter import *
 import numpy as np
 import librosa
 import shutil
-
 from Systran.requests_fn import asr
 
 On = True
