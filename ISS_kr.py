@@ -11,7 +11,6 @@ import pyaudio
 import numpy as np
 import librosa
 import shutil
-
 from Systran.requests_fn import asr
 from googletest import synthesize_text
 import post
