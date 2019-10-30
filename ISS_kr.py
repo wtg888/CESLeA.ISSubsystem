@@ -19,6 +19,7 @@ On = True
 q = queue.Queue()
 q2 = queue.Queue()
 
+
 f = open("CESLeA.txt", 'r', encoding='UTF8')
 CESLeA = f.readlines()
 f.close()
