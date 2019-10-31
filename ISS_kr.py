@@ -67,7 +67,6 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
                     print('off')
                     triggered = False
-                    # print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
 
                     fn = 'somefolder\\VM\\CESLeA-ISS\\wavfile\\%d.wav'%num
