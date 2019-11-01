@@ -71,7 +71,6 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 
                     fn = 'somefolder\\VM\\CESLeA-ISS\\wavfile\\%d.wav'%num
                     write_wave(fn, data, sample_rate)
-
                     now = int(time.time())
                     q.put_nowait((now, fn, data))
                     num = num + 1
