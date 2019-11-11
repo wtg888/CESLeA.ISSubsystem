@@ -93,7 +93,6 @@ def predict_speaker(file_name):
 
 
 def asr_thread():
-    global d
     while True:
         try:
             g = q2.get()
