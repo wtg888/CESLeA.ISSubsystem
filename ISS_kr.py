@@ -154,7 +154,6 @@ def tts():
         return '잘못된 접근입니다.'
 
 
-
 def main():
     RATE = 16000
     frame_duration_ms = 30
