@@ -174,8 +174,8 @@ def main():
 
     vad = webrtcvad.Vad(3)
 
-    ths = []
-    
+    ths = list()
+
     ths.append(threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream)))
     ths.append(threading.Thread(target=speaker_recog_thread))
     for i in range(4):
