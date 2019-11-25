@@ -12,7 +12,6 @@ from tkinter import *
 import shutil
 from time import strftime, gmtime
 
-
 On = True
 q = queue.Queue()
 spk = {}
