@@ -95,7 +95,6 @@ def speaker_recog_thread(outLabel):
             # else:
 
             google_ans = google_stt(file_name)
-
             D = np.frombuffer(data, dtype=np.int16)
             data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
             systran_ans = asr(data)
