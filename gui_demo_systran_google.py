@@ -133,6 +133,7 @@ def main():
     root = Tk()
     root.geometry("1500x500")
     root.title('Result')
+
     lbl = Label(root, text="")
     lbl.config()
     lbl.config(width=50)
@@ -141,8 +142,10 @@ def main():
 
     t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 600, vad, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
+
     t1.daemon = True
     t2.daemon = True
+
     t1.start()
     t2.start()
 
