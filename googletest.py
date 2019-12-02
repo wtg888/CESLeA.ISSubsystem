@@ -60,7 +60,6 @@ def synthesize_text(text, language_code):
     with open('output.mp3', 'wb') as out:
         out.write(response.audio_content)
     playsound.playsound('output.mp3', True)
-    # i = i + 1
 
 
 if __name__ == "__main__":
