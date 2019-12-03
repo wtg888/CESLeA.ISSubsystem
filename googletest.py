@@ -56,7 +56,6 @@ def synthesize_text(text, language_code):
 
     response = client.synthesize_speech(input_text, voice, audio_config)
 
-    # The response's audio_content is binary.
     with open('output.mp3', 'wb') as out:
         out.write(response.audio_content)
     playsound.playsound('output.mp3', True)
