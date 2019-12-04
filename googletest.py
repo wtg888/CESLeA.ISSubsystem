@@ -28,7 +28,6 @@ def google_stt(file_name, language_code='ko-KR'):
         language_code=language_code) # English : 'en-US', Korean : 'ko-KR'
 
     try:
-        # Detects speech in the audio file
         response = client.recognize(config, audio)
         res = ""
         # print(response.results)
