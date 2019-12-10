@@ -8,10 +8,8 @@ import contextlib
 import wave
 import webrtcvad
 import pyaudio
-import numpy as np
 import shutil
 
-from Systran.requests_fn import asr
 from googletest import synthesize_text, google_stt
 import post
 
