@@ -176,7 +176,6 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 def speaker_recog_thread(outLabel):
     global count
     global speaker
-    on = 0
     while True:
         try:
             g = q.get()
