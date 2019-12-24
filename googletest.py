@@ -61,4 +61,4 @@ def synthesize_text(text, language_code):
 
 
 if __name__ == "__main__":
-    synthesize_text("Hello World!!", 'en-US')
+    synthesize_text("Hello!!", 'en-US')
