@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route('/api/v1/speech', methods=['POST'])
 def tts():
-    # global On
     if request.method == 'POST':
         print(request.form['createdAt'], request.form['speaker'], request.form['speakerId'], request.form['content'])
         return 'OK'
