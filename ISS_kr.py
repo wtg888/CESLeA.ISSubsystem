@@ -165,7 +165,6 @@ def main():
         os.mkdir('somefolder\\VM\\CESLeA-ISS\\wavfile')
 
     p = pyaudio.PyAudio()
-
     stream = p.open(format=FORMAT,
                     channels=CHANNELS,
                     rate=RATE,
