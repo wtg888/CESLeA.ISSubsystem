@@ -104,10 +104,10 @@ def asr_thread():
             if speech:
                 if speech in CESLeA:
                     speech = "CESLeA"
-                print(speaker, speech)
+                # print(speaker, speech)
                 post.post(createdAt=now, speaker=speaker, speakerId=speaker, content=speech)
             else:
-                print("empty")
+                # print("empty")
         except queue.Empty:
             continue
 
