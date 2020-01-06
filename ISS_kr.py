@@ -143,7 +143,7 @@ def tts():
     if request.method == 'POST':
         text = request.form['text']
         if len(text) == 0:
-            return '텍스트를 제대로 입력하지 않았습니다.'
+            return 'no text'
         On = False
         print(text)
         synthesize_text(text, 'ko-KR') # 'en-US'
