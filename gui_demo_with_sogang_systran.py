@@ -29,7 +29,7 @@ f.close()
 speaker = ''
 spk = {"kms":"김민수", "kst":"강승태", "ojh":"오혜준", "kjh":"김종홍", "kdh":"김동현", "lsw":"이상원"}
 
-# target_speakers = speaker_names
+target_speakers = speaker_names
 
 
 def write_wave(path, audio, sample_rate):
