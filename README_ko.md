@@ -1,9 +1,9 @@
-# CESLeA.SISystem
+# CESLeA.ISSubsystem
 [![license]](/LICENSE)[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT_ko.md)
 
 ---
 
-<b>[CESLeA.SISystem]</b>은 [CESLeA] 프로젝트를 위해 개발된 음성 통합 모듈입니다.
+<b>[CESLeA.ISSubsystem]</b>은 [CESLeA] 프로젝트를 위해 개발된 음성 통합 모듈입니다.
 
 **Table of Contents**
 
@@ -36,7 +36,7 @@ WIP
 
 <b>[CESLeA]</b>는 디지털 동반자 프로젝트의 3세부 프로젝트로, 멀티모달 데이터를 인공지능 학습 기법으로 분석하여 환경 및 사용자의 상태를 파악하고, 맥락 이해를 포함한 상황 인지 정보와 융합 해석하여 이에 따른 선제적 인터랙션을 수행하는 지능형 인터랙션 기술 연구 개발 프로젝트 입니다.
 
-<b>[CESLeA.SISystem]</b>은 인공지능 학습기반의 자율지능을 연구하는 3세부 내 1팀에서 [CESLeA] 프로젝트를 위해 개발중인 음성 통합 모듈입니다.
+<b>[CESLeA.SISystem]</b>은 인공지능 학습기반의 자율지능을 연구하는 3세부 내 1팀에서 [CESLeA] 프로젝트를 위해 개발중인 음성 통합 서브시스템입니다.
 본 모듈은 화자인식, 음성검출, 음성컨트롤러로 구성되어 있습니다.
 
 ## LICENSE
@@ -44,7 +44,7 @@ WIP
 [GNU 약소 일반 공중 사용 허가서 3판]
 
 [license]: https://img.shields.io/github/license/Ckst123/CESLeA
-[CESLeA.SISystem]: https://github.com/Ckst123/CESLeA
+[CESLeA.ISSubsystem]: https://github.com/Ckst123/CESLeA
 [기여 지침서]: https://github.com/Ckst123/CESLeA/blob/dev/CONTRIBUTING_ko.md
 [행동강령]: https://github.com/Ckst123/CESLeA/blob/dev/CODE_OF_CONDUCT_ko.md
 [소개문서]: https://github.com/Ckst123/CESLeA/blob/dev/INTRO_ko.md
