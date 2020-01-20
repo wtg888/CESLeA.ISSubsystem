@@ -11,8 +11,8 @@ Sound Integration Module for [CESLeA] project.
 - [Installation](#installation)
 - [Introduction](#introduction)
 - [LICENSE](#license)
-  - [Commercial usage](#commercial_usage)
-  - [Open Source usage](#open_source_usage)
+  - [Commercial usage](#commercial-usage)
+  - [Open Source usage](#open-source-usage)
 
 ## Key Features
 
