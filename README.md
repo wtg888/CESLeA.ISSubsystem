@@ -43,7 +43,7 @@ This module consists of speaker recognition, voice detection and voice controlle
 [version 3 of the GNU Lesser General Public License]
 
 [README for Korean / 한국어 도움말]: https://github.com/Ckst123/CESLeA/blob/dev/README_ko.md
-[license]: https://img.shields.io/github/license/Ckst123/CESLeA/blob/dev/LICENSE
+[license]: https://img.shields.io/github/license/Ckst123/CESLeA
 [CESLeA.SISystem]: https://github.com/Ckst123/CESLeA
 [contribution guidelines]: https://github.com/Ckst123/CESLeA/blob/dev/CONTRIBUTING.md
 [code of conduct]: https://github.com/Ckst123/CESLeA/blob/dev/CODE_OF_CONDUCT.md
