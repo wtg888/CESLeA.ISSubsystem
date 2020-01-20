@@ -1,9 +1,9 @@
-# CESLeA.SISystem
+# CESLeA.ISSubsystem
 [![license]](/LICENSE)[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ---
 
-Sound Integration Module for [CESLeA] project.
+Intergrated Speech Subsystem for [CESLeA] project.
 [README for Korean / 한국어 도움말]
 
 **Table of Contents**
@@ -35,7 +35,7 @@ Check [Introduction file] to read full version. This is summary.
 
 <b>[CESLeA]</b> is the third detailed project of Autonomous Digital Companion. It is an intelligent interaction technology research and development project that analyzes multi-modal data with AI learning techniques to grasp environment and user's state. It also interprets it with context-aware information including contextual understanding.
 
-<b>[CESLeA.SISystem]</b> is sound integration module for [CESLeA] project developed by the 1st team in CESLeA project. This team is researching about autonomous intelligence Based on AI learning.
+<b>[CESLeA.ISSubsystem]</b> is intergrated speech subsystem for [CESLeA] project developed by the 1st team in CESLeA project. This team is researching about autonomous intelligence Based on AI learning.
 This module consists of speaker recognition, voice detection and voice controller.
 
 ## LICENSE
@@ -44,7 +44,7 @@ This module consists of speaker recognition, voice detection and voice controlle
 
 [README for Korean / 한국어 도움말]: https://github.com/Ckst123/CESLeA/blob/dev/README_ko.md
 [license]: https://img.shields.io/github/license/Ckst123/CESLeA
-[CESLeA.SISystem]: https://github.com/Ckst123/CESLeA
+[CESLeA.ISSubsystem]: https://github.com/Ckst123/CESLeA
 [contribution guidelines]: https://github.com/Ckst123/CESLeA/blob/dev/CONTRIBUTING.md
 [code of conduct]: https://github.com/Ckst123/CESLeA/blob/dev/CODE_OF_CONDUCT.md
 [Introduction file]: https://github.com/Ckst123/CESLeA/blob/dev/INTRO.md
