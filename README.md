@@ -1,18 +1,18 @@
 # CESLeA.SISystem
-[![license]](/LICENSE)
+[![license]](/LICENSE)[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ---
 
 Sound Integration Module for [CESLeA] project.
+[README for Korean / 한국어 도움말]
 
 **Table of Contents**
 
 - [Key Features](#key-features)
 - [Installation](#installation)
 - [Introduction](#introduction)
+- [Contribution guidelines](#contribution-guidelines)
 - [LICENSE](#license)
-  - [Commercial usage](#commercial-usage)
-  - [Open Source usage](#open-source-usage)
 
 ## Key Features
 
@@ -23,7 +23,13 @@ Sound Integration Module for [CESLeA] project.
 
 WIP
 
+## Contribution guidelines
+
+If you want to contribute to this software, be sure to review the [contribution guidelines]. This project adheres to the [code of conduct]. By participating, you are expected to uphold this code.
+
 ## Introduction
+
+Check [Introduction file] to read full version. This is summary.
 
 [Autonomous Digital Companion] is a research project generalized by [KETI] (Korea Electronics Technnology Institute), supported by the [IITP] (Institute for Information & Communications Technology Promotion) grant funded by the [Ministry of Science and ICT] (MSIT, a ministry of the Government of South Korea). This is a fundamental study for designing companions who provide the help you need for daily life. They also help you manage a better life and they respond to you out of sympathy because they understand your thoughts and intentions.
 
@@ -34,32 +40,17 @@ This module consists of speaker recognition, voice detection and voice controlle
 
 ## LICENSE
 
-This is a release of [CESLeA.SISystem], brought to you by Kyungpook National University, as a result of the [Autonomous Digital Companion] project, supported by the Institute for Information & Communications Technology Promotion ([IITP]) grant funded by the [Ministry of Science and ICT] (MSIT, a ministry of the Government of South Korea). This software is released under version 3 of the GNU Lesser General Public License (LGPLv3), as set forth below, with the following additional regulations.
+[version 3 of the GNU Lesser General Public License]
 
-Kyungpook National University provides its CESLeA.SISystem under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs and VARs) and open source projects.
-
-### Commercial usage
-For OEMs. ISVs, VARs and Other Distributors of Commercial Applications:
-OEMs (Original Equipment Manufacturers), ISVs (Independent Software Vendors), VARs (Value Added Resellers) and other distributors that combine and distribute commercially licensed software with sound integration system software and do not wish to distribute the source code for the commercially licensed software under the LGPLv3 must enter into a commercial license agreement with Kyungpook National University.
-
-### Open Source usage
-For Open Source Projects and Other Developers of Open Source Applications:
-For developers of Free Open Source Software ("FOSS") applications that want to combine and distribute those FOSS applications with sound integration system software, 
-
-The FOSS applications must be licensed under the LGPLv3.
-
-For more information, please contact KNU.
-Contact Kyungpook National University
-South Korea: +82-53-950-5517
-Email: cdef3456@naver.com
-
-Copyright (c) 2018 - 2020, Kyungpook National University. All rights reserved.
-
-
-[license]: https://img.shields.io/github/license/Ckst123/CESLeA
+[README for Korean / 한국어 도움말]: https://github.com/Ckst123/CESLeA/blob/dev/README_ko.md
+[license]: https://img.shields.io/github/license/Ckst123/CESLeA/blob/dev/LICENSE
 [CESLeA.SISystem]: https://github.com/Ckst123/CESLeA
-[CESLeA]: http://abr.knu.ac.kr/wordpress/ceslea/
+[contribution guidelines]: https://github.com/Ckst123/CESLeA/blob/dev/CONTRIBUTING.md
+[code of conduct]: https://github.com/Ckst123/CESLeA/blob/dev/CODE_OF_CONDUCT.md
+[Introduction file]: https://github.com/Ckst123/CESLeA/blob/dev/INTRO.md
 [Autonomous Digital Companion]: http://aicompanion.or.kr/
 [KETI]: https://www.keti.re.kr/
 [Ministry of Science and ICT]: https://www.msit.go.kr/
 [IITP]: https://www.iitp.kr/
+[CESLeA]: http://abr.knu.ac.kr/wordpress/ceslea/
+[version 3 of the GNU Lesser General Public License]: https://github.com/Ckst123/CESLeA/blob/dev/LICENSE
