@@ -3,7 +3,7 @@
 
 ---
 
-<b>[CESLeA.ISSubsystem]</b>은 [CESLeA] 프로젝트를 위해 개발된 음성 통합 모듈입니다.
+<b>[CESLeA.ISSubsystem]</b>은 [CESLeA] 프로젝트를 위해 개발된 음성 통합 서브시스템입니다.
 
 **Table of Contents**
 
