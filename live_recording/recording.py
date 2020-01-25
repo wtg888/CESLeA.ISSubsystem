@@ -98,4 +98,3 @@ if __name__ == '__main__':
         keyboard.wait('space')
         rt.join()
         idx = idx + 1
-
