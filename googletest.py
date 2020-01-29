@@ -36,7 +36,7 @@ def google_stt(file_name, language_code='ko-KR'):
         return res
     except:
         print("error")
-        return ""
+        return "error"
 
 
 def synthesize_text(text, language_code):
