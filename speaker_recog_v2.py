@@ -34,6 +34,12 @@ def load_speaker_list():
         reverse_speaker_dict = {}
 
 
+def update_speaker_list():
+    with open('speaker_list.txt', 'w', encoding='utf-8') as f:
+        for s, i in speaker_dict.items():
+            f.write(s + '\t' + i + '\n')
+
+
 def test_speaker_recog(audio=None):
     if audio:
         write_wave(os.path.join(DATA_DIR, 'test', 'test.wav'), audio)
@@ -45,3 +51,21 @@ def test_speaker_recog(audio=None):
     os.system('rm -rf %s' % os.path.join(SCRIPTS_DIR, 'result.txt'))
     os.system('rm -rf %s' % os.path.join(DATA_DIR, 'test', 'test.wav'))
     return reverse_speaker_dict[l]
+
+
+def add_speaker(name):
+    if len(speaker_dict.keys()):
+        speaker_dict[name] = '%04d' % (max(map(int, speaker_dict.values())) + 1)
+    else:
+        speaker_dict[name] = '0000'
+
+    reverse_speaker_dict[speaker_dict[name]] = name
+
+    update_speaker_list()
+    os.mkdir(os.path.join(DATA_DIR, speaker_dict[name]))
+
+
+def train_model():
+    os.chdir(SCRIPTS_DIR)
+    os.system('time ./run_train.sh')
+    os.chdir(ROOT_DIR)
