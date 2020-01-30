@@ -3,3 +3,5 @@
 data/*
 venv/*
 wavfile/*
+*.wav
+*.mp3
