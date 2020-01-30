@@ -25,4 +25,4 @@ def post_me(text):
 
 
 if __name__ == '__main__':
-    post_me("TEST")
+    pass
