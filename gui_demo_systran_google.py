@@ -85,13 +85,6 @@ def speaker_recog_thread(outLabel):
             g = q.get()
             now, file_name, data = g
             now_s = str(now)
-            # if not on:
-            #     _, speaker = predict_speaker(file_name)
-            #     outLabel.config(text=speaker)
-            #     print(now_s, speaker)
-            #     if speaker in target_speakers:
-            #         on = 1
-            # else:
 
             google_ans = google_stt(file_name)
             D = np.frombuffer(data, dtype=np.int16)
