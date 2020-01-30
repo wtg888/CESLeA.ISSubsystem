@@ -61,6 +61,6 @@ def synthesize_text(text, language_code):
 
 
 if __name__ == "__main__":
-    res = google_stt('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog\\old_data\\test\den\den8.wav')
+    res = google_stt('file path')
     print(res)
     # synthesize_text("Hello!!", 'en-US')
