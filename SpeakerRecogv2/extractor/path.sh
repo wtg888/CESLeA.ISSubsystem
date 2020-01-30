@@ -1,5 +1,5 @@
 # The virtualenv path
-export TF_ENV=/home/mi/PycharmProjects/CESLeA/venv
+export TF_ENV=/home/mi/data/venv
 
 export PROJECT_ROOT=/home/mi/PycharmProjects/CESLeA/SpeakerRecogv2/extractor
 export KALDI_ROOT=/media/mi/data/tools/kaldi

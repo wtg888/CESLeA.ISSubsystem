@@ -1,5 +1,5 @@
 # The virtualenv path
-export TF_ENV=/home/mi/PycharmProjects/CESLeA/venv
+export TF_ENV=/home/mi/data/venv
 
 export PROJECT_ROOT=/home/mi/PycharmProjects/CESLeA/SpeakerRecogv2/online
 export DATA_ROOT=/home/mi/PycharmProjects/CESLeA/data
