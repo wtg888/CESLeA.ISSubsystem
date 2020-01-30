@@ -2,7 +2,7 @@ import io
 import os
 
 # path of your google cloud json file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\MI\\Dropbox\\My First Project-e0c0bb0b4859.json" 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\MI\\Dropbox\\My First Project-2020.json"
 
 # Imports the Google Cloud client library
 from google.cloud import speech
@@ -24,7 +24,7 @@ def google_stt(file_name, language_code='ko-KR'):
 
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=16000,
+        # sample_rate_hertz=16000,
         language_code=language_code) # English : 'en-US', Korean : 'ko-KR'
 
     try:
@@ -61,4 +61,6 @@ def synthesize_text(text, language_code):
 
 
 if __name__ == "__main__":
-    synthesize_text("Hello!!", 'en-US')
+    res = google_stt('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\speaker_recog\\old_data\\test\den\den8.wav')
+    print(res)
+    # synthesize_text("Hello!!", 'en-US')
