@@ -5,3 +5,4 @@ venv/*
 wavfile/*
 *.wav
 *.mp3
+SpeakerRecogv2/online/result.txt
