@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 import os
+os.chdir('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_')
 import queue
 import threading
 import collections
@@ -18,8 +19,6 @@ from llsollu.requests_fn import asr
 
 On = True
 q = queue.Queue()
-
-target_speakers = ['SEUNGTAE', 'GILJIN', 'kst', 'ohj']
 
 
 def write_wave(path, audio, sample_rate):
@@ -65,7 +64,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                     triggered = False
                     print('save %d.wav'%num)
                     data = b''.join([f for f in voiced_frames])
-                    fn = 'C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile\\%d.wav'%num
+                    fn = 'wavfile\\%d.wav'%num
                     write_wave(fn, data, sample_rate)
                     now = int(time.time())
                     q.put_nowait((now, fn, data))
@@ -77,7 +76,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
         pass
 
 
-def speaker_recog_thread(outLabel):
+def asr_thread(outLabel):
     global d
     global On
     while True:
@@ -94,10 +93,6 @@ def speaker_recog_thread(outLabel):
                 outLabel.config(text="Google : " + google_ans + '\r\n' + "엘솔루 : " + systran_ans)
             else:
                 print("empty")
-            # On = True
-            #     on -= 1
-                # outLabel.config(text=speaker + ': ' + out)
-                # print(speaker, out)
         except queue.Empty:
             continue
 
@@ -109,8 +104,8 @@ def main():
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
 
-    if not os.path.isdir('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile'):
-        os.mkdir('C:\\Users\\MI\\Documents\\GitHub\\CESLeA_\\wavfile')
+    if not os.path.isdir('wavfile'):
+        os.mkdir('wavfile')
 
     p = pyaudio.PyAudio()
 
@@ -133,7 +128,7 @@ def main():
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 600, vad, stream))
-    t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
+    t2 = threading.Thread(target=asr_thread, args=(lbl,))
 
     t1.daemon = True
     t2.daemon = True

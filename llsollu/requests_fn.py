@@ -8,7 +8,9 @@ def asr(data):
     """
     Send audio file to ASR server
     """
-    url = 'http://192.168.43.226:7777/filemode/?productcode=DEMO&transactionid=0&language=kor'
+    f = open('url.txt', 'r')
+    url = f.read()
+    f.close()
     files = {'file': ('wav.pcm', data, "audio/pcm")}
     r = requests.post(url, files=files)
     res = r.json()
