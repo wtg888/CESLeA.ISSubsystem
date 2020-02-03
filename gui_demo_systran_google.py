@@ -14,7 +14,7 @@ import librosa
 
 from googletest import google_stt
 
-from Systran.requests_fn import asr
+from llsollu.requests_fn import asr
 
 On = True
 q = queue.Queue()

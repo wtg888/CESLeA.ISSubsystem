@@ -15,7 +15,7 @@ import librosa
 import struct
 
 from speaker_recog.predict_speaker_recog import predict_speaker
-from Systran.requests_fn import asr
+from llsollu.requests_fn import asr
 
 On = True
 q = queue.Queue()

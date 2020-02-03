@@ -8,7 +8,7 @@ import contextlib
 import wave
 import webrtcvad
 import pyaudio
-from Systran.curl_ft import asr
+from llsollu.requests_fn import asr
 
 
 On = True
@@ -56,12 +56,13 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                 if len(ring_buffer) == ring_buffer.maxlen and num_unvoiced > 0.5 * ring_buffer.maxlen:
                     print('off')
                     triggered = False
-                    print('save %d.wav'%num)
-                    data = b''.join([f for f in voiced_frames])
-                    fn = 'wavfile/%d.wav'%num
-                    write_wave(fn, data, sample_rate)
                     now = int(time.time())
-                    q.put_nowait((now, fn))
+                    data = b''.join([f for f in voiced_frames])
+                    q.put_nowait((now, data))
+                    print('save %d.wav' % num)
+                    # fn = 'wavfile/%d.wav'%num
+                    # write_wave(fn, data, sample_rate)
+                    now = int(time.time())
                     num = num + 1
                     ring_buffer.clear()
                     voiced_frames = []
@@ -69,14 +70,14 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
         pass
 
 
-def speaker_recog_thread():
+def speech_recog_thread():
     global d
     while True:
         try:
             g = q.get()
-            now, file_name = g
+            now, data = g
             now_s = str(now)
-            out = asr(file_name)
+            out = asr(data)
             print(out)
         except queue.Empty:
             continue
@@ -103,7 +104,7 @@ def main():
     vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
 
     t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream))
-    t2 = threading.Thread(target=speaker_recog_thread)
+    t2 = threading.Thread(target=speech_recog_thread)
     t1.daemon = True
     t2.daemon = True
     t1.start()

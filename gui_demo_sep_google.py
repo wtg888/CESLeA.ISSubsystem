@@ -14,7 +14,7 @@ import numpy as np
 import librosa
 from tkinter import *
 from googletest import google_stt
-from Systran.requests_fn import asr
+from llsollu.requests_fn import asr
 
 On = True
 stream = queue.Queue()
