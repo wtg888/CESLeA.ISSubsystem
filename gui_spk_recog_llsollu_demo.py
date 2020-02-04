@@ -81,7 +81,7 @@ def speaker_recog_thread(outLabel):
             g = q2.get()
             now, file_name, text = g
             now_s = str(now)
-            outLabel.config(text='이름')
+            outLabel.config(text='')
             shutil.copy(file_name, os.path.join(speaker_recog_v2.DATA_DIR, 'test', 'test.wav'))
             speaker = speaker_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker + " : " + text)
@@ -132,11 +132,11 @@ def main():
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("1500x500")
     root.title('Result')
-    lbl = Label(root, text="이름")
+    lbl = Label(root, text="")
     lbl.config()
-    lbl.config(width=10)
+    lbl.config(width=50)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
