@@ -16,16 +16,24 @@ def write_wave(path, audio):
 if __name__ == '__main__':
     bL = b''
     bR = b''
+    boL = b''
+    boR = b''
     try:
         while True:
-            L, R = map(int, input().split('\t'))
+            L, R, oL, oR = map(int, input().split('\t'))
             # print(L, R)
             bL += struct.pack('h', L)
             bR += struct.pack('h', R)
+            boL += struct.pack('h', oL)
+            boR += struct.pack('h', oR)
     except:
         pass
-    # print(len(bL))
-    # print(len(bR))
+    print(len(bL))
+    print(len(bR))
     write_wave('testL.wav', bL)
     write_wave('testR.wav', bR)
+    print(len(boL))
+    print(len(boR))
+    write_wave('testoL.wav', boL)
+    write_wave('testoR.wav', boR)
 
