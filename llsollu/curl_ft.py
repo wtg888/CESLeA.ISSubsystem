@@ -11,7 +11,7 @@ def asr(filename):
     http://code.activestate.com/recipes/576422-python-http-post-binary-file-upload-with-pycurl/
     http://pycurl.cvs.sourceforge.net/pycurl/pycurl/tests/test_post2.py?view=markup
     """
-    f = open('url.txt', 'r')
+    f = open('llsollu_url.txt', 'r')
     url = f.read()
     f.close()
     c = pycurl.Curl()

@@ -8,7 +8,7 @@ def asr(data):
     """
     Send audio file to ASR server
     """
-    f = open('url.txt', 'r')
+    f = open('llsollu_url.txt', 'r')
     url = f.read()
     f.close()
     files = {'file': ('wav.pcm', data, "audio/pcm")}
