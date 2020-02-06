@@ -34,15 +34,18 @@ def write_wave(path, audio, sample_rate):
 def receive_thread(chunk):
     bL = b''
     bO = b''
-    while True:
-        L, R, oL, oR = map(int, input().split('\t'))
-        # print(L)
-        bL += struct.pack('h', L)
-        bO += struct.pack('h', int((oL+ oR)/2))
-        if len(bL) == 2 * chunk:
-            stream.put((bL, bO))
-            bL = b''
-            bO = b''
+    try:
+        while True:
+            L, R, oL, oR = map(int, input().split('\t'))
+            # print(L)
+            bL += struct.pack('h', L)
+            bO += struct.pack('h', int((oL+ oR)/2))
+            if len(bL) == 2 * chunk:
+                stream.put((bL, bO))
+                bL = b''
+                bO = b''
+    except:
+        os._exit(1)
 
 
 def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad):
@@ -73,7 +76,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad):
                 o_data = b''.join([f[1] for f in voiced_frames])
                 fn = 'wavfile\\%d.wav'%num
                 write_wave(fn, sep_data, sample_rate)
-                write_wave(fn.replace('wavfile', 'ori_wavfile'), sep_data, sample_rate)
+                write_wave(fn.replace('wavfile', 'ori_wavfile'), o_data, sample_rate)
                 print('save %d.wav' % num)
                 now = int(time.time())
                 speechQ.put_nowait((now, fn, sep_data))

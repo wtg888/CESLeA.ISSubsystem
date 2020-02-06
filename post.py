@@ -80,7 +80,7 @@ def post_speaker_recog(audio_file):
         }
         res = requests.post(url=URL, files=files)
         print(res.content)
-        return res
+        return res.content.decode('utf8')
     except:
         print("error")
 
