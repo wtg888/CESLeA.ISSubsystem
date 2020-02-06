@@ -90,7 +90,7 @@ def asr_thread(outLabel):
             now, file_name, data = g
             now_s = str(now)
 
-            spk = post_speaker_recog(file_name.replace('wavfile', 'ori_wavfile'))
+            spk = post_speaker_recog(file_name)
 
             # google_ans = google_stt(file_name)
             D = np.frombuffer(data, dtype=np.int16)

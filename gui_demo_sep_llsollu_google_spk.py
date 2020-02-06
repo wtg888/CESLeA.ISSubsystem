@@ -95,7 +95,7 @@ def asr_thread(outLabel):
 
             spk = post_speaker_recog(file_name.replace('wavfile', 'ori_wavfile'))
 
-            google_ans = google_stt(file_name.replace('wavfile', 'ori_wavfile'))
+            google_ans = google_stt(file_name)
             D = np.frombuffer(data, dtype=np.int16)
             data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
             llsollu_ans = asr(data)
