@@ -189,6 +189,12 @@ def main():
     if not os.path.isdir('ori_wavfile1'):
         os.mkdir('ori_wavfile1')
 
+    if not os.path.isdir('wavfile2'):
+        os.mkdir('wavfile2')
+
+    if not os.path.isdir('ori_wavfile2'):
+        os.mkdir('ori_wavfile2')
+
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
