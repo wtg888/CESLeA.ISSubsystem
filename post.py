@@ -30,7 +30,7 @@ def post_me(text):
 
 def post_add_speaker(speaker):
     try:
-        URL = '%s/add_speaker' % spk_url
+        URL = '%s:8080/add_speaker' % spk_url
         data=[('speaker', speaker)]
         res = requests.post(url=URL, data=data)
         print(res.content)
@@ -40,7 +40,7 @@ def post_add_speaker(speaker):
 
 def post_add_data(speaker, audio_file):
     try:
-        URL = '%s/add_data' % spk_url
+        URL = '%s:8080/add_data' % spk_url
         speaker = io.StringIO(speaker)
         files = {
             'audio_file': ('data.wav', open(audio_file, 'rb')),
@@ -54,7 +54,7 @@ def post_add_data(speaker, audio_file):
 
 def post_delete_speaker(speaker):
     try:
-        URL = '%s/delete_speaker' % spk_url
+        URL = '%s:8080/delete_speaker' % spk_url
         data=[('speaker', speaker)]
         res = requests.post(url=URL, data=data)
         print(res.content)
@@ -64,7 +64,7 @@ def post_delete_speaker(speaker):
 
 def post_delete_data(speaker):
     try:
-        URL = '%s/delete_data' % spk_url
+        URL = '%s:8080/delete_data' % spk_url
         data=[('speaker', speaker)]
         res = requests.post(url=URL, data=data)
         print(res.content)
@@ -74,7 +74,20 @@ def post_delete_data(speaker):
 
 def post_speaker_recog(audio_file):
     try:
-        URL = '%s/speaker_recog' % spk_url
+        URL = '%s:8080/speaker_recog' % spk_url
+        files = {
+            'audio_file': ('data.wav', open(audio_file, 'rb')),
+        }
+        res = requests.post(url=URL, files=files)
+        print(res.content)
+        return res.content.decode('utf8')
+    except:
+        print("error")
+
+
+def post_age_recog(audio_file):
+    try:
+        URL = '%s:8090/age_recog' % spk_url
         files = {
             'audio_file': ('data.wav', open(audio_file, 'rb')),
         }
