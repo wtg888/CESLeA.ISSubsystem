@@ -15,7 +15,7 @@ import librosa
 from tkinter import *
 from googletest import google_stt
 from llsollu.requests_fn import asr
-from post import post_speaker_recog
+from post import post_age_recog
 
 On = True
 stream1 = queue.Queue()
@@ -101,7 +101,7 @@ def asr_thread1(outLabel):
             now, file_name, data = g
             now_s = str(now)
 
-            spk = post_speaker_recog(file_name.replace('wavfile', 'ori_wavfile'))
+            spk = post_age_recog(file_name.replace('wavfile', 'ori_wavfile'))
 
             google_ans = google_stt(file_name)
             D = np.frombuffer(data, dtype=np.int16)
@@ -161,7 +161,7 @@ def asr_thread2(outLabel):
             now, file_name, data = g
             now_s = str(now)
 
-            spk = post_speaker_recog(file_name.replace('wavfile', 'ori_wavfile'))
+            spk = post_age_recog(file_name.replace('wavfile', 'ori_wavfile'))
 
             google_ans = google_stt(file_name)
             D = np.frombuffer(data, dtype=np.int16)
