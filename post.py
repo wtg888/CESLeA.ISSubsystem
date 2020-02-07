@@ -92,8 +92,11 @@ def post_age_recog(audio_file):
             'audio_file': ('data.wav', open(audio_file, 'rb')),
         }
         res = requests.post(url=URL, files=files)
-        print(res.content)
-        return res.content.decode('utf8')
+        if res.status_code == 200:
+            print(res.content)
+            return res.content.decode('utf8')
+        else:
+            return "error"
     except:
         print("error")
 

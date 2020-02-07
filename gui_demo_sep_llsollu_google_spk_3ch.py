@@ -101,9 +101,9 @@ def asr_thread1(outLabel):
             now, file_name, data = g
             now_s = str(now)
 
-            spk = post_age_recog(file_name.replace('wavfile', 'ori_wavfile'))
+            spk = post_age_recog(file_name)
 
-            google_ans = google_stt(file_name)
+            google_ans = google_stt(file_name.replace('wavfile', 'ori_wavfile'))
             D = np.frombuffer(data, dtype=np.int16)
             data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
             llsollu_ans = asr(data)
@@ -161,9 +161,9 @@ def asr_thread2(outLabel):
             now, file_name, data = g
             now_s = str(now)
 
-            spk = post_age_recog(file_name.replace('wavfile', 'ori_wavfile'))
+            spk = post_age_recog(file_name)
 
-            google_ans = google_stt(file_name)
+            google_ans = google_stt(file_name.replace('wavfile', 'ori_wavfile'))
             D = np.frombuffer(data, dtype=np.int16)
             data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
             llsollu_ans = asr(data)
