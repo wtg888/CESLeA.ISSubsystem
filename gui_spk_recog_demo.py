@@ -59,7 +59,7 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
                     print('off')
                     triggered = False
                     data = b''.join([f for f in voiced_frames])
-                    fn = 'wavfile\\%d.wav'%num
+                    fn = os.path.join('wavfile', '%d.wav'% num)
                     write_wave(fn, data, sample_rate)
                     now = int(time.time())
                     q.put_nowait((now, fn))
