@@ -2,6 +2,7 @@ import contextlib
 import wave
 import os
 import random
+import struct
 
 
 sample_rate = 8000
@@ -42,7 +43,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('ELDp.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('CHD')]
@@ -51,7 +52,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('CHDp.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('M') or x.startswith('F')]
@@ -60,7 +61,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('normalp.wav', audio)
 
     path = 'C:\\Users\\MI\\Dropbox\\엘솔루 dataset\\300wav_noise'
@@ -70,7 +71,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('ELDp_noise.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('CHD')]
@@ -79,7 +80,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('CHDp_noise.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('M') or x.startswith('F')]
@@ -88,7 +89,7 @@ if __name__ == '__main__':
     audio = b''
     for f in trans:
         audio += read_wave(os.path.join(path, f))[0]
-        audio += bytes(0) * int(2 * 8000 * random.uniform(1, 3))
+        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(1.5, 2.5))
     write_wave('normalp_noise.wav', audio)
 
 
