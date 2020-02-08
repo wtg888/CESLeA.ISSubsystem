@@ -44,7 +44,7 @@ def receive_thread(chunk):
             L, C, R, oL, oC, oR = map(int, input().split('\t'))
             # print(L)
             b1 += struct.pack('h', L)
-            b2 += struct.pack('h', C)
+            b2 += struct.pack('h', R)
             bO += struct.pack('h', int((oL+ oR + oC)/3))
             if len(b1) == 2 * chunk:
                 stream1.put((b1, bO))
