@@ -3,6 +3,7 @@ import wave
 import os
 import random
 import struct
+import numpy as np
 
 
 sample_rate = 8000
@@ -42,27 +43,36 @@ if __name__ == '__main__':
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('ELDp.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('ELDn.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('CHD')]
     random.shuffle(trans)
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('CHDp.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('CHDn.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('M') or x.startswith('F')]
     random.shuffle(trans)
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('normalp.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('normaln.wav', audio)
 
     path = 'C:\\Users\\MI\\Dropbox\\엘솔루 dataset\\300wav_noise'
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('ELD')]
@@ -70,27 +80,36 @@ if __name__ == '__main__':
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('ELDp_noise.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('ELDn_noise.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('CHD')]
     random.shuffle(trans)
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('CHDp_noise.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('CHDn_noise.wav', audio)
 
     trans = [x.split()[0].split('-')[-1] + '.wav' for x in l if x.startswith('M') or x.startswith('F')]
     random.shuffle(trans)
 
     audio = b''
     for f in trans:
-        audio += read_wave(os.path.join(path, f))[0]
-        audio += struct.pack('h', 0) * int(2 * 8000 * random.uniform(3, 4))
-    write_wave('normalp_noise.wav', audio)
+        pcm = read_wave(os.path.join(path, f))[0]
+        arr = 1.0 * np.frombuffer(pcm, dtype=np.int16)
+        arr = arr / np.max(arr) * (32767 / 2)
+        arr = arr.astype(np.int16)
+        audio += arr.tobytes()
+    write_wave('normaln_noise.wav', audio)
 
 
 
