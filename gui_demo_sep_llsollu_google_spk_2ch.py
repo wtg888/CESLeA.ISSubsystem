@@ -41,11 +41,11 @@ def receive_thread(chunk):
     bO = b''
     try:
         while True:
-            L, C, R, oL, oC, oR = map(int, input().split('\t'))
+            L, R, oL, oR = map(int, input().split('\t'))
             # print(L)
             b1 += struct.pack('h', L)
             b2 += struct.pack('h', R)
-            bO += struct.pack('h', int((oL+ oR + oC)/3))
+            bO += struct.pack('h', int((oL+ oR)/2))
             if len(b1) == 2 * chunk:
                 stream1.put((b1, bO))
                 stream2.put((b2, bO))
