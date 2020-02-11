@@ -72,9 +72,11 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 
 def speaker_recog_thread(outLabel):
     global d
+    global On
     while True:
         try:
             g = q.get()
+            On = False
             now, file_name = g
             now_s = str(now)
             outLabel.config(text='이름')
@@ -82,6 +84,7 @@ def speaker_recog_thread(outLabel):
             speaker = speaker_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker)
             print(now_s, speaker)
+            On = True
         except queue.Empty:
             continue
 

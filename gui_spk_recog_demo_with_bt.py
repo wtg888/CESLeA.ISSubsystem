@@ -66,15 +66,17 @@ class RecordingThread(threading.Thread):
         threading.Thread.join(self, timeout)
 
 
-def command(bt, lbl, thread):
+def command(bt, button, lbl, thread):
     global i
     if thread:
+        button.config(state="disable")
         th = thread.pop()
         th.join()
         if th.isSuccess:
             spk = speaker_recog_v2.test_speaker_recog()
             lbl.config(text=spk)
         bt.set("start")
+        button.config(state="normal")
     else:
         rt = RecordingThread(filename=os.path.join(speaker_recog_v2.DATA_DIR, 'test', 'test.wav'))
         rt.start()
@@ -101,7 +103,7 @@ if __name__ == '__main__':
     btn_text.set("start")
     thread = []
     button.place(relx=0.5, rely=1.0, anchor='s')
-    button.config(command=lambda: command(btn_text, lbl, thread))
+    button.config(command=lambda: command(btn_text, button, lbl, thread))
 
     try:
         root.mainloop()
