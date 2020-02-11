@@ -14,7 +14,7 @@ if (@ARGV != 2) {
 
 ($data_base, $out_dir) = @ARGV;
 
-opendir my $dh, "$data_base/test" or die "Cannot open directory: $!";
+opendir my $dh, "$data_base" or die "Cannot open directory: $!";
 closedir $dh;
 
 if (system("mkdir -p $out_dir") != 0) {
@@ -24,12 +24,12 @@ if (system("mkdir -p $out_dir") != 0) {
 open(SPKR, ">", "$out_dir/utt2spk") or die "Could not open the output file $out_dir/utt2spk";
 open(WAV, ">", "$out_dir/wav.scp") or die "Could not open the output file $out_dir/wav.scp";
 
-opendir my $dh, "$data_base/test/" or die "Cannot open directory: $!";  
+opendir my $dh, "$data_base/" or die "Cannot open directory: $!";  
 my @files = map{s/\.[^.]+$//;$_}grep {/\.wav$/} readdir($dh);
 closedir $dh;
 foreach (@files) {
   my $name = $_;
-  my $wav = "$data_base/test/$name.wav";
+  my $wav = "$data_base/$name.wav";
   my $utt_id = "$name";
   print WAV "$utt_id", " $wav", "\n";
   print SPKR "$utt_id", " test", "\n";

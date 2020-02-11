@@ -14,8 +14,8 @@ run_xvector.sh test
 scoredir=$PROJECT_ROOT/basemodel/xvector_nnet_pretrain/xvectors_test_novad/scores
 
 python make_result_frame.py $scoredir
-python make_label.py $scoredir
-python make_result.py $scoredir
+python make_label.py $scoredir 400 400
+python make_result.py $scoredir 400 400
 cp $scoredir/result.txt result.txt
 
 

@@ -11,7 +11,7 @@ if [ $# != 1 ]; then
 fi
 
 nnetdir=$1
-
+rm -rf $nnetdir/trials.txt
 cat $nnetdir/xvector.scp | while read line
 do
   key1=`echo $line | cut -d' ' -f1`

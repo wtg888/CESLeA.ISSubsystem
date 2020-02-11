@@ -1,0 +1,17 @@
+# compute-vad --config=conf/vad.conf scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/spkrs/split1/1/feats.scp ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/mfcc/vad_spkrs.1.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/mfcc/vad_spkrs.1.scp 
+# Started at Wed Feb 12 04:08:50 KST 2020
+#
+compute-vad --config=conf/vad.conf scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/spkrs/split1/1/feats.scp ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/mfcc/vad_spkrs.1.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/mfcc/vad_spkrs.1.scp 
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0003-2019_11_08_16_08_07
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0003-2019_11_08_16_11_54
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0003-2019_11_08_16_12_17
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0014-2019_10_25_15_22_41_0
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0020-2019_10_28_16_26_29_0
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0023-2019_11_03_13_16_44_1
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0023-2019_11_03_13_16_44_2
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0023-2019_11_03_13_16_44_3
+WARNING (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:82) No frames were judged voiced for utterance 0023-2019_11_03_13_16_44_4
+LOG (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:95) Applied energy based voice activity detection; processed 641 utterances successfully; 0 had empty features, and 9 were completely unvoiced.
+LOG (compute-vad[5.5.598~1-611ff]:main():compute-vad.cc:99) Proportion of voiced frames was 0.616355 over 189425 frames.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Wed Feb 12 04:08:50 KST 2020, elapsed time 0 seconds

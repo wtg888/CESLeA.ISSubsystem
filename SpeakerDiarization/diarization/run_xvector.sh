@@ -33,8 +33,8 @@ nnetdir=$exp/basemodel/xvector_nnet_pretrain
 checkpoint='last'
 
 if [ $stage = train ]; then
-  #extract xvector in data
   cd $extractor
+  #extract xvector in data
   nnet/run_extract_embeddings.sh --cmd "$train_cmd" --nj 1 --use-gpu false --checkpoint $checkpoint --stage 0 \
     --chunk-size 10000 --normalize false --node "output" \
     $nnetdir $data/spkrs $nnetdir/xvectors
@@ -46,7 +46,7 @@ if [ $stage = test ]; then
   nnetdir_test=$nnetdir/xvectors_test_novad
   cd $extractor
   nnet/run_extract_embeddings_diar.sh --cmd "$train_cmd" --nj 1 --use-gpu false --checkpoint $checkpoint --stage 0 \
-    --chunk-size 60 --normalize false --node "output" \
+    --chunk-size 80 --normalize false --node "output" \
     $nnetdir $data/test $nnetdir_test
   #cosine similarity between test xvector and spkrs xvector
   mkdir -p $nnetdir_test/scores

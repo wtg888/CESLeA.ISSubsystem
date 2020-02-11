@@ -31,13 +31,16 @@ if [ $# != 0 ]; then
 fi
 
 # link the directories
-rm -fr utils steps sid conf local
-ln -s $kaldi_voxceleb/v2/utils ./
-ln -s $kaldi_voxceleb/v2/steps ./
-ln -s $kaldi_voxceleb/v2/sid ./
-ln -s $kaldi_voxceleb/v2/conf ./
-ln -s $kaldi_voxceleb/v2/local ./
-ln -s $kaldi_diarization/v1/diarization ./
+for dir in '' '../extractor'
+do
+  ln -fs $kaldi_voxceleb/v2/utils ./$dir
+  ln -fs $kaldi_voxceleb/v2/steps ./$dir
+  ln -fs $kaldi_voxceleb/v2/sid ./$dir
+  ln -fs $kaldi_voxceleb/v2/conf ./$dir
+  ln -fs $kaldi_voxceleb/v2/local ./$dir
+  ln -fs $kaldi_diarization/v1/diarization ./$dir
+done
+
 mkdir data
 mkdir mfcc
 

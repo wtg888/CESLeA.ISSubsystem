@@ -19,7 +19,6 @@ data=$PROJECT_ROOT/data
 exp=$PROJECT_ROOT/preprocess_log
 mfccdir=$PROJECT_ROOT/mfcc
 vaddir=$PROJECT_ROOT/mfcc
-datadir=$DATA_ROOT
 
 if [ $# != 1 ]; then
   echo "Usage: $0 <stage>"
@@ -32,7 +31,7 @@ stage=$1
 
 if [ $stage = train ]; then
   rm -rf $data/spkrs
-  make_data_all.pl ${datadir}/speaker_enrollment_wav $data/spkrs
+  make_data_all.pl $DATA_ROOT $data/spkrs
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in spkrs; do
     steps/make_mfcc.sh --write-utt2num-frames true \
@@ -46,7 +45,7 @@ if [ $stage = train ]; then
 fi
 if [ $stage = test ]; then
   rm -rf $data/test
-  make_data_test.pl $datadir $data/test
+  make_data_test.pl $TESTDATA_ROOT $data/test
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in test; do
     steps/make_mfcc.sh --write-utt2num-frames true \
