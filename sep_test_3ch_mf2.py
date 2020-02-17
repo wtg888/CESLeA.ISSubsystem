@@ -23,7 +23,6 @@ if __name__ == '__main__':
     try:
         while True:
             i1, i2, i3 = map(int, input().split('\t'))
-            # print(L, R)
             b1 += struct.pack('h', i1)
             b2 += struct.pack('h', i2)
             b3 += struct.pack('h', i3)
