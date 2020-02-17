@@ -1,19 +1,21 @@
-# nnet/wrap/extract_wrapper_diar.sh --gpuid -1 --env tf_cpu --min-chunk-size 25 --chunk-size 80 --normalize false --node output /home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain "ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/test/split1/1/feats.scp ark:- |" "ark:| copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.scp" 
-# Started at Wed Feb 12 04:12:54 KST 2020
+# nnet/wrap/extract_wrapper_diar.sh --gpuid -1 --env tf_cpu --min-chunk-size 25 --chunk-size 80 --normalize false --node output /home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain "ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/test/split1/1/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/test/split1/1/vad.scp ark:- |" "ark:| copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.scp" 
+# Started at Thu Feb 13 15:07:16 KST 2020
 #
 INFO:tensorflow:Extract embedding from output
-2020-02-12 04:12:55.395904: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-02-13 15:07:17.782492: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 INFO:tensorflow:Extract embedding from node output
 WARNING:tensorflow:From /home/mi/PycharmProjects/CESLeA/SpeakerDiarization/extractor/model/pooling.py:23: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
 Instructions for updating:
 keep_dims is deprecated, use keepdims instead
 copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors_test_novad/xvector.1.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/test/split1/1/vad.scp ark:- 
 apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/test/split1/1/feats.scp ark:- 
 LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
-INFO:tensorflow:[INFO] Key test length 282 > 80, split to 7 segments.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 397 > 80, split to 9 segments.
 INFO:tensorflow:Reading checkpoints...
 INFO:tensorflow:Restoring parameters from /home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/nnet/model-2610000
 INFO:tensorflow:Succeed to load checkpoint model-2610000
-LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 7 vectors.
-# Accounting: time=2 threads=1
-# Ended (code 0) at Wed Feb 12 04:12:56 KST 2020, elapsed time 2 seconds
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 9 vectors.
+# Accounting: time=3 threads=1
+# Ended (code 0) at Thu Feb 13 15:07:19 KST 2020, elapsed time 3 seconds

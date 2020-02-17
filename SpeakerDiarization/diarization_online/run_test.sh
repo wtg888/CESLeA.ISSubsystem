@@ -12,10 +12,10 @@ preprocess.sh test
 run_xvector.sh test
 
 scoredir=$PROJECT_ROOT/basemodel/xvector_nnet_pretrain/xvectors_test_novad/scores
+num_spkr=`cat $PROJECT_ROOT/basemodel/xvector_nnet_pretrain/xvectors/num_utts.ark | wc -l`
 
-python make_result_frame.py $scoredir
-python make_label.py $scoredir
-python make_result.py $scoredir
+python2.7 make_online_result_frame.py $scoredir $num_spkr
+python2.7 make_online_result.py $scoredir 800 400
 cp $scoredir/result.txt result.txt
 
 

@@ -76,15 +76,18 @@ def vad_thread(sample_rate, frame_duration_ms, padding_duration_ms, vad, stream)
 
 
 def speaker_recog_thread(outLabel):
+    global On
     while True:
         try:
             g = q2.get()
+            On = False
             now, file_name, text = g
             now_s = str(now)
             outLabel.config(text='')
             shutil.copy(file_name, os.path.join(speaker_recog_v2.DATA_DIR, 'test', 'test.wav'))
             speaker = speaker_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker + " : " + text)
+            On = True
         except queue.Empty:
             continue
 
@@ -127,7 +130,8 @@ def main():
                     channels=CHANNELS,
                     rate=RATE,
                     input=True,
-                    frames_per_buffer=CHUNK)
+                    frames_per_buffer=CHUNK,
+                    )
 
     vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 

@@ -1,20 +1,8 @@
 # ivector-mean ark:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/spkrs/spk2utt scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/xvector.scp ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/spk_xvector.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/spk_xvector.scp ark,t:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/num_utts.ark 
-# Started at Wed Feb 12 04:09:43 KST 2020
+# Started at Thu Feb 13 10:40:55 KST 2020
 #
 ivector-mean ark:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/data/spkrs/spk2utt scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/xvector.scp ark,scp:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/spk_xvector.ark,/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/spk_xvector.scp ark,t:/home/mi/PycharmProjects/CESLeA/SpeakerDiarization/diarization_online/basemodel/xvector_nnet_pretrain/xvectors/num_utts.ark 
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0003-2019_11_08_16_08_07
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0003-2019_11_08_16_11_54
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0003-2019_11_08_16_12_17
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0007-2019_11_26_13_06_15_2
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0007-2019_11_26_13_06_15_4
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0014-2019_10_25_15_22_41_0
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0020-2019_10_28_16_26_29_0
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0023-2019_11_03_13_16_44_1
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0023-2019_11_03_13_16_44_2
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0023-2019_11_03_13_16_44_3
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:105) No iVector present in input for utterance 0023-2019_11_03_13_16_44_4
-WARNING (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:118) Not producing output for speaker 0023 since no utterances had iVectors
-LOG (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:134) Computed mean of 24 speakers (1 with no utterances), consisting of 639 utterances (11 absent from input).
-LOG (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:145) Norm of mean of speakers is 12.3186, root-mean-square speaker-iVector length divided by sqrt(dim) is 1.00838
+LOG (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:134) Computed mean of 6 speakers (0 with no utterances), consisting of 59 utterances (0 absent from input).
+LOG (ivector-mean[5.5.598~1-611ff]:main():ivector-mean.cc:145) Norm of mean of speakers is 17.4314, root-mean-square speaker-iVector length divided by sqrt(dim) is 1.27584
 # Accounting: time=0 threads=1
-# Ended (code 0) at Wed Feb 12 04:09:43 KST 2020, elapsed time 0 seconds
+# Ended (code 0) at Thu Feb 13 10:40:55 KST 2020, elapsed time 0 seconds

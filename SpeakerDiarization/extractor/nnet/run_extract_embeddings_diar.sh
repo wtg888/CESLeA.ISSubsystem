@@ -44,8 +44,8 @@ utils/split_data.sh $data $nj
 echo "$0: extracting embeddings for $data"
 sdata=$data/split$nj/JOB
 
-#feat="ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:${sdata}/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:${sdata}/vad.scp ark:- |"
-feat="ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:${sdata}/feats.scp ark:- |"
+feat="ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:${sdata}/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:${sdata}/vad.scp ark:- |"
+#feat="ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:${sdata}/feats.scp ark:- |"
 # I use conda to load TF (in cpu case), so some preparations are applied before python. So a wrapper make things more flexible.
 # If no conda is used, simply set "--use-env false"
 if [ $stage -le 0 ]; then

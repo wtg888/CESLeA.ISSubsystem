@@ -16,7 +16,7 @@ for i in range(len(lines)/num_spkr):
         if float(sublist[2][:-1]) > float(cos[:-1]):
             cos=sublist[2]
             spkr=sublist[0]
-    if float(cos) < 0.0:
+    if float(cos) < 30.0:
         spkr="unknown"
     f2.write(utt+' '+spkr+'\n')
 f2.close
