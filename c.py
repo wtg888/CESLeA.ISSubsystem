@@ -29,11 +29,12 @@ def write_wave(path, audio):
         wf.writeframes(audio)
 
 
-o, c = np.frombuffer(read_wave('ELDn_.wav')[0], dtype=np.int16), np.frombuffer(read_wave('CHDn.wav')[0], dtype=np.int16)[:2339786]
-print(o.shape, c.shape)
-a = np.stack([o, c], axis=-1)
-print(a.shape)
-ba = a.tobytes()
-assert ba[:2] == read_wave('ELDn_.wav')[0][:2]
-assert ba[2:4] == read_wave('CHDn.wav')[0][:2]
-write_wave('addn.wav', ba)
+if __name__ == '__main__':
+    o, c = np.frombuffer(read_wave('ELDn_.wav')[0], dtype=np.int16), np.frombuffer(read_wave('CHDn.wav')[0], dtype=np.int16)[:2339786]
+    print(o.shape, c.shape)
+    a = np.stack([o, c], axis=-1)
+    print(a.shape)
+    ba = a.tobytes()
+    assert ba[:2] == read_wave('ELDn_.wav')[0][:2]
+    assert ba[2:4] == read_wave('CHDn.wav')[0][:2]
+    write_wave('addn.wav', ba)
