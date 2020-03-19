@@ -46,8 +46,6 @@ if __name__ == '__main__':
     ans1 = google_stt('testo1.wav')
     ans3 = google_stt('testo3.wav')
 
-
-
     b1 = read_wave('testo1.wav')[0]
     b2 = read_wave('testo3.wav')[0]
 
