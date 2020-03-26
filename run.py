@@ -38,7 +38,6 @@ if __name__ == '__main__':
     D = np.frombuffer(b1, dtype=np.int16)
     data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
     llsollu_ans1 = asr(data)
-
     D = np.frombuffer(b2, dtype=np.int16)
     data = librosa.core.resample(1.0 * D, orig_sr=16000, target_sr=8000).astype(dtype=np.int16).tobytes()
     llsollu_ans2 = asr(data)
