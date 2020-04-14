@@ -7,7 +7,6 @@ ROOT_DIR = os.getcwd()
 SCRIPTS_DIR = os.path.join(ROOT_DIR, 'SpeakerRecogv2', 'online')
 DATA_DIR = os.path.join(ROOT_DIR, 'data')
 
-
 speaker_dict = dict()
 reverse_speaker_dict = dict()
 
