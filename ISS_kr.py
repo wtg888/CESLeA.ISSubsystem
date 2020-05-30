@@ -172,7 +172,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(3)
+    vad = webrtcvad.Vad(2)
 
     ths = []
     ths.append(threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream)))
