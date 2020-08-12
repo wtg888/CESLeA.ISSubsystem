@@ -41,4 +41,4 @@ def asr(filename):
 
 
 if __name__ == '__main__':
-    pass
+    asr('test.wav')
