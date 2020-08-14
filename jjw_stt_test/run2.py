@@ -101,7 +101,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(2)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     t1 = threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream))
     t2 = threading.Thread(target=speech_recog_thread)
