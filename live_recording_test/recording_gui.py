@@ -8,7 +8,8 @@ import os
 import sys
 import datetime
 from tkinter import *
-# os.chdir('..')
+
+os.chdir('..')
 
 from data_split.vad_on_splited_data import preprocess
 # from speaker_recog.predict_speaker_recog import predict_speaker
@@ -133,5 +134,3 @@ if __name__ == '__main__':
         root.mainloop()
     except:
         speaker_recog_v2.train_model()
-        print('aaa')
-        pass
