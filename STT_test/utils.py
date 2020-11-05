@@ -1,5 +1,4 @@
 import numpy as np
-import os
 
 def load_np_file(file_path):
     data = np.load(file_path)
