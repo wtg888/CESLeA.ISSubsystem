@@ -1,14 +1,25 @@
 from flask import Flask, request, jsonify
+import os
+from message import create_msg
+
+IPC_FIFO_NAME = 'ipc'
+fifo = os.open(IPC_FIFO_NAME, os.O_WRONLY)
 
 app = Flask(__name__)
 speaker_dict = {}
 reverse_speaker_dict = {}
+
+def write_message(msg):
+    msg = msg.encode('utf8')
+    msg = create_msg(msg)
+    os.write(fifo, msg)
 
 
 @app.route("/stt", methods=['POST'])
 def stt():
     text = request.form['text']
     print(text)
+    write_message('stt\t' + text)
     return "OK"
 
 
@@ -16,6 +27,7 @@ def stt():
 def spk():
     text = request.form['text']
     print(text)
+    write_message('spk\t' + text)
     return "OK"
 
 
@@ -23,6 +35,7 @@ def spk():
 def env():
     text = request.form['text']
     print(text)
+    write_message('env\t' + text)
     return "OK"
 
 
