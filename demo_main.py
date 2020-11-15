@@ -2,7 +2,6 @@
 import queue
 import threading
 from tkinter import *
-import flask_fn
 
 stream = queue.Queue()
 speechQ = queue.Queue()
@@ -21,7 +20,7 @@ def main():
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
     ths = list()
-    ths.append(threading.Thread(target=flask_fn.run_app))
+    # ths.append(threading.Thread(target=flask_fn.run_app))
     for th in ths:
         th.daemon = True
         th.start()
