@@ -33,6 +33,20 @@ def read_thd():
         msgQ.put_nowait(msg)
 
 
+def change_queue(stt_lbl, spk_lbl, env_lbl):
+    while True:
+        try:
+            type, text = msgQ.get()
+            if type == 'stt':
+                stt_lbl.config(text=text)
+            elif type == 'spk':
+                spk_lbl.config(text=text)
+            elif type == 'env':
+                env_lbl.config(text=text)
+        except queue.Empty:
+            continue
+
+
 def main():
     root = Tk()
     root.geometry("1500x500")
@@ -58,6 +72,7 @@ def main():
 
     ths = list()
     ths.append(threading.Thread(target=read_thd))
+    ths.append(threading.Thread(target=change_queue, args=(stt_lbl, spk_lbl, env_lbl)))
     for th in ths:
         th.daemon = True
         th.start()
