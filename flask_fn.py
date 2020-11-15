@@ -3,7 +3,7 @@ import os
 from message import create_msg
 
 IPC_FIFO_NAME = 'ipc'
-fifo = os.open(IPC_FIFO_NAME, os.O_SYNC | os.O_CREAT | os.O_RDWR)
+fifo = os.open(IPC_FIFO_NAME, os.O_CREAT | os.O_RDWR)
 
 app = Flask(__name__)
 speaker_dict = {}
