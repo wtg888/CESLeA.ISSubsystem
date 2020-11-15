@@ -11,7 +11,7 @@ count = 0
 
 
 IPC_FIFO_NAME = 'ipc'
-fifo = os.open(IPC_FIFO_NAME, os.O_RDONLY)
+fifo = os.open(IPC_FIFO_NAME, os.O_CREAT | os.O_RDONLY)
 
 
 def get_message():
@@ -38,11 +38,23 @@ def main():
     root.geometry("1500x500")
     root.title('Result')
 
-    lbl = Label(root, text="")
-    lbl.config()
-    lbl.config(width=50)
-    lbl.config(font=("Courier", 44))
-    lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
+    stt_lbl = Label(root, text="text")
+    stt_lbl.config()
+    stt_lbl.config(width=50)
+    stt_lbl.config(font=("Courier", 20))
+    stt_lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
+
+    spk_lbl = Label(root, text="spk")
+    spk_lbl.config()
+    spk_lbl.config(width=50)
+    spk_lbl.config(font=("Courier", 20))
+    spk_lbl.place(relx=0.5, rely=0.17, anchor=CENTER)
+
+    env_lbl = Label(root, text="env")
+    env_lbl.config()
+    env_lbl.config(width=50)
+    env_lbl.config(font=("Courier", 20))
+    env_lbl.place(relx=0.5, rely=0.84, anchor=CENTER)
 
     ths = list()
     ths.append(threading.Thread(target=read_thd))
