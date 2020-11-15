@@ -18,9 +18,13 @@ fifo = os.open(IPC_FIFO_NAME, os.O_RDONLY)
 def get_message():
     """Get a message from the named pipe."""
     msg_size_bytes = os.read(fifo, 4)
+    while len(msg_size_bytes) < 4:
+        msg_size_bytes += os.read(fifo, 4 - len(msg_size_bytes))
     msg_size = decode_msg_size(msg_size_bytes)
-    msg_content = os.read(fifo, msg_size).decode("utf8")
-    return msg_content
+    msg_content = os.read(fifo, msg_size)
+    while len(msg_content) < msg_size:
+        msg_content += os.read(fifo, 4 - len(msg_content))
+    return msg_content.decode("utf8").split('\t')
 
 
 def read_thd():
