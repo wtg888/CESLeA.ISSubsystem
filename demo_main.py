@@ -54,7 +54,8 @@ def main():
 
     stt_lbl = Label(root, text="text")
     stt_lbl.config()
-    stt_lbl.config(width=50)
+    stt_lbl.config(width=1500)
+    stt_lbl.config(wraplength=1500)
     stt_lbl.config(font=("Courier", 20))
     stt_lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
