@@ -6,8 +6,7 @@ from tkinter import *
 from message import decode_msg_size
 
 
-stream = queue.Queue()
-speechQ = queue.Queue()
+msgQ = queue.Queue()
 count = 0
 
 
@@ -31,6 +30,7 @@ def read_thd():
     while True:
         msg = get_message()
         print(msg)
+        msgQ.put_nowait(msg)
 
 
 def main():
