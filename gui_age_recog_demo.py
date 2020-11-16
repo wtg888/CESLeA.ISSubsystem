@@ -12,9 +12,16 @@ from tkinter import *
 import shutil
 
 import age_recog_v2
+import requests
 
 On = True
 q = queue.Queue()
+
+URL = 'http://192.168.1.100:8080/spk'
+
+
+def post_res(spk):
+    res = requests.post(URL, data={'text': spk})
 
 
 def write_wave(path, audio, sample_rate):
@@ -83,6 +90,7 @@ def speaker_recog_thread(outLabel):
             shutil.copy(file_name, os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'))
             speaker = age_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker)
+            post_res(speaker)
             print(now_s, speaker)
             On = True
         except queue.Empty:

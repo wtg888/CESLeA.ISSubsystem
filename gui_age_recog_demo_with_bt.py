@@ -12,10 +12,18 @@ from data_split.vad_on_splited_data import preprocess
 # from speaker_recog.predict_speaker_recog import predict_speaker
 import age_recog_v2 as speaker_recog_v2
 
+import requests
+
 
 CHUNK = 2048
 sample_rate = 16000
 i = 0
+
+URL = 'http://192.168.1.100:8080/spk'
+
+
+def post_res(spk):
+    res = requests.post(URL, data={'text': spk})
 
 
 def write_wave(path, audio):
@@ -75,6 +83,7 @@ def command(bt, button, lbl, thread):
         if th.isSuccess:
             spk = speaker_recog_v2.test_speaker_recog()
             lbl.config(text=spk)
+            post_res(spk)
         bt.set("start")
         button.config(state="normal")
     else:
