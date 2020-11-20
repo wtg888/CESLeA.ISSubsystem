@@ -14,7 +14,7 @@ import shutil
 import age_recog_v2 as age_recog_v2
 import requests
 
-On = True
+ON = True
 q = queue.Queue()
 
 # URL = 'http://192.168.1.100:8080/spk'
@@ -34,7 +34,7 @@ def write_wave(path, audio, sample_rate=16000):
 
 
 def record_thread(sample_rate, frame_duration_ms, length_ms, inference_ms, stream):
-    global On
+    global ON
     chunk = int(sample_rate * (frame_duration_ms / 1000.0))
     ring_buffer = collections.deque(maxlen=length_ms // frame_duration_ms)
 
@@ -48,15 +48,14 @@ def record_thread(sample_rate, frame_duration_ms, length_ms, inference_ms, strea
                 num += 1
                 if num == inference_ms // frame_duration_ms:
                     num = 0
-                    data = b''.join([f for f in ring_buffer])
-                    q.put_nowait(data)
-
+                    if ON:
+                        data = b''.join([f for f in ring_buffer])
+                        q.put_nowait(data)
     except:
         pass
 
 
 def speaker_recog_thread(outLabel):
-    global d
     while True:
         try:
             data = q.get()
@@ -70,7 +69,19 @@ def speaker_recog_thread(outLabel):
             continue
 
 
+def command(bt, lbl):
+    global ON
+    if ON:
+        ON = False
+        bt.set("start")
+    else:
+        ON = True
+        lbl.config(text='이름')
+        bt.set("stop")
+
+
 def main():
+    global ON
     age_recog_v2.load_speaker_list()
     RATE = 16000
     frame_duration_ms = 1000
@@ -95,6 +106,13 @@ def main():
     lbl.config(width=10)
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
+
+    btn_text = StringVar()
+    button = Button(root, overrelief="solid", width=10, repeatdelay=0, repeatinterval=100, textvar=btn_text)
+    btn_text.set("start")
+    ON = False
+    button.place(relx=0.5, rely=1.0, anchor='s')
+    button.config(command=lambda: command(btn_text, lbl))
 
     t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 4000, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))

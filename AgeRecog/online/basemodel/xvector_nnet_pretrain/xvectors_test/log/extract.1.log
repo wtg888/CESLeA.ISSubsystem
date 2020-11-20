@@ -1,8 +1,8 @@
 # nnet/wrap/extract_wrapper.sh --gpuid -1 --env tf_cpu --min-chunk-size 25 --chunk-size 10000 --normalize false --node output /home/mi/PycharmProjects/CESLeA/AgeRecog/online/basemodel/xvector_nnet_pretrain "ark:apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/AgeRecog/online/data/test/split1/1/feats.scp ark:- | select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/AgeRecog/online/data/test/split1/1/vad.scp ark:- |" "ark:| copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/AgeRecog/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.1.ark,/home/mi/PycharmProjects/CESLeA/AgeRecog/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.1.scp" 
-# Started at Fri Nov 20 17:34:39 KST 2020
+# Started at Fri Nov 20 21:09:59 KST 2020
 #
 INFO:tensorflow:Extract embedding from output
-2020-11-20 17:34:40.561024: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-11-20 21:10:00.258072: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
 INFO:tensorflow:Extract embedding from node output
 WARNING:tensorflow:From /media/mi/data/PycharmProjects/CESLeA/AgeRecog/extractor/model/pooling.py:23: calling reduce_mean (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
 Instructions for updating:
@@ -18,4 +18,4 @@ INFO:tensorflow:Restoring parameters from /home/mi/PycharmProjects/CESLeA/AgeRec
 INFO:tensorflow:Succeed to load checkpoint model-2610000
 LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
 # Accounting: time=2 threads=1
-# Ended (code 0) at Fri Nov 20 17:34:41 KST 2020, elapsed time 2 seconds
+# Ended (code 0) at Fri Nov 20 21:10:01 KST 2020, elapsed time 2 seconds
