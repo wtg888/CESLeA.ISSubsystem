@@ -9,6 +9,7 @@ app = Flask(__name__)
 speaker_dict = {}
 reverse_speaker_dict = {}
 
+
 def write_message(msg):
     msg = msg.encode('utf8')
     msg = create_msg(msg)
