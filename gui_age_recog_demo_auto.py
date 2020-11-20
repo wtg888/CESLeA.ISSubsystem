@@ -17,6 +17,7 @@ import requests
 On = True
 q = queue.Queue()
 
+# URL = 'http://192.168.1.100:8080/spk'
 URL = 'http://192.168.1.100:8080/spk'
 
 
