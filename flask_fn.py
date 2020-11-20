@@ -21,7 +21,7 @@ def stt():
     text = request.form['text']
     print(text)
     write_message('stt\t' + text)
-    return "OK"
+    return "200 OK"
 
 
 @app.route("/spk", methods=['POST'])
@@ -29,7 +29,7 @@ def spk():
     text = request.form['text']
     print(text)
     write_message('spk\t' + text)
-    return "OK"
+    return "200 OK"
 
 
 @app.route("/env", methods=['POST'])
@@ -37,7 +37,7 @@ def env():
     text = request.form['text']
     print(text)
     write_message('env\t' + text)
-    return "OK"
+    return "200 OK"
 
 
 def run_app():
