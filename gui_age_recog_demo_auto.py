@@ -11,7 +11,7 @@ import pyaudio
 from tkinter import *
 import shutil
 
-import speaker_recog_v2 as age_recog_v2
+import age_recog_v2 as age_recog_v2
 import requests
 
 On = True
