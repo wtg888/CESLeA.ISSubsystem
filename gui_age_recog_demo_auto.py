@@ -96,7 +96,7 @@ def main():
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 5000, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 4000, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
     t1.daemon = True
     t2.daemon = True
