@@ -46,14 +46,21 @@ def on_close(ws):
 
 def on_open(ws):
     global recoord
+    global stream
     recoord = True
     ws.send(asrRequestOption)
+    stream = p.open(format=FORMAT,
+                    channels=CHANNELS,
+                    rate=RATE,
+                    input=True,
+                    frames_per_buffer=CHUNK)
+
     def run(*args):
         while recoord:
             for i in range(3):
-                time.sleep(1)
-                ws.send("Hello %d" % i)
-            time.sleep(1)
+                frame = stream.read(CHUNK)
+                ws.send(frame)
+    
     thread.start_new_thread(run, ())
 
 
