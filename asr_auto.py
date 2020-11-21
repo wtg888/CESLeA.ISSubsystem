@@ -20,7 +20,7 @@ asrRequestOption = json.dumps({
     'partial': True,
     'cfl': False
 })
-print(asrRequestOption)
+print('asrRequestOption', asrRequestOption)
 
 
 def on_message(ws, message):
