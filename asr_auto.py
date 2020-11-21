@@ -3,10 +3,11 @@ try:
     import thread
 except ImportError:
     import _thread as thread
-import time
+
 import json
 import pyaudio
 import struct
+import requests
 
 
 recoord = False
@@ -17,6 +18,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 p = pyaudio.PyAudio()
 stream = None
+state = None
 
 asrRequestOption = json.dumps({
     'productcode': "DIGITALW",
@@ -32,19 +34,53 @@ asrRequestOption = json.dumps({
 })
 print('asrRequestOption', asrRequestOption)
 
+# URL = 'http://192.168.1.115:8080/stt'
+URL = 'http://127.0.0.1:8080/stt'
+
+
+def post_res(text):
+    res = requests.post(URL, data={'text': text})
+
 
 def on_message(ws, message):
-    print("event.data:", message)
+    global state
+    global recoord
+    # print("event.data:", message)
+    data = json.loads(message)
+    if state == 1:
+        if data['result'] == 1:
+            state = 2
+        else:
+            recoord = False
+            ws.close()
+    else:
+        if data['rcode'] == 0:
+            # epd
+            recoord = False
+        elif data['rcode'] == 1:
+            # final result
+            print(data['result'])
+            post_res(data['result'])
+            recoord = False
+            ws.close()
+        else:
+            # partial result
+            print(data['result'])
+            post_res(data['result'])
 
 
 def on_error(ws, error):
+    global recoord
     print(error)
+    recoord = False
     stream.stop_stream()
     stream.close()
 
 
 def on_close(ws):
+    global recoord
     print("onclose")
+    recoord = False
     stream.stop_stream()
     stream.close()
 
@@ -52,6 +88,8 @@ def on_close(ws):
 def on_open(ws):
     global recoord
     global stream
+    global state
+    state = 1
     recoord = True
     ws.send(asrRequestOption)
     stream = p.open(format=FORMAT,
