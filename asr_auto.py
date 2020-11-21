@@ -1,4 +1,4 @@
-import websocket
+import websockets
 try:
     import thread
 except ImportError:
@@ -30,8 +30,8 @@ def on_open(ws):
 
 
 if __name__ == "__main__":
-    websocket.enableTrace(True)
-    ws = websocket.WebSocketApp("ws://echo.websocket.org/",
+    websockets.enableTrace(True)
+    ws = websockets.WebSocketApp("ws://echo.websocket.org/",
                               on_message = on_message,
                               on_error = on_error,
                               on_close = on_close)
