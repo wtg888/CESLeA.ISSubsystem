@@ -4,10 +4,18 @@ try:
 except ImportError:
     import _thread as thread
 import time
-
 import json
+import pyaudio
+
 
 recoord = False
+
+RATE = 8000
+CHUNK = 4096
+FORMAT = pyaudio.paInt16
+CHANNELS = 1
+p = pyaudio.PyAudio()
+stream = None
 
 asrRequestOption = json.dumps({
     'productcode': "DIGITALW",
