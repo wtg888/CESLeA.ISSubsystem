@@ -70,7 +70,7 @@ def on_open(ws):
 
 
 if __name__ == "__main__":
-    # websocket.enableTrace(True)
+    websocket.enableTrace(True)
     ws = websocket.WebSocketApp("wss://asrdemo.llsollu.com/asr/recognition/websocket/",
                               on_message = on_message,
                               on_error = on_error,
