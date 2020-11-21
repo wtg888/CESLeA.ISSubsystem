@@ -35,7 +35,7 @@ asrRequestOption = json.dumps({
 print('asrRequestOption', asrRequestOption)
 
 # URL = 'http://192.168.1.115:8080/stt'
-URL = 'http://127.0.0.1:8080/stt'
+URL = 'http://127.0.0.1:8000/stt'
 
 
 def post_res(text):
@@ -114,4 +114,9 @@ if __name__ == "__main__":
                               on_error = on_error,
                               on_close = on_close)
     ws.on_open = on_open
-    ws.run_forever()
+
+    try:
+        while True:
+            ws.run_forever()
+    except:
+        pass
