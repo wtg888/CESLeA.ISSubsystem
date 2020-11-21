@@ -39,10 +39,14 @@ def on_message(ws, message):
 
 def on_error(ws, error):
     print(error)
+    stream.stop_stream()
+    stream.close()
 
 
 def on_close(ws):
     print("onclose")
+    stream.stop_stream()
+    stream.close()
 
 
 def on_open(ws):
@@ -60,19 +64,16 @@ def on_open(ws):
         while recoord:
             for i in range(3):
                 frame = stream.read(CHUNK)
-                print(struct.pack('c', 0))
                 ws.send(struct.pack('b', 0) + frame)
 
     thread.start_new_thread(run, ())
 
 
 if __name__ == "__main__":
-    print(struct.pack('b', 0))
-    pass
     # websocket.enableTrace(True)
-    # ws = websocket.WebSocketApp("ws://echo.websocket.org/",
-    #                           on_message = on_message,
-    #                           on_error = on_error,
-    #                           on_close = on_close)
-    # ws.on_open = on_open
-    # ws.run_forever()
+    ws = websocket.WebSocketApp("wss://asrdemo.llsollu.com/asr/recognition/websocket/",
+                              on_message = on_message,
+                              on_error = on_error,
+                              on_close = on_close)
+    ws.on_open = on_open
+    ws.run_forever()
