@@ -7,6 +7,7 @@ import time
 
 import json
 
+recoord = False
 
 asrRequestOption = json.dumps({
     'productcode': "DIGITALW",
@@ -36,14 +37,15 @@ def on_close(ws):
 
 
 def on_open(ws):
+    global recoord
+    recoord = True
+    ws.send(asrRequestOption)
     def run(*args):
-        ws.send()
-        for i in range(3):
+        while recoord:
+            for i in range(3):
+                time.sleep(1)
+                ws.send("Hello %d" % i)
             time.sleep(1)
-            ws.send("Hello %d" % i)
-        time.sleep(1)
-        ws.close()
-        print("thread terminating...")
     thread.start_new_thread(run, ())
 
 
