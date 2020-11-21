@@ -5,6 +5,23 @@ except ImportError:
     import _thread as thread
 import time
 
+import json
+
+
+asrRequestOption = json.dumps({
+    'productcode': "DIGITALW",
+    'domain': 'default',
+    'cmd': "START",
+    'transactionid': "0",
+    'language': "kor",
+    'epd': True,
+    'frmt': "0",
+    'slu': False,
+    'partial': True,
+    'cfl': False
+})
+print(asrRequestOption)
+
 
 def on_message(ws, message):
     print(message)
@@ -30,10 +47,11 @@ def on_open(ws):
 
 
 if __name__ == "__main__":
-    websocket.enableTrace(True)
-    ws = websocket.WebSocketApp("ws://echo.websocket.org/",
-                              on_message = on_message,
-                              on_error = on_error,
-                              on_close = on_close)
-    ws.on_open = on_open
-    ws.run_forever()
+    pass
+    # websocket.enableTrace(True)
+    # ws = websocket.WebSocketApp("ws://echo.websocket.org/",
+    #                           on_message = on_message,
+    #                           on_error = on_error,
+    #                           on_close = on_close)
+    # ws.on_open = on_open
+    # ws.run_forever()
