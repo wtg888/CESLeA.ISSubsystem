@@ -24,7 +24,7 @@ print('asrRequestOption', asrRequestOption)
 
 
 def on_message(ws, message):
-    print(message)
+    print("event.data:", message)
 
 
 def on_error(ws, error):
@@ -32,11 +32,12 @@ def on_error(ws, error):
 
 
 def on_close(ws):
-    print("### closed ###")
+    print("onclose")
 
 
 def on_open(ws):
     def run(*args):
+        ws.send()
         for i in range(3):
             time.sleep(1)
             ws.send("Hello %d" % i)
