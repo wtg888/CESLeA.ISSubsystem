@@ -14,4 +14,4 @@ playsound
 gtts
 google-cloud-speech
 google-cloud-texttospeech
-websockets
+websocket
