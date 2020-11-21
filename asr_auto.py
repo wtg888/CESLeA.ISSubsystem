@@ -6,6 +6,7 @@ except ImportError:
 import time
 import json
 import pyaudio
+import struct
 
 
 recoord = False
@@ -59,12 +60,14 @@ def on_open(ws):
         while recoord:
             for i in range(3):
                 frame = stream.read(CHUNK)
-                ws.send(frame)
-    
+                print(struct.pack('c', 0))
+                ws.send(struct.pack('b', 0) + frame)
+
     thread.start_new_thread(run, ())
 
 
 if __name__ == "__main__":
+    print(struct.pack('b', 0))
     pass
     # websocket.enableTrace(True)
     # ws = websocket.WebSocketApp("ws://echo.websocket.org/",
