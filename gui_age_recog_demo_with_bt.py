@@ -19,7 +19,7 @@ CHUNK = 2048
 sample_rate = 16000
 i = 0
 
-URL = 'http://192.168.1.100:8080/spk'
+URL = 'http://192.168.1.115:8080/spk'
 
 
 def post_res(spk):
