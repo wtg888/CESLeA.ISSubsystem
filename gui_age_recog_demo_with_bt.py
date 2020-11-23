@@ -83,7 +83,7 @@ def command(bt, button, lbl, thread):
         if th.isSuccess:
             spk = speaker_recog_v2.test_speaker_recog()
             lbl.config(text=spk)
-            post_res(spk)
+            # post_res(spk)
         bt.set("start")
         button.config(state="normal")
     else:

@@ -22,7 +22,8 @@ URL = 'http://192.168.1.115:8080/spk'
 
 
 def post_res(spk):
-    res = requests.post(URL, data={'text': spk})
+    # res = requests.post(URL, data={'text': spk})
+    pass
 
 
 def write_wave(path, audio, sample_rate=16000):
@@ -59,7 +60,6 @@ def speaker_recog_thread(outLabel):
     while True:
         try:
             data = q.get()
-
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
             speaker = age_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker)
@@ -114,7 +114,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 4000, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 2000, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
     t1.daemon = True
     t2.daemon = True
