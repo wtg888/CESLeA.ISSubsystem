@@ -59,9 +59,9 @@ def main():
     stt_lbl.config(font=("Courier", 50, 'bold'))
     stt_lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-    spk_lbl = Label(root, text="spk")
+    spk_lbl = Label(root, text="spk\npre_spk")
     spk_lbl.config()
-    spk_lbl.config(width=50, height=1) #, borderwidth=2, relief="groove")
+    spk_lbl.config(width=50, height=2) #, borderwidth=2, relief="groove")
     spk_lbl.config(font=("Courier", 55, 'bold'))
     spk_lbl.place(relx=0.5, rely=0.10, anchor=CENTER)
 
