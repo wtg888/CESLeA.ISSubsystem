@@ -34,12 +34,12 @@ asrRequestOption = json.dumps({
 })
 print('asrRequestOption', asrRequestOption)
 
-# URL = 'http://192.168.1.115:8080/stt'
-URL = 'http://127.0.0.1:8000/stt'
+URL = 'http://192.168.1.115:8080/stt'
+# URL = 'http://127.0.0.1:8000/stt'
 
 
 def post_res(text):
-    # res = requests.post(URL, data={'text': text})
+    res = requests.post(URL, data={'text': text})
     pass
 
 
