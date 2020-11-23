@@ -102,11 +102,12 @@ def on_open(ws):
                     frames_per_buffer=CHUNK)
 
     def run(*args):
-        while recoord:
-            for i in range(3):
+        try:
+            while recoord:
                 frame = stream.read(CHUNK)
                 ws.send(struct.pack('b', 0) + frame)
-
+        except:
+            pass
     thread.start_new_thread(run, ())
 
 
