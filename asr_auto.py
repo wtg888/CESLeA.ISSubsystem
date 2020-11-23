@@ -39,13 +39,14 @@ URL = 'http://127.0.0.1:8000/stt'
 
 
 def post_res(text):
-    res = requests.post(URL, data={'text': text})
+    # res = requests.post(URL, data={'text': text})
+    pass
 
 
 def on_message(ws, message):
     global state
     global recoord
-    # print("event.data:", message)
+    print("event.data:", message)
     data = json.loads(message)
     if state == 1:
         if data['result'] == 1:
