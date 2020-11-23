@@ -20,6 +20,7 @@ q = queue.Queue()
 # URL = 'http://192.168.1.100:8080/spk'
 URL = 'http://192.168.1.115:8080/spk'
 
+pre_spk = None
 
 def post_res(spk):
     res = requests.post(URL, data={'text': spk})
@@ -56,23 +57,33 @@ def record_thread(sample_rate, frame_duration_ms, length_ms, inference_ms, strea
         pass
 
 
-def speaker_recog_thread(outLabel):
+def speaker_recog_thread(outLabel, outLabelp):
+    global pre_spk
     while True:
         try:
             data = q.get()
+            outLabel.config(text='...')
+            post_res('%s\n%s'%('...', pre_spk))
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
             speaker = age_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker)
-            post_res(speaker)
-            print(speaker)
+            if speaker != '...':
+                post_res('%s\n%s'%(speaker, pre_spk))
+                print(speaker)
+                if pre_spk != speaker:
+                    pre_spk = speaker
+                    outLabelp.config(text=speaker)
         except queue.Empty:
             continue
 
 
 def command(bt, lbl):
     global ON
+    global q
     if ON:
         ON = False
+        with q.mutex:
+            q.queue.clear()
         bt.set("start")
     else:
         ON = True
@@ -99,13 +110,19 @@ def main():
                     frames_per_buffer=CHUNK)
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("200x400")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
     lbl.config(width=10)
     lbl.config(font=("Courier", 44))
-    lbl.place(relx=0.5, rely=0.5, anchor=CENTER)
+    lbl.place(relx=0.5, rely=0.33, anchor=CENTER)
+
+    lbl_p = Label(root, text="이름")
+    lbl_p.config()
+    lbl_p.config(width=10)
+    lbl_p.config(font=("Courier", 44))
+    lbl_p.place(relx=0.5, rely=0.66, anchor=CENTER)
 
     btn_text = StringVar()
     button = Button(root, overrelief="solid", width=10, repeatdelay=0, repeatinterval=100, textvar=btn_text)
@@ -115,7 +132,7 @@ def main():
     button.config(command=lambda: command(btn_text, lbl))
 
     t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 2000, stream))
-    t2 = threading.Thread(target=speaker_recog_thread, args=(lbl,))
+    t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True
     t1.start()
