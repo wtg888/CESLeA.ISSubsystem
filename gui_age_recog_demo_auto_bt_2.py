@@ -95,7 +95,7 @@ def main():
     global ON
     age_recog_v2.load_speaker_list()
     RATE = 16000
-    frame_duration_ms = 1000
+    frame_duration_ms = 100
     CHUNK = int(RATE * (frame_duration_ms / 1000.0))
     FORMAT = pyaudio.paInt16
     CHANNELS = 1
@@ -131,7 +131,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 2000, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 4500, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True
