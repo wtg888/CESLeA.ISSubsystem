@@ -23,8 +23,10 @@ URL = 'http://192.168.1.115:8080/spk'
 pre_spk = None
 
 def post_res(spk):
-    res = requests.post(URL, data={'text': spk})
-    pass
+    try:
+        res = requests.post(URL, data={'text': spk})
+    except:
+        pass
 
 
 def write_wave(path, audio, sample_rate=16000):
@@ -132,7 +134,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 3000, 1000, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 1000, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True

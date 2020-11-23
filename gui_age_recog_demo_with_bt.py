@@ -23,8 +23,10 @@ URL = 'http://192.168.1.115:8080/spk'
 
 
 def post_res(spk):
-    res = requests.post(URL, data={'text': spk})
-
+    try:
+        res = requests.post(URL, data={'text': spk})
+    except:
+        pass
 
 def write_wave(path, audio):
     with contextlib.closing(wave.open(path, 'wb')) as wf:

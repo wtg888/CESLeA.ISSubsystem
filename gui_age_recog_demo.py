@@ -21,8 +21,10 @@ URL = 'http://192.168.1.115:8080/spk'
 
 
 def post_res(spk):
-    res = requests.post(URL, data={'text': spk})
-
+    try:
+        res = requests.post(URL, data={'text': spk})
+    except:
+        pass
 
 def write_wave(path, audio, sample_rate):
     with contextlib.closing(wave.open(path, 'wb')) as wf:
@@ -116,7 +118,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(1)  # 0~3   3: the most aggressive
+    vad = webrtcvad.Vad(3)  # 0~3   3: the most aggressive
 
     root = Tk()
     root.geometry("200x200")

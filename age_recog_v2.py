@@ -5,7 +5,7 @@ import contextlib
 
 ROOT_DIR = os.getcwd()
 SCRIPTS_DIR = os.path.join(ROOT_DIR, 'AgeRecog', 'online')
-DATA_DIR = os.path.join(ROOT_DIR, '300wav_upsample')
+DATA_DIR = os.path.join(ROOT_DIR, 'demo_data')
 
 speaker_dict = dict()
 reverse_speaker_dict = dict()
