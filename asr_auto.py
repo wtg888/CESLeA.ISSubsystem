@@ -120,9 +120,6 @@ if __name__ == "__main__":
 
     try:
         while True:
-            try:
-                ws.run_forever()
-            except:
-                pass
+            ws.run_forever()
     except:
         pass
