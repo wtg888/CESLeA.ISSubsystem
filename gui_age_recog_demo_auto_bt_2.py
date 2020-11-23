@@ -87,7 +87,8 @@ def command(bt, lbl):
         bt.set("start")
     else:
         ON = True
-        lbl.config(text='이름')
+        lbl.config(text='...')
+        post_res('%s\n%s' % ('...', pre_spk))
         bt.set("stop")
 
 
