@@ -60,14 +60,16 @@ def on_message(ws, message):
             recoord = False
         elif data['rcode'] == 1:
             # final result
-            print(data['result'])
-            post_res(data['result'])
+            if data['result']:
+                print(data['result'])
+                post_res(data['result'])
             recoord = False
             ws.close()
         else:
             # partial result
-            print(data['result'])
-            post_res(data['result'])
+            if data['result']:
+                print(data['result'])
+                post_res(data['result'])
 
 
 def on_error(ws, error):
