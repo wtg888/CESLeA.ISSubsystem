@@ -22,7 +22,8 @@ how to use online model
 1. check path and change path in online/path.sh if you need.
 2. ./configure.sh #exec only one time
 3. ./run_train.sh #if your dataset has changed you should run this script.
-4. ./run_test.sh  #make result in result.txt
+4. ./run_extractor.sh #run online extractor
+5. ./run_test.sh  #make result in result.txt
 
 -----------------------------------------------------------------------------------
 how to train new model

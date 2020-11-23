@@ -99,7 +99,7 @@ if __name__ == '__main__':
     speaker_recog_v2.load_speaker_list()
 
     root = Tk()
-    root.geometry("200x200")
+    root.geometry("400x200")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()

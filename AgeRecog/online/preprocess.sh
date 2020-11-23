@@ -20,6 +20,7 @@ exp=$PROJECT_ROOT/preprocess_log
 mfccdir=$PROJECT_ROOT/mfcc
 vaddir=$PROJECT_ROOT/mfcc
 datadir=$DATA_ROOT
+nnetdir=$PROJECT_ROOT/basemodel/xvector_nnet_pretrain
 
 if [ $# != 1 ]; then
   echo "Usage: $0 <stage>"
@@ -32,7 +33,7 @@ stage=$1
 
 if [ $stage = train ]; then
   rm -rf $data/spkrs
-  make_data_all.pl $datadir $data/spkrs
+  make_data_all.pl $datadir/train $data/spkrs
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in spkrs; do
     steps/make_mfcc.sh --write-utt2num-frames true \
@@ -42,10 +43,13 @@ if [ $stage = train ]; then
     sid/compute_vad_decision.sh --nj 1 --cmd "$train_cmd" \
       $data/${name} $exp/make_vad $vaddir
     utils/fix_data_dir.sh $data/${name}
+    cp $data/${name}/vad.scp $data/${name}/split1/1/vad.scp
   done
 fi
 if [ $stage = test ]; then
-  rm -rf $data/test
+  rm -rf $data/test 
+  rm -rf $nnetdir/xvectors_test/xvector.scp $nnetdir/xvectors_test/xvector.ark
+  rm -rf $nnetdir/xvectors_test/xvector_done.scp $nnetdir/xvectors_test/xvector_done.ark
   make_data_test.pl $datadir $data/test
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in test; do
@@ -56,5 +60,21 @@ if [ $stage = test ]; then
     sid/compute_vad_decision.sh --nj 1 --cmd "$train_cmd" \
       $data/${name} $exp/make_vad $vaddir
     utils/fix_data_dir.sh $data/${name}
+    cp $data/${name}/vad.scp $data/${name}/split1/1/vad.scp
+  done
+fi
+if [ $stage = test_offline ]; then
+  rm -rf $data/test_offline
+  make_data_test_offline.pl $datadir $data/test
+  # Make MFCCs and compute the energy-based VAD for each dataset
+  for name in test; do
+    steps/make_mfcc.sh --write-utt2num-frames true \
+      --mfcc-config conf/mfcc.conf --nj 1 --cmd "$train_cmd" \
+      $data/${name} $exp/make_mfcc $mfccdir
+    utils/fix_data_dir.sh $data/${name}
+    sid/compute_vad_decision.sh --nj 1 --cmd "$train_cmd" \
+      $data/${name} $exp/make_vad $vaddir
+    utils/fix_data_dir.sh $data/${name}
+    cp $data/${name}/vad.scp $data/${name}/split1/1/vad.scp
   done
 fi

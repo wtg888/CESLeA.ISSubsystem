@@ -111,7 +111,7 @@ def main():
                     frames_per_buffer=CHUNK)
 
     root = Tk()
-    root.geometry("200x400")
+    root.geometry("400x400")
     root.title('Result')
     lbl = Label(root, text="이름")
     lbl.config()
@@ -132,7 +132,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 5000, 4500, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 3000, 1000, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True

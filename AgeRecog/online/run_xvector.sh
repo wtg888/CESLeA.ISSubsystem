@@ -43,11 +43,30 @@ if [ $stage = train ]; then
 fi
 
 if [ $stage = test ]; then
+  while :
+  do
+    if [ -f "$nnetdir/xvectors_test/xvector_done.scp" ]; then
+      break
+    else
+      sleep .1
+    fi
+  done
+  #cosine similarity between test xvector and spkrs xvector
+  mkdir -p $nnetdir/../scores
+  cat $trials | awk '{print $1, $2}' | \
+    ivector-compute-dot-products - \
+      "ark:ivector-normalize-length scp:$nnetdir/xvectors/spk_xvector.scp ark:- |" \
+      "ark:ivector-normalize-length scp:$nnetdir/xvectors_test/xvector_done.scp ark:- |" \
+      $nnetdir/../scores/scores.cos
+
+fi
+
+if [ $stage = test_offline ]; then
   #extract xvector in test data
   cd $extractor
   nnet/run_extract_embeddings.sh --cmd "$train_cmd" --nj 1 --use-gpu false --checkpoint $checkpoint --stage 0 \
     --chunk-size 10000 --normalize false --node "output" \
-    $nnetdir $data/test $nnetdir/xvectors_test
+    $nnetdir $data/test_offline $nnetdir/xvectors_test_offline
   #cosine similarity between test xvector and spkrs xvector
   mkdir -p $nnetdir/../scores
   cat $trials | awk '{print $1, $2}' | \

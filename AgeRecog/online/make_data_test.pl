@@ -15,8 +15,8 @@ if (@ARGV != 2) {
 ($data_base, $out_dir) = @ARGV;
 
 opendir my $dh, "$data_base/test" or die "Cannot open directory: $!";
-opendir my $dh2, "$data_base" or die "Cannot open directory: $!";
-my @spkr_dirs = grep {-d "$data_base/$_" && ! /^\.{1,2}$/} readdir($dh2);
+opendir my $dh2, "$data_base/train" or die "Cannot open directory: $!";
+my @spkr_dirs = grep {-d "$data_base/train/$_" && ! /^\.{1,2}$/} readdir($dh2);
 closedir $dh;
 closedir $dh2;
 
@@ -41,7 +41,7 @@ foreach (@files) {
     my $spkr_id = $_;
     if ( $spkr_id eq "test") {
     }else {
-      print TRIALS "$spkr_id", " test", "\n";
+      print TRIALS "$spkr_id", " $name", "\n";
     }
   }
 }
