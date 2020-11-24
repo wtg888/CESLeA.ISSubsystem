@@ -38,6 +38,7 @@ def change_queue(stt_lbl, spk_lbl, env_lbl):
         try:
             type, text = msgQ.get()
             if type == 'stt':
+                text = text.replace('f', '')
                 stt_lbl.config(text=text)
             elif type == 'spk':
                 spk_lbl.config(text=text)
