@@ -30,7 +30,7 @@ eng_th = 1e-4
 def modefinder(numbers):
     c = Counter(numbers)
     mode = c.most_common(1)
-    if mode[0][1] > 0:
+    if mode[0][1] > 1:
         return mode[0][0]
     else:
         return None
