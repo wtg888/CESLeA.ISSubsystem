@@ -104,8 +104,8 @@ def speaker_recog_thread(outLabel, outLabelp):
                     print(t2 - t1, t3 - t2, t4 - t3, t5 - t4, t6 - t5, t7 - t6)
                     print(t7 - t1, spk_history)
             else:
-                post_res('%s\n%s'%('empty', pre_spk))
-                outLabel.config(text='empty')
+                # post_res('%s\n%s'%('empty', pre_spk))
+                # outLabel.config(text='empty')
                 pass
         except queue.Empty:
             continue
