@@ -47,10 +47,12 @@ if [ $stage = train ]; then
   done
 fi
 if [ $stage = test ]; then
-  rm -rf $data/test 
+  rm -rf $data/test
+  mkdir $data/test
+  cp trials $data/test/trials
   rm -rf $nnetdir/xvectors_test/xvector.scp $nnetdir/xvectors_test/xvector.ark
   rm -rf $nnetdir/xvectors_test/xvector_done.scp $nnetdir/xvectors_test/xvector_done.ark
-  make_data_test.pl $datadir $data/test
+  make_data_test2.pl $datadir $data/test
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in test; do
     steps/make_mfcc.sh --write-utt2num-frames true \

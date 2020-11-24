@@ -51,7 +51,13 @@ def test_speaker_recog(audio=None):
         os.chdir(ROOT_DIR)
         with open(os.path.join(SCRIPTS_DIR, 'result.txt'), 'r') as f:
             l = f.read().split()[0]
-        return reverse_speaker_dict[l]
+        if l.startswith('m'):
+            return 'adult_m'
+        elif l.startswith('f'):
+            return 'adult_f'
+        else:
+            return 'kid'
+
     except Exception as e:
         print('Error', e)
         return '...'

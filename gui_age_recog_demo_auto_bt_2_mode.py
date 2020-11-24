@@ -25,7 +25,7 @@ pre_spk = None
 spk_history = collections.deque(maxlen=2)
 from collections import Counter
 from energy import get_energy
-eng_th = 1e-4
+eng_th = 1e-2
 
 def modefinder(numbers):
     c = Counter(numbers)
