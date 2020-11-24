@@ -22,7 +22,7 @@ URL = 'http://192.168.1.115:8080/spk'
 
 pre_spk = None
 
-spk_history = collections.deque(maxlen=3)
+spk_history = collections.deque(maxlen=5)
 from collections import Counter
 
 
@@ -74,6 +74,7 @@ def speaker_recog_thread(outLabel, outLabelp):
     while True:
         try:
             data = q.get()
+            t1 = time.time()
             outLabel.config(text='...')
             post_res('%s\n%s'%('...', pre_spk))
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
@@ -84,9 +85,11 @@ def speaker_recog_thread(outLabel, outLabelp):
                 spk = modefinder(spk_history)
                 post_res('%s\n%s'%(spk, pre_spk))
                 print(spk)
-                if pre_spk != speaker:
-                    pre_spk = speaker
-                    outLabelp.config(text=speaker)
+                if pre_spk != spk:
+                    pre_spk = spk
+                    outLabelp.config(text=spk)
+                t2 = time.time()
+                print(t2 - t1, spk_history)
         except queue.Empty:
             continue
 
