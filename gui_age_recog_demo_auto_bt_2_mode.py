@@ -80,12 +80,16 @@ def speaker_recog_thread(outLabel, outLabelp):
             data = q.get()
             t1 = time.time()
             outLabel.config(text='...')
+            t2 = time.time()
             post_res('%s\n%s'%('...', pre_spk))
+            t3 = time.time()
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
+            t4 = time.time()
             energy = get_energy(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'))
+            t5 = time.time()
             if energy > eng_th:
                 speaker = age_recog_v2.test_speaker_recog()
-                print(speaker)
+                t6 = time.time()
                 if speaker != '...':
                     spk_history.append(speaker)
                     spk = modefinder(spk_history)
@@ -96,8 +100,9 @@ def speaker_recog_thread(outLabel, outLabelp):
                         if pre_spk != spk:
                             pre_spk = spk
                             outLabelp.config(text=pre_spk)
-                    t2 = time.time()
-                    print(t2 - t1, spk_history)
+                    t7 = time.time()
+                    print(t2 - t1, t3 - t2, t4 - t3, t5 - t4, t6 - t5, t7 - t6)
+                    print(t7 - t1, spk_history)
             else:
                 post_res('%s\n%s'%('empty', pre_spk))
                 outLabel.config(text='empty')
