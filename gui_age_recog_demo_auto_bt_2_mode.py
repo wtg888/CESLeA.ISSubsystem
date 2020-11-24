@@ -31,7 +31,6 @@ def modefinder(numbers):
     return mode[0][0]
 
 
-
 def post_res(spk):
     try:
         res = requests.post(URL, data={'text': spk})
