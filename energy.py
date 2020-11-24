@@ -29,6 +29,7 @@ def get_energy(path):
     print(arr)
     energy = np.mean(arr ** 2)
     print(energy)
+    return energy
 
 
 if __name__ == '__main__':

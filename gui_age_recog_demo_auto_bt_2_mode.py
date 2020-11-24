@@ -24,12 +24,13 @@ pre_spk = None
 
 spk_history = collections.deque(maxlen=2)
 from collections import Counter
-
+from energy import get_energy
+eng_th = 1e-4
 
 def modefinder(numbers):
     c = Counter(numbers)
     mode = c.most_common(1)
-    if mode[0][1] > 1:
+    if mode[0][1] > 0:
         return mode[0][0]
     else:
         return None
@@ -81,20 +82,26 @@ def speaker_recog_thread(outLabel, outLabelp):
             outLabel.config(text='...')
             post_res('%s\n%s'%('...', pre_spk))
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
-            speaker = age_recog_v2.test_speaker_recog()
-
-            if speaker != '...':
-                spk_history.append(speaker)
-                spk = modefinder(spk_history)
-                if spk:
-                    post_res('%s\n%s'%(spk, pre_spk))
-                    print(spk)
-                    outLabel.config(text=spk)
-                    if pre_spk != spk:
-                        pre_spk = spk
-                        outLabelp.config(text=pre_spk)
-                t2 = time.time()
-                print(t2 - t1, spk_history)
+            energy = get_energy(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'))
+            if energy > eng_th:
+                speaker = age_recog_v2.test_speaker_recog()
+                print(speaker)
+                if speaker != '...':
+                    spk_history.append(speaker)
+                    spk = modefinder(spk_history)
+                    if spk:
+                        post_res('%s\n%s'%(spk, pre_spk))
+                        print(spk)
+                        outLabel.config(text=spk)
+                        if pre_spk != spk:
+                            pre_spk = spk
+                            outLabelp.config(text=pre_spk)
+                    t2 = time.time()
+                    print(t2 - t1, spk_history)
+            else:
+                post_res('%s\n%s'%('empty', pre_spk))
+                outLabel.config(text='empty')
+                pass
         except queue.Empty:
             continue
 
