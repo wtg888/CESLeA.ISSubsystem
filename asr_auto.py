@@ -62,7 +62,7 @@ def on_message(ws, message):
             # final result
             if data['result']:
                 print(data['result'])
-                post_res(data['result'])
+                post_res(data['result']+'f')
             recoord = False
             ws.close()
         else:
