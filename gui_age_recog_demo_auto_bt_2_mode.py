@@ -22,6 +22,16 @@ URL = 'http://192.168.1.115:8080/spk'
 
 pre_spk = None
 
+from collections import Counter
+
+
+def modefinder(numbers):
+    c = Counter(numbers)
+    mode = c.most_common(1)
+    return mode[0][0]
+
+
+
 def post_res(spk):
     try:
         res = requests.post(URL, data={'text': spk})
