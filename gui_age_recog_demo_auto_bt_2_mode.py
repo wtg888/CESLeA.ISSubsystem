@@ -22,6 +22,7 @@ URL = 'http://192.168.1.115:8080/spk'
 
 pre_spk = None
 
+spk_history = collections.deque(maxlen=3)
 from collections import Counter
 
 
@@ -79,8 +80,10 @@ def speaker_recog_thread(outLabel, outLabelp):
             speaker = age_recog_v2.test_speaker_recog()
             outLabel.config(text=speaker)
             if speaker != '...':
-                post_res('%s\n%s'%(speaker, pre_spk))
-                print(speaker)
+                spk_history.append(speaker)
+                spk = modefinder(spk_history)
+                post_res('%s\n%s'%(spk, pre_spk))
+                print(spk)
                 if pre_spk != speaker:
                     pre_spk = speaker
                     outLabelp.config(text=speaker)
@@ -95,6 +98,8 @@ def command(bt, lbl):
         ON = False
         with q.mutex:
             q.queue.clear()
+        with spk_history.mutex:
+            spk_history.queue.clear()
         bt.set("start")
     else:
         ON = True
@@ -143,7 +148,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 1000, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 1500, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True
