@@ -119,8 +119,10 @@ if __name__ == "__main__":
                               on_close = on_close)
     ws.on_open = on_open
 
-    try:
-        while True:
+    while True:
+        try:
             ws.run_forever()
-    except:
-        pass
+        except Exception as e:
+            # print(e.message())
+            pass
+
