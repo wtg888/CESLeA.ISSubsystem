@@ -98,8 +98,7 @@ def command(bt, lbl):
         ON = False
         with q.mutex:
             q.queue.clear()
-        with spk_history.mutex:
-            spk_history.queue.clear()
+        spk_history.clear()
         bt.set("start")
     else:
         ON = True
