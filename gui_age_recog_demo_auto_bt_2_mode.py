@@ -22,14 +22,17 @@ URL = 'http://192.168.1.115:8080/spk'
 
 pre_spk = None
 
-spk_history = collections.deque(maxlen=5)
+spk_history = collections.deque(maxlen=2)
 from collections import Counter
 
 
 def modefinder(numbers):
     c = Counter(numbers)
     mode = c.most_common(1)
-    return mode[0][0]
+    if mode[0][1] > 1:
+        return mode[0][0]
+    else:
+        return None
 
 
 def post_res(spk):
@@ -79,15 +82,17 @@ def speaker_recog_thread(outLabel, outLabelp):
             post_res('%s\n%s'%('...', pre_spk))
             write_wave(os.path.join(age_recog_v2.DATA_DIR, 'test', 'test.wav'), data)
             speaker = age_recog_v2.test_speaker_recog()
-            outLabel.config(text=speaker)
+
             if speaker != '...':
                 spk_history.append(speaker)
                 spk = modefinder(spk_history)
-                post_res('%s\n%s'%(spk, pre_spk))
-                print(spk)
-                if pre_spk != spk:
-                    pre_spk = spk
-                    outLabelp.config(text=spk)
+                if spk:
+                    post_res('%s\n%s'%(spk, pre_spk))
+                    print(spk)
+                    outLabel.config(text=spk)
+                    if pre_spk != spk:
+                        pre_spk = spk
+                        outLabelp.config(text=pre_spk)
                 t2 = time.time()
                 print(t2 - t1, spk_history)
         except queue.Empty:
@@ -137,7 +142,7 @@ def main():
     lbl.config(font=("Courier", 44))
     lbl.place(relx=0.5, rely=0.33, anchor=CENTER)
 
-    lbl_p = Label(root, text="이름")
+    lbl_p = Label(root, text="None")
     lbl_p.config()
     lbl_p.config(width=10)
     lbl_p.config(font=("Courier", 44))
