@@ -15,4 +15,4 @@ preprocess.sh test
 run_xvector.sh test
 
 #rm -rf result.txt
-cat basemodel/scores/scores.cos | sort -k 3 -nr >> result.txt
+cat basemodel/scores/scores.cos | sort -k 3 -nr > result.txt

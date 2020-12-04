@@ -381,3 +381,7 @@ LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applie
 LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
 INFO:tensorflow:[INFO] Key test length 200.
 LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+Traceback (most recent call last):
+  File "nnet/lib/extract_online.py", line 109, in <module>
+    time.sleep(0.03)
+KeyboardInterrupt
