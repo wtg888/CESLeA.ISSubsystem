@@ -25,7 +25,7 @@ pre_spk = None
 spk_history = collections.deque(maxlen=2)
 from collections import Counter
 from energy import get_energy
-eng_th = 1e-2
+eng_th = 1e-5
 
 def modefinder(numbers):
     c = Counter(numbers)
@@ -38,7 +38,8 @@ def modefinder(numbers):
 
 def post_res(spk):
     try:
-        res = requests.post(URL, data={'text': spk})
+        # res = requests.post(URL, data={'text': spk})
+        pass
     except:
         pass
 
@@ -167,7 +168,7 @@ def main():
     button.place(relx=0.5, rely=1.0, anchor='s')
     button.config(command=lambda: command(btn_text, lbl))
 
-    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 1500, stream))
+    t1 = threading.Thread(target=record_thread, args=(RATE, frame_duration_ms, 2000, 700, stream))
     t2 = threading.Thread(target=speaker_recog_thread, args=(lbl, lbl_p))
     t1.daemon = True
     t2.daemon = True

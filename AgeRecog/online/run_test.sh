@@ -9,7 +9,7 @@
 set -e
 
 rm -rf result.txt
-echo "999 test 999" >> result.txt
+# echo "999 test 999" >> result.txt
 preprocess.sh test
 #preprocess.sh test_noonline
 run_xvector.sh test
