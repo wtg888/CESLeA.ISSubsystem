@@ -51,7 +51,7 @@ def test_speaker_recog(audio=None):
         os.chdir(ROOT_DIR)
         with open(os.path.join(SCRIPTS_DIR, 'result.txt'), 'r') as f:
             l = f.read().split()[0]
-        return reverse_speaker_dict[l]
+        return l # reverse_speaker_dict[l]
 
     except Exception as e:
         print('Error', e)

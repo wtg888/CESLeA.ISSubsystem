@@ -206,3 +206,1109 @@ LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applie
 LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
 INFO:tensorflow:[INFO] Key test length 200.
 LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 57.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 75.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 88.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 35.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 82.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 101.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 89.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 72.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 71.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 63.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 67.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 48.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 54.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 200.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 200.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 200.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 200.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 200.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 57.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 75.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 57.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 75.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 88.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 35.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 82.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 101.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 89.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 72.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 71.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 63.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 67.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 48.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 54.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 57.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 75.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 88.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 35.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 82.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 101.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 89.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 72.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 71.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 63.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 67.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 48.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 54.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 57.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 75.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 88.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 66.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 35.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 82.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 74.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 101.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 87.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 64.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 89.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 72.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 78.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 70.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 71.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 63.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 69.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 65.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 67.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 48.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
+copy-vector ark:- ark,scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.ark,/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/basemodel/xvector_nnet_pretrain/xvectors_test/xvector.scp 
+select-voiced-frames ark:- scp,s,cs:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/vad.scp ark:- 
+apply-cmvn-sliding --norm-vars=false --center=true --cmn-window=300 scp:/home/mi/PycharmProjects/CESLeA/Speaker_recog_final/online/data/test/split1/1/feats.scp ark:- 
+LOG (apply-cmvn-sliding[5.5.598~1-611ff]:main():apply-cmvn-sliding.cc:75) Applied sliding-window cepstral mean normalization to 1 utterances, 0 had errors.
+LOG (select-voiced-frames[5.5.598~1-611ff]:main():select-voiced-frames.cc:106) Done selecting voiced frames; processed 1 utterances, 0 had errors.
+INFO:tensorflow:[INFO] Key test length 54.
+LOG (copy-vector[5.5.598~1-611ff]:main():copy-vector.cc:90) Copied 1 vectors.
