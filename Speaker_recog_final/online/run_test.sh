@@ -14,5 +14,5 @@ preprocess.sh test
 #preprocess.sh test_noonline
 run_xvector.sh test
 
-#rm -rf result.txt
+rm -rf result.txt
 cat basemodel/scores/scores.cos | sort -k 3 -nr > result.txt

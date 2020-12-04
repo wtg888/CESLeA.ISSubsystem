@@ -59,11 +59,13 @@ if __name__ == '__main__':
         dim = int(f.readline().strip())
     trainer.build("predict", dim=dim)
     vad_dir = args.rspecifier.split(":")[5].split()[0]
+    #tf.logging.info(vad_dir)
     write_dir = args.wspecifier.split(":")[3].split(",")
-    tf.logging.info(args.wspecifier)
+    #tf.logging.info(args.wspecifier)
 
     while True:
         if os.path.isfile(vad_dir):
+            #start = time.time()
             fp_out = open_or_fd(args.wspecifier, "wb")
             for index, (key, feature) in enumerate(read_mat_ark(args.rspecifier)):
                 if feature.shape[0] < args.min_chunk_size:
@@ -96,14 +98,14 @@ if __name__ == '__main__':
                     embedding /= np.sqrt(np.sum(np.square(embedding)))
                 write_vec_flt(fp_out, embedding, key=key)
             fp_out.close()
-
-            #time.sleep(0.1)
-            shutil.copyfile(write_dir[0],write_dir[0][:-4]+"_done.ark")
+            #shutil.copyfile(write_dir[0],write_dir[0][:-4]+"_done.ark")
             shutil.copyfile(write_dir[1],write_dir[1][:-4]+"_done.scp")
-
-            tf.logging.info("Done\n")
             os.remove(vad_dir)
+            #tf.logging.info("Done\n")
+            #end = time.time()
+            #workingtime = str(end - start)
+            #tf.logging.info("time elapsed:"+workingtime)
         else :
-            time.sleep(0.2)
+            time.sleep(0.03)
             #tf.logging.info("Wait\n")
     trainer.close()

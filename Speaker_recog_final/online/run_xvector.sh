@@ -43,20 +43,25 @@ if [ $stage = train ]; then
 fi
 
 if [ $stage = test ]; then
+  #START=$(date +%s.%N)
   while :
   do
     if [ -f "$nnetdir/xvectors_test/xvector_done.scp" ]; then
+      #sleep .03
       break
     else
-      sleep .1
+      sleep .03
     fi
   done
+  #END=$(date +%s.%N)
+  #runtime=$(python -c "print(${END}-${START})")
+  #echo "Runtime was $runtime"
   #cosine similarity between test xvector and spkrs xvector
   mkdir -p $nnetdir/../scores
   cat $trials | awk '{print $1, $2}' | \
     ivector-compute-dot-products - \
       "ark:ivector-normalize-length scp:$nnetdir/xvectors/spk_xvector.scp ark:- |" \
-      "ark:ivector-normalize-length scp:$nnetdir/xvectors_test/xvector_done.scp ark:- |" \
+      "ark:ivector-normalize-length scp:$nnetdir/xvectors_test/xvector.scp ark:- |" \
       $nnetdir/../scores/scores.cos
 
 fi

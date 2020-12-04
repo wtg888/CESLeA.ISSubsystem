@@ -33,7 +33,7 @@ stage=$1
 
 if [ $stage = train ]; then
   rm -rf $data/spkrs
-  make_data_all.pl $datadir/train $data/spkrs
+  make_data_all.pl $datadir $data/spkrs
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in spkrs; do
     steps/make_mfcc.sh --write-utt2num-frames true \
@@ -46,22 +46,20 @@ if [ $stage = train ]; then
     cp $data/${name}/vad.scp $data/${name}/split1/1/vad.scp
   done
 fi
+
 if [ $stage = test ]; then
-  rm -rf $data/test
-  mkdir $data/test
+  rm -rf $data/test/* $nnetdir/xvectors_test/xvector*
   cp trials $data/test/trials
-  rm -rf $nnetdir/xvectors_test/xvector.scp $nnetdir/xvectors_test/xvector.ark
-  rm -rf $nnetdir/xvectors_test/xvector_done.scp $nnetdir/xvectors_test/xvector_done.ark
   make_data_test.pl $datadir $data/test
   # Make MFCCs and compute the energy-based VAD for each dataset
   for name in test; do
-    steps/make_mfcc.sh --write-utt2num-frames true \
+    make_mfcc_online.sh --write-utt2num-frames true \
       --mfcc-config conf/mfcc.conf --nj 1 --cmd "$train_cmd" \
       $data/${name} $exp/make_mfcc $mfccdir
-    utils/fix_data_dir.sh $data/${name}
+    #utils/fix_data_dir.sh $data/${name}
     sid/compute_vad_decision.sh --nj 1 --cmd "$train_cmd" \
       $data/${name} $exp/make_vad $vaddir
-    utils/fix_data_dir.sh $data/${name}
+    #utils/fix_data_dir.sh $data/${name}
     cp $data/${name}/vad.scp $data/${name}/split1/1/vad.scp
   done
 fi
