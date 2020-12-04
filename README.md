@@ -20,7 +20,6 @@ Intergrated Speech Subsystem for [CESLeA] project.
 - Intergrated Speech controller technology for communication between related modules
 
 ## Installation
-
 WIP
 
 ## Contribution guidelines
