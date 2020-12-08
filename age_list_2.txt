@@ -1,0 +1,6 @@
+senior_f	senior_f
+senior_m	senior_m
+kid_f	kid_f
+kid_m	kid_m
+adult_f	adult_f
+adult_m	adult_m

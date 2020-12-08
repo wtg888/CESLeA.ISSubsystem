@@ -17,10 +17,9 @@ Intergrated Speech Subsystem for [CESLeA] project.
 ## Key Features
 
 - Speaker recognition technology that distinguishes the target speaker's voice from the separated speaker's voice
-- Voice controller technology for communication between related modules
+- Intergrated Speech controller technology for communication between related modules
 
 ## Installation
-
 WIP
 
 ## Contribution guidelines
