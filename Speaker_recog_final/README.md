@@ -1,13 +1,14 @@
 current state
 
 1-1. ivector extractor : done
-1-2. xvector extractor -> working
-1-3. dvector extractor : future
+1-2. xvector extractor : done
+1-3. dvector extractor : done
 
-2-1. base recognizer : working
+2-1. base recognizer : done
 2-2. NN recognizer : working
 
 3-1. online model(baseline model) : done
+3-2. online model(diarization model) : done
 
 how to install
 1. install KALDI TOOLKIT, python
