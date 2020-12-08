@@ -3,3 +3,13 @@
 data/*
 venv/*
 wavfile/*
+*.wav
+*.mp3
+SpeakerRecogv2/online/result.txt
+AgeRecog/online/result.txt
+url.txt
+get_micnum.py
+/speaker_list.txt
+llsollu_url.txt
+spk_url.txt
+age_list.txt

@@ -120,7 +120,7 @@ def vad_collector(sample_rate, frame_duration_ms,
             # If more than 50% of the frames in the ring buffer are
             # unvoiced, then enter NOTTRIGGERED and yield whatever
             # audio we've collected.
-            if num_unvoiced > 0.5 * ring_buffer.maxlen:
+            if num_unvoiced > 0.6 * ring_buffer.maxlen:
                 sys.stdout.write('-(%s)' % (frame.timestamp + frame.duration))
                 triggered = False
                 yield b''.join([f.bytes for f in voiced_frames])

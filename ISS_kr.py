@@ -11,7 +11,7 @@ import pyaudio
 import numpy as np
 import librosa
 import shutil
-from Systran.requests_fn import asr
+from llsollu.requests_fn import asr
 from googletest import synthesize_text
 import post
 
@@ -107,7 +107,8 @@ def asr_thread():
                 # print(speaker, speech)
                 post.post(createdAt=now, speaker=speaker, speakerId=speaker, content=speech)
             else:
-                # print("empty")
+                print("empty")
+                # pass
         except queue.Empty:
             continue
 
@@ -171,7 +172,7 @@ def main():
                     input=True,
                     frames_per_buffer=CHUNK)
 
-    vad = webrtcvad.Vad(3)
+    vad = webrtcvad.Vad(2)
 
     ths = []
     ths.append(threading.Thread(target=vad_thread, args=(RATE, frame_duration_ms, 300, vad, stream)))
