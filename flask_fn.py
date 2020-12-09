@@ -16,6 +16,19 @@ def write_message(msg):
     os.write(fifo, msg)
 
 
+@app.route('/tts', methods=['POST'])
+def tts():
+    if request.method == 'POST':
+        text = request.form['text']
+        if len(text) == 0:
+            return 'no text'
+        print(text)
+        write_message('tts\t' + text)
+        return 'OK'
+    else:
+        return '잘못된 접근입니다.'
+
+
 @app.route("/stt", methods=['POST'])
 def stt():
     text = request.form['text']
