@@ -9,18 +9,17 @@
 - Include the signs of agreement about this guidelines.
 
 ## about Dual Licensing
-This is a release of //Name of Software//, brought to you by Kyungpook National University, as a result of the [Autonomous Digital Companion] project, supported by the Institute for Information & Communications Technology Promotion ([IITP]) grant funded by the [Ministry of Science and ICT] (MSIT, a ministry of the Government of South Korea). This software is released under [version 3 of the GNU Lesser General Public License] (LGPLv3), as set forth below, with the following additional regulations.
+This is a release of CESLeA.ISSubsystem, brought to you by Kyungpook National University, as a result of the [Autonomous Digital Companion] project, supported by the Institute for Information & Communications Technology Promotion ([IITP]) grant funded by the [Ministry of Science and ICT] (MSIT, a ministry of the Government of South Korea). This software is released under [version 3 of the GNU Lesser General Public License] (LGPLv3), as set forth below, with the following additional regulations.
 
-Kyungpook National University provides its //Name of Software// under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs and VARs) and open source projects.
+Kyungpook National University provides its CESLeA.ISSubsystem under a dual license model designed to meet the development and distribution needs of both commercial distributors (such as OEMs, ISVs and VARs) and open source projects.
 
 ### Commercial usage
 For OEMs. ISVs, VARs and Other Distributors of Commercial Applications:
-OEMs (Original Equipment Manufacturers), ISVs (Independent Software Vendors), VARs (Value Added Resellers) and other distributors that combine and distribute commercially licensed software with //Name of Software// and do not wish to distribute the source code for the commercially licensed software under the LGPLv3 must enter into a commercial license agreement with Kyungpook National University.
+OEMs (Original Equipment Manufacturers), ISVs (Independent Software Vendors), VARs (Value Added Resellers) and other distributors that combine and distribute commercially licensed software with CESLeA.ISSubsystem and do not wish to distribute the source code for the commercially licensed software under the LGPLv3 must enter into a commercial license agreement with Kyungpook National University.
 
 ### Open Source usage
 For Open Source Projects and Other Developers of Open Source Applications:
-For developers of Free Open Source Software ("FOSS") applications that want to combine and distribute those FOSS applications with //Name of Software//, 
-
+For developers of Free Open Source Software ("FOSS") applications that want to combine and distribute those FOSS applications with CESLeA.ISSubsystem, 
 The FOSS applications must be licensed under the LGPLv3.
 
 For more information, please contact KNU.
