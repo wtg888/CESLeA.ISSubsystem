@@ -8,3 +8,4 @@ flask
 playsound
 gtts
 websocket-client
+pywin32

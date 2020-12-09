@@ -5,16 +5,14 @@ import os
 from tkinter import *
 from message import decode_msg_size
 import requests
-from gtts import gTTS
+import win32com.client
 import playsound
 import time
 
 
 def tts(text):
-    tts = gTTS(text=text, lang='ko')
-    tts.save("tts.mp3")
-    playsound.playsound('tts.mp3', True)
-    time.sleep(0.1)
+    tts = win32com.client.Dispatch("SAPI.SpVoice")
+    tts.Speak(text)
 
 
 msgQ = queue.Queue()
