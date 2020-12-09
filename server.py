@@ -1,10 +1,18 @@
 from flask import Flask, request, jsonify
-import os
-from message import create_msg
+import requests
 
 app = Flask(__name__)
 speaker_dict = {}
 reverse_speaker_dict = {}
+
+URL = 'http://192.168.1.115:8080/tts'
+
+
+def post(text):
+    try:
+        res = requests.post(URL, data={'text': text})
+    except:
+        pass
 
 
 @app.route("/iss", methods=['POST'])
