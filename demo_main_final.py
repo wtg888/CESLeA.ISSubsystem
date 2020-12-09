@@ -5,6 +5,16 @@ import os
 from tkinter import *
 from message import decode_msg_size
 import requests
+from gtts import gTTS
+import playsound
+import time
+
+
+def tts(text):
+    tts = gTTS(text=text, lang='ko')
+    tts.save("tts.mp3")
+    playsound.playsound('tts.mp3', True)
+    time.sleep(0.1)
 
 
 msgQ = queue.Queue()
@@ -59,6 +69,8 @@ def change_queue(stt_lbl, spk_lbl):
             elif type == 'spk':
                 spk_lbl.config(text=text)
                 speaker = text
+            elif type == 'tts':
+                tts(text)
         except queue.Empty:
             continue
 
