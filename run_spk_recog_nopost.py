@@ -38,10 +38,7 @@ def modefinder(numbers):
 
 
 def post_res(spk):
-    try:
-        res = requests.post(URL, data={'text': spk})
-    except:
-        pass
+    pass
 
 
 def write_wave(path, audio, sample_rate=16000):
