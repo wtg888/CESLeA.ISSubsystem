@@ -4,14 +4,25 @@ import threading
 import os
 from tkinter import *
 from message import decode_msg_size
+import requests
 
 
 msgQ = queue.Queue()
 count = 0
 pre_txt = ''
-
+speaker = ''
 IPC_FIFO_NAME = 'ipc'
 fifo = os.open(IPC_FIFO_NAME, os.O_CREAT | os.O_RDONLY)
+
+
+URL = 'http://192.168.1.115:8080/iss'
+
+
+def post_res(text, spk):
+    try:
+        res = requests.post(URL, data={'text': text, 'speaker':spk})
+    except:
+        pass
 
 
 def get_message():
@@ -35,6 +46,7 @@ def read_thd():
 
 def change_queue(stt_lbl, spk_lbl):
     global pre_txt
+    global speaker
     while True:
         try:
             type, text = msgQ.get()
@@ -43,8 +55,10 @@ def change_queue(stt_lbl, spk_lbl):
                 if text[-1] == 'f':
                     text = text[:-1]
                     pre_txt = text
+                    post_res(text, speaker)
             elif type == 'spk':
                 spk_lbl.config(text=text)
+                speaker = text
         except queue.Empty:
             continue
 
